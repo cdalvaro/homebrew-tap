@@ -12,7 +12,8 @@ You can type `brew install cdalvaro/tap/formula` to install the specified `formu
 
 |Formula|Description|
 |:-----:|:---------:|
-|[wxmac](Formula/wxmac.rb)| WxWidgets Release 3.1.1|
+|[wxmac](Formula/wxmac.rb)|[wxWidgets/wxWidgets](https://github.com/wxWidgets/wxWidgets) Release 3.1.1|
+|[howard-hinnant-date](Formula/howard-hinnant-date.rb)|[HowardHinnant/date](https://github.com/HowardHinnant/date) C++ Library|
 
 ## More Documentation
 
