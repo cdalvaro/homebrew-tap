@@ -15,10 +15,18 @@ class Wxmac < Formula
 
   option "with-stl", "use standard C++ classes for everything"
   option "with-static", "build static libraries"
+  option "with-enable-abort", "apply patch patch-make-public-enable-abort"
 
   depends_on "jpeg"
   depends_on "libpng"
   depends_on "libtiff"
+
+  if build.with?("enable-abort")
+    patch do
+      url "https://github.com/cdalvaro/homebrew-tap/raw/master/formula-patches/wxmac/patch-make-public-enable-abort.diff"
+      sha256 "50c4fd7618cc6015dafc55a89d96f5330dc739215a1c55f31c4d34181b5e5d18"
+    end
+  end
 
   def install
     args = [
