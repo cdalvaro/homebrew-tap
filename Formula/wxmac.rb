@@ -1,17 +1,10 @@
 class Wxmac < Formula
-  desc "Cross-platform C++ GUI toolkit (wxWidgets for macOS)"
+  desc     "Cross-platform C++ GUI toolkit (wxWidgets for macOS)"
   homepage "https://www.wxwidgets.org"
-  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.1/wxWidgets-3.1.1.tar.bz2"
-  sha256 "c925dfe17e8f8b09eb7ea9bfdcfcc13696a3e14e92750effd839f5e10726159e"
-  head "https://github.com/wxWidgets/wxWidgets.git"
-
-  bottle do
-    cellar :any
-    sha256 "1ddeb111fc0519d87dbdb4cf3887c0976ea4e077bb6e6c26493b7d1ec930b048" => :mojave
-    sha256 "32357b2ab1590b209e89c02fd36c54b5378fe79d32e82abc4047ab4fbae2663c" => :high_sierra
-    sha256 "666f423fdee434b4e4f91d6035678f658cf149df8077dae01151c0ebe781445a" => :sierra
-    sha256 "6acfa572e370c0f9c2f48f89ab8807a42d81726151e8ebddccca48aa634514de" => :el_capitan
-  end
+  url      "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.1/wxWidgets-3.1.1.tar.bz2"
+  sha256   "c925dfe17e8f8b09eb7ea9bfdcfcc13696a3e14e92750effd839f5e10726159e"
+  head     "https://github.com/wxWidgets/wxWidgets.git"
+  bottle   :unneeded
 
   option "with-stl", "use standard C++ classes for everything"
   option "with-static", "build static libraries"
