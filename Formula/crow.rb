@@ -27,4 +27,3 @@ class Crow < Formula
     system "./test"
   end
 end
-

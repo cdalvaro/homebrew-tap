@@ -24,10 +24,9 @@ class Cppzmq < Formula
         zmq::socket_t socket(context, ZMQ_ROUTER);
       }
     EOS
-    system ENV.cxx, "test.cpp", "-std=c++11", 
+    system ENV.cxx, "test.cpp", "-std=c++11",
                     "-I#{include}", "-L#{HOMEBREW_PREFIX}/lib",
                     "-lzmq", "-o", "test"
     system "./test"
   end
 end
-    

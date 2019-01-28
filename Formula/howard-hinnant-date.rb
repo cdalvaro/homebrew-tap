@@ -37,4 +37,3 @@ class HowardHinnantDate < Formula
     system "./test"
   end
 end
-
