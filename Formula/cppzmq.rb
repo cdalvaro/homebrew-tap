@@ -8,7 +8,6 @@ class Cppzmq < Formula
 
   depends_on "cmake" => :build
   depends_on "zmq"
-  needs :cxx11
 
   def install
     system "cmake", ".", *std_cmake_args
