@@ -9,7 +9,6 @@ class HowardHinnantDate < Formula
   option "without-string-view", "Disable C++ string view"
 
   depends_on "cmake" => :build
-  needs      :cxx11
 
   def install
     custom_args = ["-DENABLE_DATE_TESTING=OFF", "-DUSE_SYSTEM_TZ_DB=ON", "-DBUILD_SHARED_LIBS=ON"]
