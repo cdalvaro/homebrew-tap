@@ -2,7 +2,7 @@ class CppPlotly < Formula
   desc     "Generate html/javascript charts from C++ using plotly.js library"
   homepage "https://github.com/pablrod/cppplotly"
   url      "https://github.com/pablrod/cppplotly/archive/v0.4.0.tar.gz"
-  sha256   "519867c7ca6815f3abb7dfa84238d48505323a2e7bdbb26e09aaa57924c5cabd"
+  sha256   "378a978d5e6d06685e83593bbd5c4652685c2340240312ce57913befcca9f7c3"
   head     "https://github.com/pablrod/cppplotly.git"
   bottle   :unneeded
 
