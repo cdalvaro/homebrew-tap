@@ -6,7 +6,6 @@ class Wxmac < Formula
   head     "https://github.com/wxWidgets/wxWidgets.git"
   bottle   :unneeded
 
-  option "with-stl", "use standard C++ classes for everything"
   option "with-static", "build static libraries"
   option "with-enable-abort", "apply patch patch-make-public-enable-abort"
 
@@ -48,7 +47,6 @@ class Wxmac < Formula
       "--with-macosx-version-min=#{MacOS.version}",
     ]
 
-    args << "--enable-stl" if build.with? "stl"
     args << (build.with?("static") ? "--disable-shared" : "--enable-shared")
 
     system "./configure", *args
