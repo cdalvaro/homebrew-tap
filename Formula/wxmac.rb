@@ -6,7 +6,6 @@ class Wxmac < Formula
   head     "https://github.com/wxWidgets/wxWidgets.git"
   bottle   :unneeded
 
-  option "with-static", "build static libraries"
   option "with-enable-abort", "apply patch patch-make-public-enable-abort"
 
   depends_on "jpeg"
@@ -46,8 +45,6 @@ class Wxmac < Formula
       # Set with-macosx-version-min to avoid configure defaulting to 10.5
       "--with-macosx-version-min=#{MacOS.version}",
     ]
-
-    args << (build.with?("static") ? "--disable-shared" : "--enable-shared")
 
     system "./configure", *args
     system "make", "install"
