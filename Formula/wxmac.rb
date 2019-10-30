@@ -1,8 +1,8 @@
 class Wxmac < Formula
   desc     "Cross-platform C++ GUI toolkit (wxWidgets for macOS)"
   homepage "https://www.wxwidgets.org"
-  url      "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.2/wxWidgets-3.1.2.tar.bz2"
-  sha256   "4cb8d23d70f9261debf7d6cfeca667fc0a7d2b6565adb8f1c484f9b674f1f27a"
+  url      "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.3/wxWidgets-3.1.3.tar.bz2"
+  sha256   "fffc1d34dac54ff7008df327907984b156c50cff5a2f36ee3da6052744ab554a"
   head     "https://github.com/wxWidgets/wxWidgets.git"
   bottle   :unneeded
 
