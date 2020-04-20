@@ -16,6 +16,7 @@ You can type `brew install cdalvaro/tap/formula` to install the specified `formu
 |[cppzmq](Formula/cppzmq.rb)|[zeromq/cppzmq](https://github.com/zeromq/cppzmq) Header-only C++ binding for libzmq|
 |[crow](Formula/crow.rb)|[ipkn/crow](https://github.com/ipkn/crow) Crow is very fast and easy to use C++ micro web framework (inspired by Python Flask)|
 |[howard-hinnant-date](Formula/howard-hinnant-date.rb)|[HowardHinnant/date](https://github.com/HowardHinnant/date) A date and time library based on the C++11/14/17 <chrono> header|
+|[simple-web-server](Formula/simple-web-server.rb)|[eidheim/Simple-Web-Server](https://gitlab.com/eidheim/Simple-Web-Server) A very simple, fast, multithreaded, platform independent HTTP and HTTPS server and client library implemented using C++11 and Boost.Asio.|
 |[wxmac](Formula/wxmac.rb)|[wxWidgets/wxWidgets](https://github.com/wxWidgets/wxWidgets) Cross-Platform GUI Library - Release 3.1|
 
 ## More Documentation
