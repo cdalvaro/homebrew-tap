@@ -6,7 +6,7 @@ cdalvaro custom formulae for the [Homebrew package manager](https://brew.sh).
 
 Just `brew tap cdalvaro/tap`. This will enable formulaes from this tap.
 
-You can type `brew install cdalvaro/tap/formula` to install the specified `formula`.
+You can type `brew install cdalvaro/tap/<formula>` to install the specified `<formula>`.
 
 ## Available formulaes
 
