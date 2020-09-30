@@ -1,4 +1,4 @@
-class Cppzmq < Formula
+class CppZmq < Formula
   desc     "Header-only C++ binding for libzmq"
   homepage "https://github.com/zeromq/cppzmq"
   url      "https://github.com/zeromq/cppzmq/archive/v4.7.0.tar.gz"
