@@ -1,12 +1,14 @@
-# 🍻 Homebrew Custom
+[![hombrew tap cdalvaro][homebrew_tap_badge]][homebrew_tap_url]
 
-cdalvaro custom formulae for the [Homebrew package manager](https://brew.sh).
+# <img src="https://simpleicons.org/icons/homebrew.svg" height=24pt> Homebrew Custom Tap
+
+[@cdalvaro](https://github.com/cdalvaro) custom formulae for the [Homebrew package manager](https://brew.sh).
 
 ## How to enable this tap?
 
-Just `brew tap cdalvaro/tap`. This will enable formulae from this tap.
+Just type `brew tap cdalvaro/tap`. This will allow you to install formulae from this tap.
 
-You can type `brew install cdalvaro/tap/<formula>` to install the specified `<formula>`.
+You can directly type `brew install cdalvaro/tap/<formula>` to install the specified `<formula>`.
 
 ## Available formulae
 
@@ -25,3 +27,5 @@ You can type `brew install cdalvaro/tap/<formula>` to install the specified `<fo
 More documentation is available at: [Homebrew - Taps](https://docs.brew.sh/Taps)
 
 [salt_release_notes]: https://docs.saltstack.com/en/latest/topics/releases/3001.1.html
+[homebrew_tap_badge]: https://img.shields.io/badge/homebrew%20tap-cdalvaro-orange?style=flat-square&logo=Homebrew&color=FBB040
+[homebrew_tap_url]: https://github.com/cdalvaro/homebrew-tap
