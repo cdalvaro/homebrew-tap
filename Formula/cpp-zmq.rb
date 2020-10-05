@@ -1,8 +1,8 @@
 class CppZmq < Formula
   desc     "Header-only C++ binding for libzmq"
   homepage "https://github.com/zeromq/cppzmq"
-  url      "https://github.com/zeromq/cppzmq/archive/v4.7.0.tar.gz"
-  sha256   "ffbedc8ffb95caea0b82f9be208c8ac5d6040870b63f2a9c780ccff681d5464c"
+  url      "https://github.com/zeromq/cppzmq/archive/v4.7.1.tar.gz"
+  sha256   "9853e0437d834cbed5d3c223bf1d755cadee70e7c964c6e42c4c6783dee5d02c"
   head     "https://github.com/zeromq/cppzmq.git"
   bottle   :unneeded
 
