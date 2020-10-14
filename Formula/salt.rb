@@ -46,6 +46,11 @@ class Salt < Formula
     sha256 "de9421118a99c79cbba1e512d60e5caed1d63273ce30a0e8d4edef4a2e500387"
   end
 
+  patch do
+    url "https://github.com/cdalvaro/homebrew-tap/raw/master/formula-patches/salt/requirements-timelib-0.2.5.diff"
+    sha256 "343b13aabb43f5e54c9cd7381a0a3a57df702ef827347d7378fa15eb92b39ee2"
+  end
+
   def install
     ENV["SWIG_FEATURES"]="-I#{Formula["openssl@1.1"].opt_include}"
 
