@@ -1,8 +1,8 @@
 class SimpleWebServer < Formula
   desc     "A very simple, fast, multithreaded, platform independent HTTP and HTTPS server and client library implemented using C++11 and Boost.Asio"
   homepage "https://gitlab.com/eidheim/Simple-Web-Server"
-  url      "https://gitlab.com/eidheim/Simple-Web-Server/-/archive/v3.0.2/Simple-Web-Server-v3.0.2.tar.gz"
-  sha256   "9997079979c542e49809c4ce20942f2eed60b34505b9e757d08966488d18d319"
+  url      "https://gitlab.com/eidheim/Simple-Web-Server/-/archive/v3.1.1/Simple-Web-Server-v3.1.1.tar.gz"
+  sha256   "f8f656d941647199e0a2db3cb07788b0e8c30d0f019d28e6ee9281bc48db132d"
   head     "https://gitlab.com/eidheim/Simple-Web-Server.git"
   bottle   :unneeded
 
