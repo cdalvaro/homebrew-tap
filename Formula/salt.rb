@@ -47,13 +47,18 @@ class Salt < Formula
     sha256 "0be93f6a8d7cbf0cc79ae2f0afb1993fc055fc0018c27e2bd01ba143e51d4452"
   end
 
+  resource "importlib-metadata" do
+    url "https://files.pythonhosted.org/packages/5d/44/636bcd15697791943e2dedda0dbe098d8530a38d113b202817133e0b06c0/importlib_metadata-0.23.tar.gz"
+    sha256 "aa18d7378b00b40847790e7c27e11673d7fed219354109d0e7b9e5b25dc3ad26"
+  end
+
   # Do not install PyObjC since it causes broken linkage
   # Based on:
   # - https://github.com/Homebrew/homebrew-core/pull/52835#issuecomment-617502578
   # - https://github.com/saltstack/salt/pull/56904
   patch do
     url "https://github.com/cdalvaro/homebrew-tap/raw/master/formula-patches/salt/remove-pyobjc-linkage.diff"
-    sha256 "0e51d15ee59029ca0d3222010ff34f343ab563a6cda301816ba505af5b75988a"
+    sha256 "270b5fc8c8112df9822588f6791f0fa5cce6e703114a6f03de084fa9472299e7"
   end
 
   def install
@@ -61,8 +66,6 @@ class Salt < Formula
 
     # Fix building of M2Crypto on High Sierra https://github.com/Homebrew/homebrew-core/pull/45895
     ENV.delete("HOMEBREW_SDKROOT") if MacOS.version == :high_sierra
-
-    FileUtils.cp(buildpath/"requirements/static/pkg/py3.7/darwin.txt", "/tmp/darwin.txt")
 
     venv = virtualenv_create(libexec, Formula["python@3.7"].bin/"python3.7")
     venv.pip_install resources
