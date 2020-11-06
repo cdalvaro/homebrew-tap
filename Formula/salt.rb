@@ -57,8 +57,7 @@ class Salt < Formula
   # - https://github.com/Homebrew/homebrew-core/pull/52835#issuecomment-617502578
   # - https://github.com/saltstack/salt/pull/56904
   patch do
-    #url "https://github.com/cdalvaro/homebrew-tap/raw/master/formula-patches/salt/remove-pyobjc-linkage.diff"
-    url "file:///Users/Carlos/Documents/Projects/github/homebrew-tap/formula-patches/salt/remove-pyobjc-linkage.diff"
+    url "https://github.com/cdalvaro/homebrew-tap/raw/master/formula-patches/salt/remove-pyobjc-linkage.diff"
     sha256 "7808935308300d9679a3ed4153185408609cf0bdf22e4ec84d9055d0cf3f935c"
   end
 
