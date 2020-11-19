@@ -3,8 +3,8 @@ class Salt < Formula
 
   desc "Dynamic infrastructure communication bus"
   homepage "https://s.saltstack.com/community/"
-  url "https://files.pythonhosted.org/packages/48/79/66352fd2351bd494ee6ee502693c8b54f77a8afc4d96c5b20b1f1306b2b5/salt-3002.1.tar.gz"
-  sha256 "4c536a0577c9fe5052fa80c25c93527af00b50086aba0f5320e46dcd1dc3e75e"
+  url "https://files.pythonhosted.org/packages/b5/45/a20ff8a3cad48b50a924ee9c65f2df0e214de4fa282c4feef2e1d6a0b886/salt-3002.2.tar.gz"
+  sha256 "bd6d29621ce8e099412777cd396af35474aa112bb0999b5da804387d87290075"
   license "Apache-2.0"
   head "https://github.com/saltstack/salt.git", :branch => "develop", :shallow => false
 
@@ -58,7 +58,7 @@ class Salt < Formula
   # - https://github.com/saltstack/salt/pull/56904
   patch do
     url "https://github.com/cdalvaro/homebrew-tap/raw/master/formula-patches/salt/remove-pyobjc-linkage.diff"
-    sha256 "7808935308300d9679a3ed4153185408609cf0bdf22e4ec84d9055d0cf3f935c"
+    sha256 "86feb6a9da3c260326cd559552d181166c84592b3827a8bbeca826df500951c5"
   end
 
   def install
