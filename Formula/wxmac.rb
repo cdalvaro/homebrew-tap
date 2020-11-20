@@ -3,6 +3,7 @@ class Wxmac < Formula
   homepage "https://www.wxwidgets.org"
   url      "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.4/wxWidgets-3.1.4.tar.bz2"
   sha256   "3ca3a19a14b407d0cdda507a7930c2e84ae1c8e74f946e0144d2fa7d881f1a94"
+  license  "wxWindows"
   head     "https://github.com/wxWidgets/wxWidgets.git"
 
   option "with-enable-abort", "apply patch patch-make-public-enable-abort"
@@ -10,6 +11,10 @@ class Wxmac < Formula
   depends_on "jpeg"
   depends_on "libpng"
   depends_on "libtiff"
+
+  on_linux do
+    depends_on "pkg-config" => :build
+  end
 
   if build.with?("enable-abort")
     patch do
