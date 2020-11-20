@@ -6,7 +6,11 @@ class Salt < Formula
   url "https://files.pythonhosted.org/packages/b5/45/a20ff8a3cad48b50a924ee9c65f2df0e214de4fa282c4feef2e1d6a0b886/salt-3002.2.tar.gz"
   sha256 "bd6d29621ce8e099412777cd396af35474aa112bb0999b5da804387d87290075"
   license "Apache-2.0"
-  head "https://github.com/saltstack/salt.git", :branch => "develop", :shallow => false
+  head "https://github.com/saltstack/salt.git", branch: "develop", shallow: false
+
+  livecheck do
+    url :stable
+  end
 
   depends_on "swig" => :build
   depends_on "libgit2"
