@@ -18,10 +18,6 @@ class Wxmac < Formula
   depends_on "libpng"
   depends_on "libtiff"
 
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
-
   if build.with?("enable-abort")
     patch do
       url "https://github.com/cdalvaro/homebrew-tap/raw/master/formula-patches/wxmac/patch-make-public-enable-abort.diff"
