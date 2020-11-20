@@ -51,11 +51,6 @@ class Salt < Formula
     sha256 "0be93f6a8d7cbf0cc79ae2f0afb1993fc055fc0018c27e2bd01ba143e51d4452"
   end
 
-  resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/56/1f/74c3e29389d34feea2d62ba3de1169efea2566eb22e9546d379756860525/importlib_metadata-2.0.0.tar.gz"
-    sha256 "77a540690e24b0305878c37ffd421785a6f7e53c8b5720d211b211de8d0e95da"
-  end
-
   # Do not install PyObjC since it causes broken linkage
   # Based on:
   # - https://github.com/Homebrew/homebrew-core/pull/52835#issuecomment-617502578
