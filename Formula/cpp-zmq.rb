@@ -5,6 +5,11 @@ class CppZmq < Formula
   sha256   "9853e0437d834cbed5d3c223bf1d755cadee70e7c964c6e42c4c6783dee5d02c"
   head     "https://github.com/zeromq/cppzmq.git"
 
+  livecheck do
+    url "https://github.com/zeromq/cppzmq/releases/latest"
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+  end
+
   depends_on "cmake" => :build
   depends_on "zeromq"
 

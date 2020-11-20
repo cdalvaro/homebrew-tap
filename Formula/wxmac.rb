@@ -6,6 +6,11 @@ class Wxmac < Formula
   license  "wxWindows"
   head     "https://github.com/wxWidgets/wxWidgets.git"
 
+  livecheck do
+    url "https://github.com/wxWidgets/wxWidgets/releases/latest"
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+  end
+
   option "with-enable-abort", "apply patch patch-make-public-enable-abort"
 
   depends_on "jpeg"

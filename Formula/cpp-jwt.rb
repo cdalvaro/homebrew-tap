@@ -5,6 +5,11 @@ class CppJwt < Formula
   sha256   "792889f08dd1acbc14129d11e013f9ef46e663c545ea366dd922402d8becbe05"
   head     "https://github.com/arun11299/cpp-jwt.git"
 
+  livecheck do
+    url "https://github.com/arun11299/cpp-jwt/releases/latest"
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+  end
+
   option "with-nlohmann-json", "Use nlohmann-json library instead of the vendored one"
 
   depends_on "cmake" => :build
