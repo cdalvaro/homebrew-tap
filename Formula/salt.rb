@@ -12,6 +12,11 @@ class Salt < Formula
     url :stable
   end
 
+  bottle do
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/salt-3002.2"
+    sha256 "61d551d7272d2da2be933db739b0e311aae26b8f1080308340e75f1a15ed9d26" => :catalina
+  end
+
   depends_on "swig" => :build
   depends_on "libgit2"
   depends_on "libyaml"
