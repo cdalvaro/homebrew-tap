@@ -15,7 +15,11 @@ class CppZmq < Formula
   depends_on "zeromq"
 
   def install
-    system "cmake", ".", *std_cmake_args
+    custom_args = [
+      "-DCPPZMQ_BUILD_TESTS=OFF",
+    ]
+
+    system "cmake", ".", *std_cmake_args, *custom_args
     system "make", "install"
   end
 
