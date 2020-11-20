@@ -2,9 +2,14 @@ class HowardHinnantDate < Formula
   desc     "C++ library for date and time operations based on <chrono>"
   homepage "https://github.com/HowardHinnant/date"
   url      "https://github.com/HowardHinnant/date/archive/v3.0.0.tar.gz"
-  head     "https://github.com/HowardHinnant/date.git"
   sha256   "87bba2eaf0ebc7ec539e5e62fc317cb80671a337c1fb1b84cb9e4d42c6dbebe3"
-  bottle   :unneeded
+  license  "MIT"
+  head     "https://github.com/HowardHinnant/date.git"
+
+  livecheck do
+    url "https://github.com/HowardHinnant/date/releases/latest"
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+  end
 
   option "without-string-view", "Disable C++ string view"
 
@@ -15,14 +20,11 @@ class HowardHinnantDate < Formula
       "-DENABLE_DATE_TESTING=OFF",
       "-DUSE_SYSTEM_TZ_DB=ON",
       "-DBUILD_SHARED_LIBS=ON",
-      "-DBUILD_TZ_LIB=ON"
+      "-DBUILD_TZ_LIB=ON",
     ]
 
-    if build.with? "string-view"
-      custom_args << "-DDISABLE_STRING_VIEW=OFF"
-    else
-      custom_args << "-DDISABLE_STRING_VIEW=ON"
-    end
+    disable_string_view = build.with?("string-view") ? "OFF" : "ON"
+    custom_args << "-DDISABLE_STRING_VIEW=#{disable_string_view}"
 
     system "cmake", ".", *std_cmake_args, *custom_args
     system "make", "install"

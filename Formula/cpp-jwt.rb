@@ -1,16 +1,20 @@
 class CppJwt < Formula
-  desc     'JSON Web Token library for C++'
-  homepage 'https://github.com/arun11299/cpp-jwt'
-  url      'https://github.com/arun11299/cpp-jwt/archive/v1.3.tar.gz'
-  sha256   '792889f08dd1acbc14129d11e013f9ef46e663c545ea366dd922402d8becbe05'
-  head     'https://github.com/arun11299/cpp-jwt.git'
-  bottle   :unneeded
+  desc     "JSON Web Token library for C++"
+  homepage "https://github.com/arun11299/cpp-jwt"
+  url      "https://github.com/arun11299/cpp-jwt/archive/v1.3.tar.gz"
+  sha256   "792889f08dd1acbc14129d11e013f9ef46e663c545ea366dd922402d8becbe05"
+  head     "https://github.com/arun11299/cpp-jwt.git"
 
-  option 'with-nlohmann-json', "Use nlohmann-json library instead of the vendored one"
+  livecheck do
+    url "https://github.com/arun11299/cpp-jwt/releases/latest"
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+  end
 
-  depends_on 'cmake' => :build
-  depends_on 'nlohmann-json' => :optional
-  depends_on 'openssl@1.1'
+  option "with-nlohmann-json", "Use nlohmann-json library instead of the vendored one"
+
+  depends_on "cmake" => :build
+  depends_on "openssl@1.1"
+  depends_on "nlohmann-json" => :optional
 
   def install
     custom_args = [
@@ -18,18 +22,15 @@ class CppJwt < Formula
       "-DCPP_JWT_BUILD_TESTS=OFF",
     ]
 
-    if build.with? "nlohmann-json"
-      custom_args << "-DCPP_JWT_USE_VENDORED_NLOHMANN_JSON=OFF"
-    else
-      custom_args << "-DCPP_JWT_USE_VENDORED_NLOHMANN_JSON=ON"
-    end
+    use_vendored_nlohmann = build.with?("nlohmann-json") ? "OFF" : "ON"
+    custom_args << "-DCPP_JWT_USE_VENDORED_NLOHMANN_JSON=#{use_vendored_nlohmann}"
 
     system "cmake", ".", *std_cmake_args, *custom_args
     system "make", "install"
   end
 
   test do
-    (testpath / 'test.cpp').write <<~EOS
+    (testpath / "test.cpp").write <<~EOS
       #include <iostream>
       #include <map>
       #include <chrono>
@@ -52,14 +53,12 @@ class CppJwt < Formula
     EOS
 
     custom_args = []
-    if !build.with? "nlohmann-json"
-      custom_args << "-DCPP_JWT_USE_VENDORED_NLOHMANN_JSON"
-    end
+    custom_args << "-DCPP_JWT_USE_VENDORED_NLOHMANN_JSON" if build.without? "nlohmann-json"
 
-    system ENV.cxx, "-I#{include}", '-std=c++14',
-           "-I#{Formula['openssl@1.1'].include}",
+    system ENV.cxx, "-I#{include}", "-std=c++14",
+           "-I#{Formula["openssl@1.1"].include}",
            *custom_args,
-           'test.cpp', '-o', 'test'
-    system './test'
+           "test.cpp", "-o", "test"
+    system "./test"
   end
 end
