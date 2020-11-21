@@ -1,12 +1,6 @@
 class CppJwt < Formula
   desc     "JSON Web Token library for C++"
   homepage "https://github.com/arun11299/cpp-jwt"
-  bottle do
-    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/cpp-jwt-1.3"
-    cellar :any_skip_relocation
-    sha256 "347ae3bf4b752546f37de737acb6602acc821f476c109abd105cdd1b8dd289de" => :catalina
-  end
-
   url      "https://github.com/arun11299/cpp-jwt/archive/v1.3.tar.gz"
   sha256   "792889f08dd1acbc14129d11e013f9ef46e663c545ea366dd922402d8becbe05"
   license  "MIT"
@@ -15,6 +9,12 @@ class CppJwt < Formula
   livecheck do
     url "https://github.com/arun11299/cpp-jwt/releases/latest"
     regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+  end
+
+  bottle do
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/cpp-jwt-1.3"
+    cellar :any_skip_relocation
+    sha256 "347ae3bf4b752546f37de737acb6602acc821f476c109abd105cdd1b8dd289de" => :catalina
   end
 
   option "with-nlohmann-json", "Use nlohmann-json library instead of the vendored one"
