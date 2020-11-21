@@ -1,12 +1,6 @@
 class HowardHinnantDate < Formula
   desc     "Date and time library based on the C++11/14/17 <chrono> header"
   homepage "https://github.com/HowardHinnant/date"
-  bottle do
-    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/howard-hinnant-date-3.0.0"
-    cellar :any
-    sha256 "8eea94bb442f0589b21b8f0fb361d29e8d1213169c93cf45f65ad2dad6cb8dc1" => :catalina
-  end
-
   url      "https://github.com/HowardHinnant/date/archive/v3.0.0.tar.gz"
   sha256   "87bba2eaf0ebc7ec539e5e62fc317cb80671a337c1fb1b84cb9e4d42c6dbebe3"
   license  "MIT"
@@ -15,6 +9,12 @@ class HowardHinnantDate < Formula
   livecheck do
     url "https://github.com/HowardHinnant/date/releases/latest"
     regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+  end
+
+  bottle do
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/howard-hinnant-date-3.0.0"
+    cellar :any
+    sha256 "8eea94bb442f0589b21b8f0fb361d29e8d1213169c93cf45f65ad2dad6cb8dc1" => :catalina
   end
 
   option "without-string-view", "Disable C++ string view"
