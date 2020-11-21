@@ -3,6 +3,7 @@ class CppJwt < Formula
   homepage "https://github.com/arun11299/cpp-jwt"
   url      "https://github.com/arun11299/cpp-jwt/archive/v1.3.tar.gz"
   sha256   "792889f08dd1acbc14129d11e013f9ef46e663c545ea366dd922402d8becbe05"
+  license  "MIT"
   head     "https://github.com/arun11299/cpp-jwt.git"
 
   livecheck do
