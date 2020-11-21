@@ -1,12 +1,6 @@
 class CppZmq < Formula
   desc     "Header-only C++ binding for libzmq"
   homepage "https://github.com/zeromq/cppzmq"
-  bottle do
-    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/cpp-zmq-4.7.1"
-    cellar :any_skip_relocation
-    sha256 "a9de5d03bfe7d0456590792d4ba569ed2186358c023adf483a36be93916fcfce" => :catalina
-  end
-
   url      "https://github.com/zeromq/cppzmq/archive/v4.7.1.tar.gz"
   sha256   "9853e0437d834cbed5d3c223bf1d755cadee70e7c964c6e42c4c6783dee5d02c"
   license  "MIT"
@@ -15,6 +9,12 @@ class CppZmq < Formula
   livecheck do
     url "https://github.com/zeromq/cppzmq/releases/latest"
     regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+  end
+
+  bottle do
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/cpp-zmq-4.7.1"
+    cellar :any_skip_relocation
+    sha256 "a9de5d03bfe7d0456590792d4ba569ed2186358c023adf483a36be93916fcfce" => :catalina
   end
 
   depends_on "cmake" => :build
