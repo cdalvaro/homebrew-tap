@@ -1,12 +1,6 @@
 class Wxmac < Formula
   desc     "Cross-platform C++ GUI toolkit (wxWidgets for macOS)"
   homepage "https://www.wxwidgets.org"
-  bottle do
-    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/wxmac-3.1.4_1"
-    cellar :any
-    sha256 "10d048b269014d0d1ce9365ff5cbdfe6cb76d81ff61226de8a9fa337a45fb601" => :catalina
-  end
-
   url      "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.4/wxWidgets-3.1.4.tar.bz2"
   sha256   "3ca3a19a14b407d0cdda507a7930c2e84ae1c8e74f946e0144d2fa7d881f1a94"
   license  "wxWindows"
@@ -16,6 +10,12 @@ class Wxmac < Formula
   livecheck do
     url "https://github.com/wxWidgets/wxWidgets/releases/latest"
     regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+  end
+
+  bottle do
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/wxmac-3.1.4_1"
+    cellar :any
+    sha256 "10d048b269014d0d1ce9365ff5cbdfe6cb76d81ff61226de8a9fa337a45fb601" => :catalina
   end
 
   option "with-enable-abort", "apply patch patch-make-public-enable-abort"
