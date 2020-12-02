@@ -6,6 +6,7 @@ class Salt < Formula
   url "https://files.pythonhosted.org/packages/b5/45/a20ff8a3cad48b50a924ee9c65f2df0e214de4fa282c4feef2e1d6a0b886/salt-3002.2.tar.gz"
   sha256 "bd6d29621ce8e099412777cd396af35474aa112bb0999b5da804387d87290075"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/saltstack/salt.git", branch: "develop", shallow: false
 
   livecheck do
@@ -56,22 +57,18 @@ class Salt < Formula
     sha256 "cbeb38ab1df9b5d8896548a11e63aae8a064763ab5f1eabe4475e6b8a78ee1c8"
   end
 
-  # Do not install PyObjC since it causes broken linkage
-  # Based on:
-  # - https://github.com/Homebrew/homebrew-core/pull/52835#issuecomment-617502578
-  # - https://github.com/saltstack/salt/pull/56904
-  patch do
-    url "https://github.com/cdalvaro/homebrew-tap/raw/master/formula-patches/salt/remove-pyobjc-linkage.diff"
-    sha256 "86feb6a9da3c260326cd559552d181166c84592b3827a8bbeca826df500951c5"
-  end
-
   def install
+    python = Formula["python@3.7"].bin/"python3.7"
+    xy = Language::Python.major_minor_version python
+
     ENV["SWIG_FEATURES"]="-I#{Formula["openssl@1.1"].opt_include}"
 
-    # Fix building of M2Crypto on High Sierra https://github.com/Homebrew/homebrew-core/pull/45895
-    ENV.delete("HOMEBREW_SDKROOT") if MacOS.version == :high_sierra
+    ENV["USE_STATIC_REQUIREMENTS"] = "1"
+    # Do not install PyObjC since it causes broken linkage
+    # https://github.com/Homebrew/homebrew-core/pull/52835#issuecomment-617502578
+    inreplace buildpath/"requirements/static/pkg/py#{xy}/darwin.txt", /^pyobjc.*$/, ""
 
-    venv = virtualenv_create(libexec, Formula["python@3.7"].bin/"python3.7")
+    venv = virtualenv_create(libexec, python)
     venv.pip_install resources
 
     system libexec/"bin/pip", "install", "-v", "--ignore-installed", buildpath
