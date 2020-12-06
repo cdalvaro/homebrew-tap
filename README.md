@@ -26,7 +26,7 @@ You can directly type `brew install cdalvaro/tap/<formula>` to install the speci
 
 More documentation is available at: [Homebrew - Taps](https://docs.brew.sh/Taps)
 
-[homebrew_tap_badge]: https://img.shields.io/badge/homebrew%20tap-cdalvaro-orange?style=flat-square&logo=Homebrew&color=FBB040
+[homebrew_tap_badge]: https://img.shields.io/badge/brew%20tap-cdalvaro/tap-orange?style=flat-square&logo=Homebrew&color=FBB040
 [homebrew_tap_url]: https://github.com/cdalvaro/homebrew-tap
 [cpp-jwt_badge]: https://img.shields.io/badge/cpp--jwt-1.3-orange?style=flat-square&color=FBB040
 [cpp-plotly_badge]: https://img.shields.io/badge/cpp--plotly-0.4.0-orange?style=flat-square&color=FBB040
