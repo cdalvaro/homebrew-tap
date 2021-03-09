@@ -7,14 +7,13 @@ class HowardHinnantDate < Formula
   head     "https://github.com/HowardHinnant/date.git"
 
   livecheck do
-    url "https://github.com/HowardHinnant/date/releases/latest"
-    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+    url :stable
+    strategy :github_latest
   end
 
   bottle do
     root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/howard-hinnant-date-3.0.0"
-    cellar :any
-    sha256 "8eea94bb442f0589b21b8f0fb361d29e8d1213169c93cf45f65ad2dad6cb8dc1" => :catalina
+    sha256 cellar: :any_skip_relocation, catalina: "8eea94bb442f0589b21b8f0fb361d29e8d1213169c93cf45f65ad2dad6cb8dc1"
   end
 
   option "without-string-view", "Disable C++ string view"

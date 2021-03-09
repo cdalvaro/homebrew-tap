@@ -8,8 +8,7 @@ class SimpleWebServer < Formula
 
   bottle do
     root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/simple-web-server-3.1.1"
-    cellar :any_skip_relocation
-    sha256 "7f5d751fcd82dfa93cdd266a10686592b855bf0ba445ef6c389b0c87b1adbb37" => :catalina
+    sha256 cellar: :any_skip_relocation, catalina: "7f5d751fcd82dfa93cdd266a10686592b855bf0ba445ef6c389b0c87b1adbb37"
   end
 
   depends_on "cmake" => :build

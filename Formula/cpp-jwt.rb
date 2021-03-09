@@ -7,14 +7,13 @@ class CppJwt < Formula
   head     "https://github.com/arun11299/cpp-jwt.git"
 
   livecheck do
-    url "https://github.com/arun11299/cpp-jwt/releases/latest"
-    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+    url :stable
+    strategy :github_latest
   end
 
   bottle do
     root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/cpp-jwt-1.3"
-    cellar :any_skip_relocation
-    sha256 "347ae3bf4b752546f37de737acb6602acc821f476c109abd105cdd1b8dd289de" => :catalina
+    sha256 cellar: :any_skip_relocation, catalina: "347ae3bf4b752546f37de737acb6602acc821f476c109abd105cdd1b8dd289de"
   end
 
   option "with-nlohmann-json", "Use nlohmann-json library instead of the vendored one"

@@ -12,7 +12,7 @@ class Catboost < Formula
 
   bottle do
     root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/catboost-0.24.4"
-    sha256 cellar: :any_skip_relocation, big_sur: "3af9367ed2b86ccdbfc51c73e0a039036f8cb2c3942913c986da922662fe5bd1"
+    sha256 cellar: :any_skip_relocation, big_sur:  "3af9367ed2b86ccdbfc51c73e0a039036f8cb2c3942913c986da922662fe5bd1"
     sha256 cellar: :any_skip_relocation, catalina: "4d25cdb8eca725f6334fe56714b9fad05207804075201aaa147444bfde3c3c09"
   end
 
