@@ -14,9 +14,8 @@ class Wxmac < Formula
 
   bottle do
     root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/wxmac-3.1.4_1"
-    cellar :any
     rebuild 1
-    sha256 "fe9782709884f59098d014681fdd200e0c0b51813cc490f08024ff7a9d4c2cb2" => :catalina
+    sha256 cellar: :any_skip_relocation, catalina: "fe9782709884f59098d014681fdd200e0c0b51813cc490f08024ff7a9d4c2cb2"
   end
 
   option "with-enable-abort", "apply patch patch-make-public-enable-abort"
