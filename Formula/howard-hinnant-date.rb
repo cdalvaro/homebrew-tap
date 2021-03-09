@@ -7,8 +7,8 @@ class HowardHinnantDate < Formula
   head     "https://github.com/HowardHinnant/date.git"
 
   livecheck do
-    url "https://github.com/HowardHinnant/date/releases/latest"
-    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+    url :stable
+    strategy :github_latest
   end
 
   bottle do

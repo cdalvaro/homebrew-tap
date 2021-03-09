@@ -7,8 +7,8 @@ class CppJwt < Formula
   head     "https://github.com/arun11299/cpp-jwt.git"
 
   livecheck do
-    url "https://github.com/arun11299/cpp-jwt/releases/latest"
-    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+    url :stable
+    strategy :github_latest
   end
 
   bottle do

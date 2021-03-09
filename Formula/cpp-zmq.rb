@@ -7,8 +7,8 @@ class CppZmq < Formula
   head     "https://github.com/zeromq/cppzmq.git"
 
   livecheck do
-    url "https://github.com/zeromq/cppzmq/releases/latest"
-    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+    url :stable
+    strategy :github_latest
   end
 
   bottle do

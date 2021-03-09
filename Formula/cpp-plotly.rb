@@ -4,7 +4,13 @@ class CppPlotly < Formula
   url      "https://github.com/pablrod/cppplotly/archive/v0.4.0.tar.gz"
   sha256   "378a978d5e6d06685e83593bbd5c4652685c2340240312ce57913befcca9f7c3"
   head     "https://github.com/pablrod/cppplotly.git"
-  bottle   :unneeded
+
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
+  bottle :unneeded
 
   depends_on "json11"
 
