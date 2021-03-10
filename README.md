@@ -30,7 +30,7 @@ More documentation is available at: [Homebrew - Taps](https://docs.brew.sh/Taps)
 [homebrew_tap_badge]: https://img.shields.io/badge/brew%20tap-cdalvaro/tap-orange?style=flat-square&logo=Homebrew&color=FBB040
 [homebrew_tap_url]: https://github.com/cdalvaro/homebrew-tap
 [catboost_badge]: https://img.shields.io/badge/catboost-0.24.4-orange?style=flat-square&color=FBB040
-[cpp-jwt_badge]: https://img.shields.io/badge/cpp--jwt-1.3-orange?style=flat-square&color=FBB040
+[cpp-jwt_badge]: https://img.shields.io/badge/cpp--jwt-1.4-orange?style=flat-square&color=FBB040
 [cpp-plotly_badge]: https://img.shields.io/badge/cpp--plotly-0.4.0-orange?style=flat-square&color=FBB040
 [cpp-zmq_badge]: https://img.shields.io/badge/cpp--zmq-4.7.1-orange?style=flat-square&color=FBB040
 [howard-hinnant-date_badge]: https://img.shields.io/badge/howard--hinnant--date-3.0.0-orange?style=flat-square&color=FBB040
