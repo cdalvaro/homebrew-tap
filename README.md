@@ -24,9 +24,9 @@ Error: Fetching /usr/local/Homebrew/Library/Taps/cdalvaro/homebrew-tap failed!
 Try the following command to solve the issue:
 
 ```sh
-brew update-reset $(brew --repo cdalvaro/tap)
+rm -rf $(brew --repo cdalvaro/tap)
+brew tap cdalvaro/tap
 ```
-
 </details>
 
 ## Available formulae
