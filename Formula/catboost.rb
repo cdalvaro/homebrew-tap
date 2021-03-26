@@ -11,9 +11,9 @@ class Catboost < Formula
   end
 
   bottle do
-    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/catboost-0.24.4"
-    sha256 cellar: :any_skip_relocation, big_sur:  "3af9367ed2b86ccdbfc51c73e0a039036f8cb2c3942913c986da922662fe5bd1"
-    sha256 cellar: :any_skip_relocation, catalina: "4d25cdb8eca725f6334fe56714b9fad05207804075201aaa147444bfde3c3c09"
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/catboost-0.25"
+    sha256 cellar: :any_skip_relocation, big_sur:  "9547b0268a82eb10d7d37c08550e85d9669821fb30b582d32309364154ec1ea3"
+    sha256 cellar: :any_skip_relocation, catalina: "87d5022f436425f3b72c9a2f025ab40e12e5827d25c3ca088ce1a69d9cce3b42"
   end
 
   resource "yandex-resources" do
