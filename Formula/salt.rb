@@ -13,9 +13,9 @@ class Salt < Formula
   end
 
   bottle do
-    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/salt-3002.2_1"
-    sha256 cellar: :any_skip_relocation, big_sur:  "1d0bbd9692e4d7679c09272153e51e81f6cb8a3be62502ec86753b2735208991"
-    sha256 cellar: :any_skip_relocation, catalina: "647dbdd350a9b8be6acc6a529010bf6bb75588385046852926cc6c440f7a7c25"
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/salt-3002.6"
+    sha256 cellar: :any, big_sur:  "0496c6fa5bcb55c24219c942b1f968f3fc9237e59a0b31da0a62645fc54290f2"
+    sha256               catalina: "f45f6d3e4f371d0bfe859e0bde45fe8510b6d8586eee7d3b560d29eeb466310b"
   end
 
   depends_on "swig" => :build
