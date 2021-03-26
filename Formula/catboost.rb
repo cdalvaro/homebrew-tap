@@ -1,8 +1,8 @@
 class Catboost < Formula
   desc "Fast, scalable, high performance Gradient Boosting on Decision Trees cli tool"
   homepage "https://catboost.ai"
-  url "https://github.com/catboost/catboost/archive/v0.24.4.tar.gz"
-  sha256 "03df498249206519b7e37ff8067cf265a2826afc4305a32f97986fbe308994da"
+  url "https://github.com/catboost/catboost/archive/v0.25.tar.gz"
+  sha256 "26c06716e7e235e5e837123be0251bacd23595b188d68194d88263e6ae56bf8f"
   license "Apache-2.0"
 
   livecheck do
@@ -16,9 +16,14 @@ class Catboost < Formula
     sha256 cellar: :any_skip_relocation, catalina: "4d25cdb8eca725f6334fe56714b9fad05207804075201aaa147444bfde3c3c09"
   end
 
+  resource "yandex-resources" do
+    url "https://storage.mds.yandex.net/get-devtools-opensource/233854/76eebdce3caf642db6f4ff3bbc441b41"
+    sha256 "add0f1c82e8c367c286486921a9e2a9378d241a2c6d9832cdcab678f009b6b07"
+  end
+
   resource "yandex" do
-    url "https://storage.mds.yandex.net/get-devtools-opensource/471749/1903567586"
-    sha256 "cb97bd28c8205c18bf9426b9457616e2fd05121562c72dcbba1ee7eca53a5034"
+    url "https://storage.mds.yandex.net/get-devtools-opensource/373962/2057406071"
+    sha256 "4dc49947ec9085228a804c73dbb0746fc9a035e59e4b45a74095a5474f34fde7"
   end
 
   def install
