@@ -53,6 +53,6 @@ More documentation is available at: [Homebrew - Taps](https://docs.brew.sh/Taps)
 [cpp-plotly_badge]: https://img.shields.io/badge/cpp--plotly-0.4.0-orange?style=flat-square&color=FBB040
 [cpp-zmq_badge]: https://img.shields.io/badge/cpp--zmq-4.7.1-orange?style=flat-square&color=FBB040
 [howard-hinnant-date_badge]: https://img.shields.io/badge/howard--hinnant--date-3.0.0-orange?style=flat-square&color=FBB040
-[salt_badge]: https://img.shields.io/badge/salt-3002.2%20(python@3.7)-orange?style=flat-square&color=FBB040
+[salt_badge]: https://img.shields.io/badge/salt-3002.6%20(python@3.7)-orange?style=flat-square&color=FBB040
 [simple-web-server_badge]: https://img.shields.io/badge/simple--web--server-3.1.1-orange?style=flat-square&color=FBB040
 [wxmac_badge]: https://img.shields.io/badge/wxmac-3.1.4-orange?style=flat-square&color=FBB040
