@@ -26,7 +26,7 @@ class Wxmac < Formula
 
   if build.with?("enable-abort")
     patch do
-      url "https://github.com/cdalvaro/homebrew-tap/raw/master/formula-patches/wxmac/patch-make-public-enable-abort.diff"
+      url "https://github.com/cdalvaro/homebrew-tap/raw/HEAD/formula-patches/wxmac/patch-make-public-enable-abort.diff"
       sha256 "50c4fd7618cc6015dafc55a89d96f5330dc739215a1c55f31c4d34181b5e5d18"
     end
   end
