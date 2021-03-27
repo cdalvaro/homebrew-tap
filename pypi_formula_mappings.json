@@ -1,5 +1,5 @@
 {
-  "salt": {
+  "cdalvaro/tap/salt": {
     "extra_packages": ["pycryptodome", "pygit2"],
     "exclude_packages": ["pyobjc"]
   }
