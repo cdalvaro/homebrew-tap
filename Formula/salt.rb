@@ -3,8 +3,8 @@ class Salt < Formula
 
   desc "Dynamic infrastructure communication bus"
   homepage "https://saltproject.io"
-  url "https://files.pythonhosted.org/packages/c7/5d/5e4913197397fe0a8da43a93afa0981dda72c016710deb458d5c0e963c77/salt-3002.6.tar.gz"
-  sha256 "ffc478569363e1d17b6a3a0c421eaae9c079bbeabc4c7725a222d0fbf903a0a5"
+  url "https://files.pythonhosted.org/packages/e9/e8/4c23ba10ae61f04bf15837c659af9623663d6e3d2917700ae07ed9645629/salt-3003.tar.gz"
+  sha256 "c4689733dfe738cf287e31cb3fdd3cb8d1606295202b18d8e66d48d372d5ca77"
   license "Apache-2.0"
   head "https://github.com/saltstack/salt.git", branch: "develop", shallow: false
 
@@ -35,10 +35,11 @@ class Salt < Formula
   #
   # Plase do not add PyObjC (pyobjc* resources) since it causes broken linkage
   # https://github.com/Homebrew/homebrew-core/pull/52835#issuecomment-617502578
-
+  #
+  # Dependencies extracted from: https://github.com/saltstack/salt/blob/v3003/requirements/static/pkg/py3.7/darwin.txt
   resource "apache-libcloud" do
-    url "https://files.pythonhosted.org/packages/b9/3e/adfe316292bd2f5ff2556ea09887515c09974483c3028ae39563734e145b/apache-libcloud-2.4.0.tar.gz"
-    sha256 "125c410996b84464b426922f1398a317869f27173a6461e32f3b1dfe671d5235"
+    url "https://files.pythonhosted.org/packages/b6/a0/707142df518a602a2e36f9aa4f6dcc2cc9981843ffb7ba1207f7a084819d/apache-libcloud-2.5.0.tar.gz"
+    sha256 "8f133038710257d39f9092ccaea694e31f7f4fe02c11d7fcc2674bc60a9448b6"
   end
 
   resource "cached-property" do
@@ -52,7 +53,6 @@ class Salt < Formula
   end
 
   resource "cffi" do
-    # 1.12.2 is required here https://github.com/saltstack/salt/blob/998c382f5f2c3b4cbf7d96aa6913ada6993909b3/requirements/static/pkg/py3.7/darwin.txt#L10
     url "https://files.pythonhosted.org/packages/64/7c/27367b38e6cc3e1f49f193deb761fe75cda9f95da37b67b422e62281fcac/cffi-1.12.2.tar.gz"
     sha256 "e113878a446c6228669144ae8a56e268c91b7f1fafae927adc4879d9849e0ea7"
   end
@@ -78,8 +78,8 @@ class Salt < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/1c/15/aceb9a2535c9fa805316b49e42fde0a83d1a0492b4e3608a4a5dc9b04b46/cryptography-3.2.tar.gz"
-    sha256 "e4789b84f8dedf190148441f7c5bfe7244782d9cbb194a36e17b91e7d3e1cca9"
+    url "https://files.pythonhosted.org/packages/d4/85/38715448253404186029c575d559879912eb8a1c5d16ad9f25d35f7c4f4c/cryptography-3.3.2.tar.gz"
+    sha256 "5a60d3780149e13b7a6ff7ad6526b38846354d11a15e21068e57073e29e19bed"
   end
 
   resource "distro" do
@@ -93,8 +93,8 @@ class Salt < Formula
   end
 
   resource "GitPython" do
-    url "https://files.pythonhosted.org/packages/8a/79/d18495e6af62ef08b48a19d37c3c15f8e41c9ec4d05cc5ab491d2601702c/GitPython-2.1.15.tar.gz"
-    sha256 "838c38d882a97b2fd146dbd4eb9baaf857cb65ebaa64e4c06fca48aaa491e1c6"
+    url "https://files.pythonhosted.org/packages/ec/4d/e6553122c85ec7c4c3e702142cc0f5ed02e5cf1b4d7ecea86a07e45725a0/GitPython-3.1.12.tar.gz"
+    sha256 "42dbefd8d9e2576c496ed0059f3103dcef7125b9ce16f9d5f9c834aed44a1dac"
   end
 
   resource "idna" do
@@ -138,8 +138,8 @@ class Salt < Formula
   end
 
   resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/e4/4f/057549afbd12fdd5d9aae9df19a6773a3d91988afe7be45b277e8cee2f4d/msgpack-1.0.0.tar.gz"
-    sha256 "9534d5cc480d4aff720233411a1f765be90885750b07df772380b34c10ecb5c0"
+    url "https://files.pythonhosted.org/packages/59/04/87fc6708659c2ed3b0b6d4954f270b6e931def707b227c4554f99bd5401e/msgpack-1.0.2.tar.gz"
+    sha256 "fae04496f5bc150eefad4e9571d1a76c55d021325dcd484ce45065ebbdd00984"
   end
 
   resource "portend" do
@@ -148,8 +148,8 @@ class Salt < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/73/93/4f8213fbe66fc20cb904f35e6e04e20b47b85bee39845cc66a0bcf5ccdcb/psutil-5.6.7.tar.gz"
-    sha256 "ffad8eb2ac614518bbe3c0b8eb9dffdb3a8d2e3a7d5da51c5b974fb723a5c5aa"
+    url "https://files.pythonhosted.org/packages/e1/b0/7276de53321c12981717490516b7e612364f2cb372ee8901bd4a66a000d7/psutil-5.8.0.tar.gz"
+    sha256 "0c9ccb99ab76025f2f0bbecf341d4656e9c1351db8cc8a03ccd62e318ab4b5c6"
   end
 
   resource "pyasn1" do
@@ -203,8 +203,8 @@ class Salt < Formula
   end
 
   resource "pyzmq" do
-    url "https://files.pythonhosted.org/packages/05/77/7483975d84fe1fd24cc67881ba7810e0e7b3ee6c2a0e002a5d6703cca49b/pyzmq-19.0.2.tar.gz"
-    sha256 "296540a065c8c21b26d63e3cea2d1d57902373b16e4256afe46422691903a438"
+    url "https://files.pythonhosted.org/packages/f8/48/5416696b9f2eacc7d1f9fe3a7187ad54d769e09585ec0b59c137ab5c7575/pyzmq-18.0.1.tar.gz"
+    sha256 "8b319805f6f7c907b101c864c3ca6cefc9db8ce0791356f180b1b644c7347e4c"
   end
 
   resource "requests" do
