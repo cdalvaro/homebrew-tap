@@ -32,35 +32,35 @@ brew tap cdalvaro/tap
 
 ## Available formulae
 
-### [![catboost][catboost_badge]](Formula/catboost.rb "Catboost")
+### Catboost [![catboost][catboost_badge]](Formula/catboost.rb)
 
 [catboost/catboost](https://github.com/catboost/catboost) Fast, scalable, high performance Gradient Boosting on Decision Trees cli tool.
 
-### [![cpp-jwt][cpp-jwt_badge]](Formula/cpp-jwt.rb "CppJwt")
+### Cpp JWT [![cpp-jwt][cpp-jwt_badge]](Formula/cpp-jwt.rb)
 
 [arun11299/cpp-jwt](https://github.com/arun11299/cpp-jwt) JSON Web Token library for C++.
 
-### [![cpp-plotly][cpp-plotly_badge]](Formula/cpp-plotly.rb "CppPlotly")
+### Cpp Plotly [![cpp-plotly][cpp-plotly_badge]](Formula/cpp-plotly.rb)
 
 [pablrod/cppplotly](https://github.com/pablrod/cppplotly) Generate html/javascript charts from C++ data using javascript library plotly.js.
 
-### [![cpp-zmq][cpp-zmq_badge]](Formula/cpp-zmq.rb "CppZmq")
+### Cpp ZMQ [![cpp-zmq][cpp-zmq_badge]](Formula/cpp-zmq.rb)
 
 [zeromq/cppzmq](https://github.com/zeromq/cppzmq) Header-only C++ binding for libzmq.
 
-### [![howard-hinnant-date][howard-hinnant-date_badge]](Formula/howard-hinnant-date.rb "HowardHinnantDate")
+### Howard Hinnant Date [![howard-hinnant-date][howard-hinnant-date_badge]](Formula/howard-hinnant-date.rb)
 
 [HowardHinnant/date](https://github.com/HowardHinnant/date) A date and time library based on the C++11/14/17 \<chrono\> header.
 
-### [![salt][salt_badge]](Formula/salt.rb "Salt")
+### Salt [![salt][salt_badge]](Formula/salt.rb)
 
 [saltstack/salt](https://github.com/saltstack/salt) Software to automate the management and configuration of any infrastructure or application at scale. (Uses Python 3.7 to fix issue [saltstack/salt#57742](https://github.com/saltstack/salt/issues/57742))
 
-### [![simple-web-server][simple-web-server_badge]](Formula/simple-web-server.rb "SimpleWebServer")
+### Simple Web Server [![simple-web-server][simple-web-server_badge]](Formula/simple-web-server.rb)
 
 [eidheim/Simple-Web-Server](https://gitlab.com/eidheim/Simple-Web-Server) A very simple, fast, multithreaded, platform independent HTTP and HTTPS server and client library implemented using C++11 and Boost.Asio.
 
-### [![wxmac][wxmac_badge]](Formula/wxmac.rb "WxMac")
+### Wx Mac [![wxmac][wxmac_badge]](Formula/wxmac.rb)
 
 [wxWidgets/wxWidgets](https://github.com/wxWidgets/wxWidgets) Cross-Platform GUI Library.
 
