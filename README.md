@@ -32,37 +32,37 @@ brew tap cdalvaro/tap
 
 ## Available formulae
 
-### Catboost [![catboost][catboost_badge]](Formula/catboost.rb)
+### [![catboost][catboost_badge]](Formula/catboost.rb) [catboost/catboost](https://github.com/catboost/catboost)
 
-[catboost/catboost](https://github.com/catboost/catboost) Fast, scalable, high performance Gradient Boosting on Decision Trees cli tool.
+Fast, scalable, high performance Gradient Boosting on Decision Trees cli tool.
 
-### Cpp JWT [![cpp-jwt][cpp-jwt_badge]](Formula/cpp-jwt.rb)
+### [![cpp-jwt][cpp-jwt_badge]](Formula/cpp-jwt.rb) [arun11299/cpp-jwt](https://github.com/arun11299/cpp-jwt)
 
-[arun11299/cpp-jwt](https://github.com/arun11299/cpp-jwt) JSON Web Token library for C++.
+JSON Web Token library for C++.
 
-### Cpp Plotly [![cpp-plotly][cpp-plotly_badge]](Formula/cpp-plotly.rb)
+### [![cpp-plotly][cpp-plotly_badge]](Formula/cpp-plotly.rb) [pablrod/cppplotly](https://github.com/pablrod/cppplotly)
 
-[pablrod/cppplotly](https://github.com/pablrod/cppplotly) Generate html/javascript charts from C++ data using javascript library plotly.js.
+Generate html/javascript charts from C++ data using javascript library plotly.js.
 
-### Cpp ZMQ [![cpp-zmq][cpp-zmq_badge]](Formula/cpp-zmq.rb)
+### [![cpp-zmq][cpp-zmq_badge]](Formula/cpp-zmq.rb) [zeromq/cppzmq](https://github.com/zeromq/cppzmq)
 
-[zeromq/cppzmq](https://github.com/zeromq/cppzmq) Header-only C++ binding for libzmq.
+Header-only C++ binding for libzmq.
 
-### Howard Hinnant Date [![howard-hinnant-date][howard-hinnant-date_badge]](Formula/howard-hinnant-date.rb)
+### [![howard-hinnant-date][howard-hinnant-date_badge]](Formula/howard-hinnant-date.rb) [HowardHinnant/date](https://github.com/HowardHinnant/date)
 
-[HowardHinnant/date](https://github.com/HowardHinnant/date) A date and time library based on the C++11/14/17 \<chrono\> header.
+A date and time library based on the C++11/14/17 \<chrono\> header.
 
-### Salt [![salt][salt_badge]](Formula/salt.rb)
+### [![salt][salt_badge]](Formula/salt.rb) [saltstack/salt](https://github.com/saltstack/salt)
 
-[saltstack/salt](https://github.com/saltstack/salt) Software to automate the management and configuration of any infrastructure or application at scale. (Uses Python 3.7 to fix issue [saltstack/salt#57742](https://github.com/saltstack/salt/issues/57742))
+Software to automate the management and configuration of any infrastructure or application at scale. (Uses Python 3.7 to fix issue [saltstack/salt#57742](https://github.com/saltstack/salt/issues/57742))
 
-### Simple Web Server [![simple-web-server][simple-web-server_badge]](Formula/simple-web-server.rb)
+### [![simple-web-server][simple-web-server_badge]](Formula/simple-web-server.rb) [eidheim/Simple-Web-Server](https://gitlab.com/eidheim/Simple-Web-Server)
 
-[eidheim/Simple-Web-Server](https://gitlab.com/eidheim/Simple-Web-Server) A very simple, fast, multithreaded, platform independent HTTP and HTTPS server and client library implemented using C++11 and Boost.Asio.
+A very simple, fast, multithreaded, platform independent HTTP and HTTPS server and client library implemented using C++11 and Boost.Asio.
 
-### Wx Mac [![wxmac][wxmac_badge]](Formula/wxmac.rb)
+### [![wxmac][wxmac_badge]](Formula/wxmac.rb) [wxWidgets/wxWidgets](https://github.com/wxWidgets/wxWidgets)
 
-[wxWidgets/wxWidgets](https://github.com/wxWidgets/wxWidgets) Cross-Platform GUI Library.
+Cross-Platform GUI Library.
 
 ## More Documentation
 
