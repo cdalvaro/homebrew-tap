@@ -32,16 +32,37 @@ brew tap cdalvaro/tap
 
 ## Available formulae
 
-| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Formula &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Description                                                                                                                                                                                                                                                    |
-| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [![catboost][catboost_badge]](Formula/catboost.rb)                                                                                                                                                                                                                                                                                                                                                | [catboost/catboost](https://github.com/catboost/catboost) Fast, scalable, high performance Gradient Boosting on Decision Trees cli tool                                                                                                                        |
-| [![cpp-jwt][cpp-jwt_badge]](Formula/cpp-jwt.rb)                                                                                                                                                                                                                                                                                                                                                   | [arun11299/cpp-jwt](https://github.com/arun11299/cpp-jwt) JSON Web Token library for C++                                                                                                                                                                       |
-| [![cpp-plotly][cpp-plotly_badge]](Formula/cpp-plotly.rb)                                                                                                                                                                                                                                                                                                                                          | [pablrod/cppplotly](https://github.com/pablrod/cppplotly) Generate html/javascript charts from C++ data using javascript library plotly.js                                                                                                                     |
-| [![cpp-zmq][cpp-zmq_badge]](Formula/cpp-zmq.rb)                                                                                                                                                                                                                                                                                                                                                   | [zeromq/cppzmq](https://github.com/zeromq/cppzmq) Header-only C++ binding for libzmq                                                                                                                                                                           |
-| [![howard-hinnant-date][howard-hinnant-date_badge]](Formula/howard-hinnant-date.rb)                                                                                                                                                                                                                                                                                                               | [HowardHinnant/date](https://github.com/HowardHinnant/date) A date and time library based on the C++11/14/17 <chrono> header                                                                                                                                   |
-| [![salt][salt_badge]](Formula/salt.rb)                                                                                                                                                                                                                                                                                                                                                            | [saltstack/salt](https://github.com/saltstack/salt) Software to automate the management and configuration of any infrastructure or application at scale. (Uses Python 3.7 to fix issue [saltstack/salt#57742](https://github.com/saltstack/salt/issues/57742)) |
-| [![simple-web-server][simple-web-server_badge]](Formula/simple-web-server.rb)                                                                                                                                                                                                                                                                                                                     | [eidheim/Simple-Web-Server](https://gitlab.com/eidheim/Simple-Web-Server) A very simple, fast, multithreaded, platform independent HTTP and HTTPS server and client library implemented using C++11 and Boost.Asio.                                            |
-| [![wxmac][wxmac_badge]](Formula/wxmac.rb)                                                                                                                                                                                                                                                                                                                                                         | [wxWidgets/wxWidgets](https://github.com/wxWidgets/wxWidgets) Cross-Platform GUI Library                                                                                                                                                                       |
+### [![catboost][catboost_badge]](Formula/catboost.rb "Catboost")
+
+[catboost/catboost](https://github.com/catboost/catboost) Fast, scalable, high performance Gradient Boosting on Decision Trees cli tool.
+
+### [![cpp-jwt][cpp-jwt_badge]](Formula/cpp-jwt.rb "CppJwt")
+
+[arun11299/cpp-jwt](https://github.com/arun11299/cpp-jwt) JSON Web Token library for C++.
+
+### [![cpp-plotly][cpp-plotly_badge]](Formula/cpp-plotly.rb "CppPlotly")
+
+[pablrod/cppplotly](https://github.com/pablrod/cppplotly) Generate html/javascript charts from C++ data using javascript library plotly.js.
+
+### [![cpp-zmq][cpp-zmq_badge]](Formula/cpp-zmq.rb "CppZmq")
+
+[zeromq/cppzmq](https://github.com/zeromq/cppzmq) Header-only C++ binding for libzmq.
+
+### [![howard-hinnant-date][howard-hinnant-date_badge]](Formula/howard-hinnant-date.rb "HowardHinnantDate")
+
+[HowardHinnant/date](https://github.com/HowardHinnant/date) A date and time library based on the C++11/14/17 \<chrono\> header.
+
+### [![salt][salt_badge]](Formula/salt.rb "Salt")
+
+[saltstack/salt](https://github.com/saltstack/salt) Software to automate the management and configuration of any infrastructure or application at scale. (Uses Python 3.7 to fix issue [saltstack/salt#57742](https://github.com/saltstack/salt/issues/57742))
+
+### [![simple-web-server][simple-web-server_badge]](Formula/simple-web-server.rb "SimpleWebServer")
+
+[eidheim/Simple-Web-Server](https://gitlab.com/eidheim/Simple-Web-Server) A very simple, fast, multithreaded, platform independent HTTP and HTTPS server and client library implemented using C++11 and Boost.Asio.
+
+### [![wxmac][wxmac_badge]](Formula/wxmac.rb "WxMac")
+
+[wxWidgets/wxWidgets](https://github.com/wxWidgets/wxWidgets) Cross-Platform GUI Library.
 
 ## More Documentation
 
@@ -49,7 +70,7 @@ More documentation is available at: [Homebrew - Taps](https://docs.brew.sh/Taps)
 
 [homebrew_tap_badge]: https://img.shields.io/badge/brew%20tap-cdalvaro/tap-orange?style=flat-square&logo=Homebrew&color=FBB040
 [homebrew_tap_url]: https://github.com/cdalvaro/homebrew-tap
-[catboost_badge]: https://img.shields.io/badge/catboost-0.25-orange?style=flat-square&color=FBB040
+[catboost_badge]: https://img.shields.io/badge/catboost-0.25.1-orange?style=flat-square&color=FBB040
 [cpp-jwt_badge]: https://img.shields.io/badge/cpp--jwt-1.4-orange?style=flat-square&color=FBB040
 [cpp-plotly_badge]: https://img.shields.io/badge/cpp--plotly-0.4.0-orange?style=flat-square&color=FBB040
 [cpp-zmq_badge]: https://img.shields.io/badge/cpp--zmq-4.7.1-orange?style=flat-square&color=FBB040
