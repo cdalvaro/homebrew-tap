@@ -3,7 +3,7 @@
     "extra_packages": ["pycryptodome", "pygit2"],
     "exclude_packages": ["pyobjc"]
   },
-  "cdalvaro/tap/salt@3002.6": {
+  "cdalvaro/tap/salt@3002": {
     "extra_packages": ["pycryptodome", "pygit2"],
     "exclude_packages": ["pyobjc"]
   }
