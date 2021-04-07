@@ -13,9 +13,9 @@ class SaltAT3002 < Formula
   end
 
   bottle do
-    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/salt@3002.6-3002.6"
-    sha256 cellar: :any, big_sur:  "5a13491eb58b43595492786c908356f5ab2337e3af8b85b10f5d9ed673dea354"
-    sha256               catalina: "d111d1640378dc1613adff8ff9c57e540d8bd37a93c17961b449953207dface5"
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/salt@3002-3002.6"
+    sha256 cellar: :any, big_sur:  "dd2e112081deefa1108d28f4315225705d700d40052a611701ae2998a5adb272"
+    sha256               catalina: "76e9094ecf190c3f860199443e08dd7860b300de645fb97dcd0f3eb3cf6e5be1"
   end
 
   keg_only :versioned_formula
