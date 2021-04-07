@@ -12,6 +12,12 @@ class SaltAT30026 < Formula
     url :stable
   end
 
+  bottle do
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/salt@3002.6-3002.6"
+    sha256 cellar: :any, big_sur:  "5a13491eb58b43595492786c908356f5ab2337e3af8b85b10f5d9ed673dea354"
+    sha256               catalina: "d111d1640378dc1613adff8ff9c57e540d8bd37a93c17961b449953207dface5"
+  end
+
   keg_only :versioned_formula
 
   depends_on "swig" => :build
