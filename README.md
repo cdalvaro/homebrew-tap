@@ -56,6 +56,18 @@ A date and time library based on the C++11/14/17 \<chrono\> header.
 
 Software to automate the management and configuration of any infrastructure or application at scale. (Uses Python 3.7 to fix issue [saltstack/salt#57742](https://github.com/saltstack/salt/issues/57742))
 
+<details>
+  <summary><b>Also available</b>: salt@3002.6</summary>
+
+In order to install the versioned formula type the following commands:
+
+```sh
+brew install cdalvaro/tap/salt@3002.6
+brew link cdalvaro/tap/salt@3002.6
+```
+
+</details>
+
 ### [eidheim/Simple-Web-Server](https://gitlab.com/eidheim/Simple-Web-Server)<a href="Formula/simple-web-server.rb"><img src="https://img.shields.io/badge/simple--web--server-3.1.1-orange?style=flat-square&color=FBB040" align="right"/></a>
 
 A very simple, fast, multithreaded, platform independent HTTP and HTTPS server and client library implemented using C++11 and Boost.Asio.
