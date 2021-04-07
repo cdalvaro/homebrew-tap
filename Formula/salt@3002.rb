@@ -1,4 +1,4 @@
-class SaltAT30026 < Formula
+class SaltAT3002 < Formula
   include Language::Python::Virtualenv
 
   desc "Dynamic infrastructure communication bus"

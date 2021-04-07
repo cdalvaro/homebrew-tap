@@ -57,13 +57,15 @@ A date and time library based on the C++11/14/17 \<chrono\> header.
 Software to automate the management and configuration of any infrastructure or application at scale. (Uses Python 3.7 to fix issue [saltstack/salt#57742](https://github.com/saltstack/salt/issues/57742))
 
 <details>
-  <summary><b>Also available</b>: salt@3002.6</summary>
+  <summary><b>Also available</b>: salt@3002</summary>
+
+<a href="Formula/salt@3002.rb"><img src="https://img.shields.io/badge/salt@3002-3002.6-orange?style=flat-square&color=FBB040"/></a>
 
 In order to install the versioned formula type the following commands:
 
 ```sh
-brew install cdalvaro/tap/salt@3002.6
-brew link cdalvaro/tap/salt@3002.6
+brew install cdalvaro/tap/salt@3002
+brew link cdalvaro/tap/salt@3002
 ```
 
 </details>
