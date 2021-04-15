@@ -74,7 +74,7 @@ brew link cdalvaro/tap/salt@3002
 
 A very simple, fast, multithreaded, platform independent HTTP and HTTPS server and client library implemented using C++11 and Boost.Asio.
 
-### [wxWidgets/wxWidgets](https://github.com/wxWidgets/wxWidgets)<a href="Formula/wxmac.rb"><img src="https://img.shields.io/badge/wxmac-3.1.4-orange?style=flat-square&color=FBB040" align="right"/></a>
+### [wxWidgets/wxWidgets](https://github.com/wxWidgets/wxWidgets)<a href="Formula/wxmac.rb"><img src="https://img.shields.io/badge/wxmac-3.1.5-orange?style=flat-square&color=FBB040" align="right"/></a>
 
 Cross-Platform GUI Library.
 
