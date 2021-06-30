@@ -52,7 +52,7 @@ Header-only C++ binding for libzmq.
 
 A date and time library based on the C++11/14/17 \<chrono\> header.
 
-### [saltstack/salt](https://github.com/saltstack/salt)<a href="Formula/salt.rb"><img src="https://img.shields.io/badge/salt-3003-orange?style=flat-square&color=FBB040" align="right"/></a>
+### [saltstack/salt](https://github.com/saltstack/salt)<a href="Formula/salt.rb"><img src="https://img.shields.io/badge/salt-3003.1-orange?style=flat-square&color=FBB040" align="right"/></a>
 
 Software to automate the management and configuration of any infrastructure or application at scale. (Uses Python 3.7 to fix issue [saltstack/salt#57742](https://github.com/saltstack/salt/issues/57742))
 
