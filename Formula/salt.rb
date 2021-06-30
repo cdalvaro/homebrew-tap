@@ -8,10 +8,6 @@ class Salt < Formula
   license "Apache-2.0"
   head "https://github.com/saltstack/salt.git", branch: "develop", shallow: false
 
-  livecheck do
-    url :stable
-  end
-
   bottle do
     root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/salt-3003"
     sha256 cellar: :any, big_sur:  "35583c95602c004d48d5af84af4740e42b1b5923f9a1dcf597eb963cbf5d4a05"
@@ -29,11 +25,13 @@ class Salt < Formula
 
   on_linux do
     depends_on "pkg-config" => :build
+    depends_on "gmp"
+    depends_on "pcre"
   end
 
   # Homebrew installs optional dependencies: pycryptodome, pygit2
   #
-  # Plase do not add PyObjC (pyobjc* resources) since it causes broken linkage
+  # Please do not add PyObjC (pyobjc* resources) since it causes broken linkage
   # https://github.com/Homebrew/homebrew-core/pull/52835#issuecomment-617502578
   #
   # Dependencies extracted from: https://github.com/saltstack/salt/blob/v3003.1/requirements/static/pkg/py3.7/darwin.txt
@@ -262,6 +260,7 @@ class Salt < Formula
     # Do not install PyObjC since it causes broken linkage
     # https://github.com/Homebrew/homebrew-core/pull/52835#issuecomment-617502578
     inreplace buildpath/"requirements/static/pkg/py#{xy}/darwin.txt", /^pyobjc.*$/, ""
+    inreplace buildpath/"requirements/darwin.txt", "-r pyobjc.txt", ""
 
     venv = virtualenv_create(libexec, python)
     venv.pip_install resources
