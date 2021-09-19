@@ -10,49 +10,29 @@ Just type `brew tap cdalvaro/tap`. This will allow you to install formulae from 
 
 You can directly type `brew install cdalvaro/tap/<formula>` to install the specified `<formula>`.
 
-<details>
-  <summary><b>⚠️ Important</b>: Default branch has been renamed</summary>
-
-If you are having this issue when running `brew update` or `brew upgrade`:
-
-```
-brew update
-fatal: couldn't find remote ref refs/heads/master
-Error: Fetching /usr/local/Homebrew/Library/Taps/cdalvaro/homebrew-tap failed!
-```
-
-Try the following command to solve the issue:
-
-```sh
-rm -rf $(brew --repo cdalvaro/tap)
-brew tap cdalvaro/tap
-```
-
-</details>
-
 ## Available formulae
 
-### [catboost/catboost](https://github.com/catboost/catboost)<a href="Formula/catboost.rb"><img src="https://img.shields.io/badge/catboost-0.25.1-orange?style=flat-square&color=FBB040" align="right"/></a>
+#### [catboost/catboost](https://github.com/catboost/catboost)<a href="Formula/catboost.rb"><img src="https://img.shields.io/badge/catboost-0.25.1-orange?style=flat-square&color=FBB040" align="right"/></a>
 
 Fast, scalable, high performance Gradient Boosting on Decision Trees cli tool.
 
-### [arun11299/cpp-jwt](https://github.com/arun11299/cpp-jwt)<a href="Formula/cpp-jwt.rb"><img src="https://img.shields.io/badge/cpp--jwt-1.4-orange?style=flat-square&color=FBB040" align="right"/></a>
+#### [arun11299/cpp-jwt](https://github.com/arun11299/cpp-jwt)<a href="Formula/cpp-jwt.rb"><img src="https://img.shields.io/badge/cpp--jwt-1.4-orange?style=flat-square&color=FBB040" align="right"/></a>
 
 JSON Web Token library for C++.
 
-### [pablrod/cppplotly](https://github.com/pablrod/cppplotly)<a href="Formula/cpp-plotly.rb"><img src="https://img.shields.io/badge/cpp--plotly-0.4.0-orange?style=flat-square&color=FBB040" align="right"/></a>
+##### [pablrod/cppplotly](https://github.com/pablrod/cppplotly)<a href="Formula/cpp-plotly.rb"><img src="https://img.shields.io/badge/cpp--plotly-0.4.0-orange?style=flat-square&color=FBB040" align="right"/></a>
 
 Generate html/javascript charts from C++ data using javascript library plotly.js.
 
-### [zeromq/cppzmq](https://github.com/zeromq/cppzmq)<a href="Formula/cpp-zmq.rb"><img src="https://img.shields.io/badge/cpp--zmq-4.7.1-orange?style=flat-square&color=FBB040" align="right"/></a>
+#### [zeromq/cppzmq](https://github.com/zeromq/cppzmq)<a href="Formula/cpp-zmq.rb"><img src="https://img.shields.io/badge/cpp--zmq-4.8.1-orange?style=flat-square&color=FBB040" align="right"/></a>
 
 Header-only C++ binding for libzmq.
 
-### [HowardHinnant/date](https://github.com/HowardHinnant/date)<a href="Formula/howard-hinnant-date.rb"><img src="https://img.shields.io/badge/howard--hinnant--date-3.0.0-orange?style=flat-square&color=FBB040" align="right"/></a>
+##### [HowardHinnant/date](https://github.com/HowardHinnant/date)<a href="Formula/howard-hinnant-date.rb"><img src="https://img.shields.io/badge/howard--hinnant--date-3.0.0-orange?style=flat-square&color=FBB040" align="right"/></a>
 
 A date and time library based on the C++11/14/17 \<chrono\> header.
 
-### [saltstack/salt](https://github.com/saltstack/salt)<a href="Formula/salt.rb"><img src="https://img.shields.io/badge/salt-3003-orange?style=flat-square&color=FBB040" align="right"/></a>
+#### [saltstack/salt](https://github.com/saltstack/salt)<a href="Formula/salt.rb"><img src="https://img.shields.io/badge/salt-3003-orange?style=flat-square&color=FBB040" align="right"/></a>
 
 Software to automate the management and configuration of any infrastructure or application at scale. (Uses Python 3.7 to fix issue [saltstack/salt#57742](https://github.com/saltstack/salt/issues/57742))
 
@@ -70,11 +50,11 @@ brew link cdalvaro/tap/salt@3002
 
 </details>
 
-### [eidheim/Simple-Web-Server](https://gitlab.com/eidheim/Simple-Web-Server)<a href="Formula/simple-web-server.rb"><img src="https://img.shields.io/badge/simple--web--server-3.1.1-orange?style=flat-square&color=FBB040" align="right"/></a>
+#### [eidheim/Simple-Web-Server](https://gitlab.com/eidheim/Simple-Web-Server)<a href="Formula/simple-web-server.rb"><img src="https://img.shields.io/badge/simple--web--server-3.1.1-orange?style=flat-square&color=FBB040" align="right"/></a>
 
 A very simple, fast, multithreaded, platform independent HTTP and HTTPS server and client library implemented using C++11 and Boost.Asio.
 
-### [wxWidgets/wxWidgets](https://github.com/wxWidgets/wxWidgets)<a href="Formula/wxmac.rb"><img src="https://img.shields.io/badge/wxmac-3.1.5-orange?style=flat-square&color=FBB040" align="right"/></a>
+#### [wxWidgets/wxWidgets](https://github.com/wxWidgets/wxWidgets)<a href="Formula/wxmac.rb"><img src="https://img.shields.io/badge/wxmac-3.1.5-orange?style=flat-square&color=FBB040" align="right"/></a>
 
 Cross-Platform GUI Library.
 
