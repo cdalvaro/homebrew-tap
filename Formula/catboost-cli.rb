@@ -11,9 +11,9 @@ class CatboostCli < Formula
   end
 
   bottle do
-    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/catboost-0.26.1"
-    sha256 cellar: :any_skip_relocation, big_sur:  "0cf4d7b860a8f51ae08087eb38ca5f566bd030fce862e1d706211f78a915daec"
-    sha256 cellar: :any_skip_relocation, catalina: "72ffb0f09f763ce4d06b4620c6c640e0fbbb1bf8c4e1373a4a000dec4b9fce49"
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/catboost-cli-1.0.0"
+    sha256 cellar: :any_skip_relocation, big_sur:  "a0ca475212ed7e176f59e78739c958da7f4a4b9816b311baa06b47856845e084"
+    sha256 cellar: :any_skip_relocation, catalina: "c1cc80e00d43ef5168216e95c219be130812ee1b05d3e5d29631a64ba26801c5"
   end
 
   def install
