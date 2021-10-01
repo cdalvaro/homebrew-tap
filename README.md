@@ -12,7 +12,7 @@ You can directly type `brew install cdalvaro/tap/<formula>` to install the speci
 
 ## Available formulae
 
-#### [catboost/catboost](https://github.com/catboost/catboost)<a href="Formula/catboost.rb"><img src="https://img.shields.io/badge/catboost-0.26.1-orange?style=flat-square&color=FBB040" align="right"/></a>
+#### [catboost/catboost](https://github.com/catboost/catboost)<a href="Formula/catboost.rb"><img src="https://img.shields.io/badge/catboost--cli-1.0.0-orange?style=flat-square&color=FBB040" align="right"/></a>
 
 Fast, scalable, high performance Gradient Boosting on Decision Trees cli tool.
 
