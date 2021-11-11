@@ -7,10 +7,7 @@ class CppPlotly < Formula
 
   livecheck do
     url :stable
-    strategy :github_latest
   end
-
-  bottle :unneeded
 
   depends_on "json11"
 
