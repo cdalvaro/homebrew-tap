@@ -9,6 +9,12 @@ class CppPlotly < Formula
     url :stable
   end
 
+  bottle do
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/cpp-plotly-0.4.0"
+    sha256 cellar: :any_skip_relocation, big_sur:  "547a02b4a83e66b079253d3e100c98ec3f93e9aeb2a0d77f73d6be1220b6baeb"
+    sha256 cellar: :any_skip_relocation, catalina: "4f4a9e35dc9b2dd93762a16e0fbab5754a558f64b8dc5e85a884dedb0d5aa89a"
+  end
+
   depends_on "json11"
 
   def install
