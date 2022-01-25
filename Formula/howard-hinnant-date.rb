@@ -12,8 +12,9 @@ class HowardHinnantDate < Formula
   end
 
   bottle do
-    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/howard-hinnant-date-3.0.0"
-    sha256 cellar: :any_skip_relocation, catalina: "8eea94bb442f0589b21b8f0fb361d29e8d1213169c93cf45f65ad2dad6cb8dc1"
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/howard-hinnant-date-3.0.1"
+    sha256 cellar: :any, big_sur:  "ee1ed7ac1e314d6ac5bd2b6fd61dbc29bcdb9ab769e06496cae079ac22dbdf57"
+    sha256 cellar: :any, catalina: "2e6f33083eed1c69a6bfe6b9f6c9b006b68755246e2e1d9a0e51f0ef446bd1b3"
   end
 
   option "without-string-view", "Disable C++ string view"
