@@ -1,8 +1,8 @@
 class HowardHinnantDate < Formula
   desc     "Date and time library based on the C++11/14/17 <chrono> header"
   homepage "https://github.com/HowardHinnant/date"
-  url      "https://github.com/HowardHinnant/date/archive/v3.0.0.tar.gz"
-  sha256   "87bba2eaf0ebc7ec539e5e62fc317cb80671a337c1fb1b84cb9e4d42c6dbebe3"
+  url      "https://github.com/HowardHinnant/date/archive/v3.0.1.tar.gz"
+  sha256   "7a390f200f0ccd207e8cff6757e04817c1a0aec3e327b006b7eb451c57ee3538"
   license  "MIT"
   head     "https://github.com/HowardHinnant/date.git"
 

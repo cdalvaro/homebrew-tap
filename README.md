@@ -28,7 +28,7 @@ Generate html/javascript charts from C++ data using javascript library plotly.js
 
 Header-only C++ binding for libzmq.
 
-##### [HowardHinnant/date](https://github.com/HowardHinnant/date)<a href="Formula/howard-hinnant-date.rb"><img src="https://img.shields.io/badge/howard--hinnant--date-3.0.0-orange?style=flat-square&color=FBB040" align="right"/></a>
+##### [HowardHinnant/date](https://github.com/HowardHinnant/date)<a href="Formula/howard-hinnant-date.rb"><img src="https://img.shields.io/badge/howard--hinnant--date-3.0.1-orange?style=flat-square&color=FBB040" align="right"/></a>
 
 A date and time library based on the C++11/14/17 \<chrono\> header.
 
