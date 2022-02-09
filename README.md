@@ -54,6 +54,21 @@ brew link cdalvaro/tap/salt@3002
 
 A very simple, fast, multithreaded, platform independent HTTP and HTTPS server and client library implemented using C++11 and Boost.Asio.
 
+#### [libfuse/sshfs](https://github.com/libfuse/sshfs)<a href="Formula/sshfs.rb"><img src="https://img.shields.io/badge/sshfs-3.7.2-orange?style=flat-square&color=FBB040" align="right"/></a>
+
+A network filesystem client to connect to SSH servers.
+
+<details>
+  <summary><b>⚠️ Important</b>: Requires <a href="https://osxfuse.github.io">macFUSE</a></summary>
+
+It can be installed via Homebrew:
+
+```sh
+brew install --cask macfuse
+```
+
+</details>
+
 #### [wxWidgets/wxWidgets](https://github.com/wxWidgets/wxWidgets)<a href="Formula/wxmac.rb"><img src="https://img.shields.io/badge/wxmac-3.1.5-orange?style=flat-square&color=FBB040" align="right"/></a>
 
 Cross-Platform GUI Library.
