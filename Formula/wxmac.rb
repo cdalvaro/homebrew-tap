@@ -4,7 +4,7 @@ class Wxmac < Formula
   url      "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.6/wxWidgets-3.1.6.tar.bz2"
   sha256   "6a2339997794eb9964aa4e0985aa2b8614257d63bb5e422f8cd9363f0d376146"
   license  "wxWindows"
-  head     "https://github.com/wxWidgets/wxWidgets.git"
+  head     "https://github.com/wxWidgets/wxWidgets.git", branch: "master"
 
   livecheck do
     url "https://github.com/wxWidgets/wxWidgets/releases/latest"
