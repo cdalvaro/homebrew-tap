@@ -1,14 +1,14 @@
 class Wxmac < Formula
   desc     "Cross-platform C++ GUI toolkit (wxWidgets for macOS)"
   homepage "https://www.wxwidgets.org"
-  url      "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.6/wxWidgets-3.1.6.tar.bz2"
-  sha256   "6a2339997794eb9964aa4e0985aa2b8614257d63bb5e422f8cd9363f0d376146"
+  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.7/wxWidgets-3.1.7.tar.bz2"
+  sha256 "3d666e47d86192f085c84089b850c90db7a73a5d26b684b617298d89dce84f19"
   license  "wxWindows"
   head     "https://github.com/wxWidgets/wxWidgets.git", branch: "master"
 
   livecheck do
-    url "https://github.com/wxWidgets/wxWidgets/releases/latest"
-    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -22,6 +22,13 @@ class Wxmac < Formula
   depends_on "jpeg"
   depends_on "libpng"
   depends_on "libtiff"
+
+  on_linux do
+    depends_on "pkg-config" => :build
+    depends_on "gtk+3"
+    depends_on "libsm"
+    depends_on "mesa-glu"
+  end
 
   if build.with?("enable-abort")
     patch do
