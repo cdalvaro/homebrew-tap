@@ -1,8 +1,8 @@
 class Wxmac < Formula
   desc     "Cross-platform C++ GUI toolkit (wxWidgets for macOS)"
   homepage "https://www.wxwidgets.org"
-  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.7/wxWidgets-3.1.7.tar.bz2"
-  sha256 "3d666e47d86192f085c84089b850c90db7a73a5d26b684b617298d89dce84f19"
+  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.0/wxWidgets-3.2.0.tar.bz2"
+  sha256 "356e9b55f1ae3d58ae1fed61478e9b754d46b820913e3bfbc971c50377c1903a"
   license  "wxWindows"
   head     "https://github.com/wxWidgets/wxWidgets.git", branch: "master"
 
@@ -61,6 +61,7 @@ class Wxmac < Formula
       "--disable-precomp-headers",
       # This is the default option, but be explicit
       "--disable-monolithic",
+      "--disable-tests",
       # Set with-macosx-version-min to avoid configure defaulting to 10.5
       "--with-macosx-version-min=#{MacOS.version}",
     ]
