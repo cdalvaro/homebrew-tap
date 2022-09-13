@@ -12,10 +12,10 @@ class Wxmac < Formula
   end
 
   bottle do
-    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/wxmac-3.2.0"
-    sha256 cellar: :any, monterey: "bb08e45de0406a02e760f3ee8f021ac134c79f0dd77089be1cb7ca8752175411"
-    sha256 cellar: :any, big_sur:  "bc7ae7e8204b8db5963f75f58d8ba1fb774caf288c243d00cb6acb7fd3c61264"
-    sha256 cellar: :any, catalina: "f04176150227c5d9a3d5a18a813752f51765ec16e0aa835403594ddf9a328dc5"
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/wxmac-3.2.1"
+    sha256 cellar: :any, monterey: "954545aef13c7811d55c643b131d1177aace2d88f7c2e190191b14602d158ff6"
+    sha256 cellar: :any, big_sur:  "79357ea26f31289cffd2435ec24da72249b554c07cae83194654456c836d96c6"
+    sha256 cellar: :any, catalina: "279156de73edd6cd611f991f6cda9c0efbfb2b1a04b9a775b82f39a2b477c78e"
   end
 
   option "with-enable-abort", "apply patch patch-make-public-enable-abort"
