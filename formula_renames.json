@@ -1,5 +1,4 @@
 {
   "cppzmq": "cpp-zmq",
-  "salt@3002.6": "salt@3002",
   "catboost": "catboost-cli"
 }
