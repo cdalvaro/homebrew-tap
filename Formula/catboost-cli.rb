@@ -16,14 +16,8 @@ class CatboostCli < Formula
     sha256 cellar: :any_skip_relocation, catalina: "3d440f29429c5a87601af0865352bc0e08fcd50cef2c72d123d162b31e5aa279"
   end
 
-  depends_on "python3" => :build
-
-  patch do
-    url "https://github.com/cdalvaro/homebrew-tap/raw/HEAD/formula-patches/catboost-cli/use_python3.diff"
-    sha256 "377754bcf2dfddbb297d839d0c47dc97379692a003e89e7d33ae4510be5ebee4"
-  end
-
   def install
+    inreplace buildpath/"ya", "#!/usr/bin/env python", "#!/usr/bin/env python3"
     cd "#{buildpath}/catboost/app" do
       ENV["YA_CACHE_DIR"] = "./.ya"
       system "../../ya", "make", "-r", "-o", "#{buildpath}/brew-build"
