@@ -1,8 +1,8 @@
 class CatboostCli < Formula
   desc "Fast, scalable, high performance Gradient Boosting on Decision Trees cli tool"
   homepage "https://catboost.ai"
-  url "https://github.com/catboost/catboost/archive/refs/tags/v1.0.3.tar.gz"
-  sha256 "38470f24efd1bc6d0791d1acc686dc0617af9dab04f7b2065e747f560a9c3952"
+  url "https://github.com/catboost/catboost/archive/refs/tags/v1.0.6.tar.gz"
+  sha256 "867c0beb9944a382a5680342c77e7718d0b43d862d9f4fd58b18a2a76f2af92c"
   license "Apache-2.0"
 
   livecheck do
@@ -14,6 +14,13 @@ class CatboostCli < Formula
     root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/catboost-cli-1.0.3"
     sha256 cellar: :any_skip_relocation, big_sur:  "3f0e8ec63373dfac4a913960a3f58db22a1ffc80ddeca4553bcb4e1b8184b9fe"
     sha256 cellar: :any_skip_relocation, catalina: "3d440f29429c5a87601af0865352bc0e08fcd50cef2c72d123d162b31e5aa279"
+  end
+
+  depends_on "python3" => :build
+
+  patch do
+    url "https://github.com/cdalvaro/homebrew-tap/raw/HEAD/formula-patches/catboost-cli/use_python3.diff"
+    sha256 "377754bcf2dfddbb297d839d0c47dc97379692a003e89e7d33ae4510be5ebee4"
   end
 
   def install
