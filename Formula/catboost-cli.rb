@@ -1,8 +1,8 @@
 class CatboostCli < Formula
   desc "Fast, scalable, high performance Gradient Boosting on Decision Trees cli tool"
   homepage "https://catboost.ai"
-  url "https://github.com/catboost/catboost/archive/refs/tags/v1.0.3.tar.gz"
-  sha256 "38470f24efd1bc6d0791d1acc686dc0617af9dab04f7b2065e747f560a9c3952"
+  url "https://github.com/catboost/catboost/archive/refs/tags/v1.0.6.tar.gz"
+  sha256 "867c0beb9944a382a5680342c77e7718d0b43d862d9f4fd58b18a2a76f2af92c"
   license "Apache-2.0"
 
   livecheck do
@@ -17,6 +17,7 @@ class CatboostCli < Formula
   end
 
   def install
+    inreplace buildpath/"ya", "#!/usr/bin/env python", "#!/usr/bin/env python3"
     cd "#{buildpath}/catboost/app" do
       ENV["YA_CACHE_DIR"] = "./.ya"
       system "../../ya", "make", "-r", "-o", "#{buildpath}/brew-build"
