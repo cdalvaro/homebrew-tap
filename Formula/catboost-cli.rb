@@ -4,6 +4,7 @@ class CatboostCli < Formula
   url "https://github.com/catboost/catboost/archive/refs/tags/v1.0.6.tar.gz"
   sha256 "867c0beb9944a382a5680342c77e7718d0b43d862d9f4fd58b18a2a76f2af92c"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
