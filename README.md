@@ -24,7 +24,7 @@ JSON Web Token library for C++.
 
 Generate html/javascript charts from C++ data using javascript library plotly.js.
 
-#### [zeromq/cppzmq](https://github.com/zeromq/cppzmq)<a href="Formula/cpp-zmq.rb"><img src="https://img.shields.io/badge/cpp--zmq-4.8.1-orange?style=flat-square&color=FBB040" align="right"/></a>
+#### [zeromq/cppzmq](https://github.com/zeromq/cppzmq)<a href="Formula/cpp-zmq.rb"><img src="https://img.shields.io/badge/cpp--zmq-4.9.0-orange?style=flat-square&color=FBB040" align="right"/></a>
 
 Header-only C++ binding for libzmq.
 
