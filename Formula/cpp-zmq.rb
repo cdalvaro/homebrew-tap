@@ -12,9 +12,10 @@ class CppZmq < Formula
   end
 
   bottle do
-    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/cpp-zmq-4.8.1"
-    sha256 cellar: :any_skip_relocation, big_sur:  "d10f518e98d3edd8734d9b41151de22e580b3239afff7eb8e59e5875d2ae0011"
-    sha256 cellar: :any_skip_relocation, catalina: "d39e23d23e1f255733ce7eb0e1cd5ca5b1bb3d6ded09446f3c334cbac6326814"
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/cpp-zmq-4.9.0"
+    sha256 cellar: :any_skip_relocation, monterey: "135ba553cac661ac9a608e96880307852719b21e6996d7796e428dbd396f3515"
+    sha256 cellar: :any_skip_relocation, big_sur:  "76849717683fae74b865e69cbcf31e508cd91c571174d9fc0b9231290dc19fb3"
+    sha256 cellar: :any_skip_relocation, catalina: "1706b12442298413e6b1a530f782463c4a5f3f5d80daa9800b7ee0d98390a218"
   end
 
   depends_on "cmake" => :build
