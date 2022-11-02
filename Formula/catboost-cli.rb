@@ -4,6 +4,7 @@ class CatboostCli < Formula
   url "https://github.com/catboost/catboost/archive/refs/tags/v1.1.1.tar.gz"
   sha256 "9ae3e79d1425c599bcfe2061712a601385cbf461ee9f0a75b0e54b19e83fdc93"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -18,9 +19,18 @@ class CatboostCli < Formula
   end
 
   def install
+    build_args = [
+      "--target-platform",
+      "DEFAULT-DARWIN-#{Hardware::CPU.arm? ? "ARM64" : "X86_64"}",
+      "--build",
+      "release",
+      "-o",
+      "#{buildpath}/brew-build",
+    ]
+
     cd "#{buildpath}/catboost/app" do
       ENV["YA_CACHE_DIR"] = "./.ya"
-      system "../../ya", "make", "-r", "-o", "#{buildpath}/brew-build"
+      system "../../ya", "make", *build_args
       bin.install "#{buildpath}/brew-build/catboost/app/catboost"
     end
   end
