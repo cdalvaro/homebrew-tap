@@ -18,7 +18,6 @@ class CatboostCli < Formula
   end
 
   def install
-    inreplace buildpath/"ya", "#!/usr/bin/env python", "#!/usr/bin/env python3"
     cd "#{buildpath}/catboost/app" do
       ENV["YA_CACHE_DIR"] = "./.ya"
       system "../../ya", "make", "-r", "-o", "#{buildpath}/brew-build"
