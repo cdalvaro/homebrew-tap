@@ -36,7 +36,7 @@ A date and time library based on the C++11/14/17 \<chrono\> header.
 
 A very simple, fast, multithreaded, platform independent HTTP and HTTPS server and client library implemented using C++11 and Boost.Asio.
 
-#### [wxWidgets/wxWidgets](https://github.com/wxWidgets/wxWidgets)<a href="Formula/wxmac.rb"><img src="https://img.shields.io/badge/wxmac-3.2.1-orange?style=flat-square&color=FBB040" align="right"/></a>
+#### [wxWidgets/wxWidgets](https://github.com/wxWidgets/wxWidgets)<a href="Formula/wxwidgets.rb"><img src="https://img.shields.io/badge/wxwidgets-3.2.2-orange?style=flat-square&color=FBB040" align="right"/></a>
 
 Cross-Platform GUI Library.
 
