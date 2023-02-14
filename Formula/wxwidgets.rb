@@ -12,10 +12,9 @@ class Wxwidgets < Formula
   end
 
   bottle do
-    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/wxmac-3.2.1"
-    sha256 cellar: :any, monterey: "954545aef13c7811d55c643b131d1177aace2d88f7c2e190191b14602d158ff6"
-    sha256 cellar: :any, big_sur:  "79357ea26f31289cffd2435ec24da72249b554c07cae83194654456c836d96c6"
-    sha256 cellar: :any, catalina: "279156de73edd6cd611f991f6cda9c0efbfb2b1a04b9a775b82f39a2b477c78e"
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/wxwidgets-3.2.2.1"
+    sha256 cellar: :any, monterey: "6f9f612470919a361e63a16241e5632d035a40609642e310347301624b8e487d"
+    sha256 cellar: :any, big_sur:  "4779c90a89adf7cbdac0c86ad61f88a81b78d83c54065895133ca6133fb4f9b0"
   end
 
   option "with-enable-abort", "apply patch patch-make-public-enable-abort"
