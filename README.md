@@ -32,6 +32,10 @@ Header-only C++ binding for libzmq.
 
 A date and time library based on the C++11/14/17 \<chrono\> header.
 
+#### [saltstack/salt](https://github.com/saltstack/salt)<a href="Formula/salt.rb"><img src="https://img.shields.io/badge/salt-3006.1-orange?style=flat-square&color=FBB040" align="right"/></a>
+
+Software to automate the management and configuration of any infrastructure or application at scale.
+
 #### [eidheim/Simple-Web-Server](https://gitlab.com/eidheim/Simple-Web-Server)<a href="Formula/simple-web-server.rb"><img src="https://img.shields.io/badge/simple--web--server-3.1.1-orange?style=flat-square&color=FBB040" align="right"/></a>
 
 A very simple, fast, multithreaded, platform independent HTTP and HTTPS server and client library implemented using C++11 and Boost.Asio.
