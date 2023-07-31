@@ -6,6 +6,7 @@ class Salt < Formula
   url "https://files.pythonhosted.org/packages/6f/9e/4aaebe2d4effe04836115177c05593b85c0b17e08e5ef51a963d483fbc5f/salt-3006.1.tar.gz"
   sha256 "95587bd611dea6affb6908d0ec2686cb7edb84c14144b4851776f127a60ec5b9"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/saltstack/salt.git", branch: "master"
 
   depends_on "rust" => :build
@@ -213,8 +214,8 @@ class Salt < Formula
   end
 
   resource "PyYAML" do
-    url "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz"
-    sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
+    url "https://files.pythonhosted.org/packages/cd/e5/af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0/PyYAML-6.0.1.tar.gz"
+    sha256 "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
   end
 
   resource "pyzmq" do
