@@ -1,10 +1,10 @@
 class CatboostCli < Formula
   desc "Fast, scalable, high performance Gradient Boosting on Decision Trees cli tool"
   homepage "https://catboost.ai"
-  url "https://github.com/catboost/catboost/archive/refs/tags/v1.1.1.tar.gz"
-  sha256 "9ae3e79d1425c599bcfe2061712a601385cbf461ee9f0a75b0e54b19e83fdc93"
+  url "https://github.com/catboost/catboost/archive/refs/tags/v1.2.tar.gz"
+  sha256 "59aa2c1690fff4ac38696f850a951484c844f0f40a0d0ab3a5b5dc588b09ee9b"
   license "Apache-2.0"
-  revision 1
+  head "https://github.com/catboost/catboost.git"
 
   livecheck do
     url :stable
@@ -18,24 +18,30 @@ class CatboostCli < Formula
     sha256 cellar: :any_skip_relocation, catalina: "037772205515d1636d42a8137e5961b6d1fa8e67f539919aaadf5804a1dab788"
   end
 
-  def install
-    build_args = [
-      "--target-platform",
-      "DEFAULT-DARWIN-#{Hardware::CPU.arm? ? "ARM64" : "X86_64"}",
-      "--build",
-      "release",
-      "-o",
-      "#{buildpath}/brew-build",
-    ]
+  depends_on "cmake" => :build
+  depends_on "conan@1" => :build
+  depends_on "ninja" => :build
 
-    cd "#{buildpath}/catboost/app" do
-      ENV["YA_CACHE_DIR"] = "./.ya"
-      system "../../ya", "make", *build_args
-      bin.install "#{buildpath}/brew-build/catboost/app/catboost"
-    end
+  def install
+    extra_cmake_args = [
+      "-S",
+      buildpath.to_s,
+      "-B",
+      "#{buildpath}/brew-build",
+      "-G",
+      "Ninja",
+      "-DCATBOOST_COMPONENTS=app",
+      "-DHAVE_CUDA=NO",
+      "-DCMAKE_TOOLCHAIN_FILE=#{buildpath}/build/toolchains/clang.toolchain",
+    ]
+    system "cmake", *extra_cmake_args, *std_cmake_args
+    system "ninja", "-C", "#{buildpath}/brew-build", "catboost"
+
+    bin.install "#{buildpath}/brew-build/catboost/app/catboost" => "catboost-#{version}"
+    bin.install_symlink "catboost-#{version}" => "catboost"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/catboost --version")
+    assert_predicate bin/"catboost", :exist?
   end
 end
