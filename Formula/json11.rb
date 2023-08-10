@@ -5,6 +5,13 @@ class Json11 < Formula
   sha256   "bab960eebc084d26aaf117b8b8809aecec1e86e371a173655b7dffb49383b0bf"
   license  "MIT"
 
+  bottle do
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/json11-1.0.0"
+    sha256 cellar: :any_skip_relocation, ventura:  "61f7ea75954629e7d4222219e394131dd62c0029b908615e10c6a9a6fc43b6de"
+    sha256 cellar: :any_skip_relocation, monterey: "1fd312bbef10d5406bfd13ed8fe8512f7484ea082c6607b527f8ae0a5d4a030d"
+    sha256 cellar: :any_skip_relocation, big_sur:  "bd3d883df2f5fe8f656acf1056ba6e79760ed444a3eb118b17fa3ae7eb267c3b"
+  end
+
   depends_on "cmake" => :build
 
   def install
