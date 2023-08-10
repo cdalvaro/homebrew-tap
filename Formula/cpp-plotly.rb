@@ -3,6 +3,7 @@ class CppPlotly < Formula
   homepage "https://github.com/pablrod/cppplotly"
   url      "https://github.com/pablrod/cppplotly/archive/v0.4.0.tar.gz"
   sha256   "378a978d5e6d06685e83593bbd5c4652685c2340240312ce57913befcca9f7c3"
+  revision 1
   head     "https://github.com/pablrod/cppplotly.git"
 
   livecheck do
@@ -15,7 +16,7 @@ class CppPlotly < Formula
     sha256 cellar: :any_skip_relocation, catalina: "4f4a9e35dc9b2dd93762a16e0fbab5754a558f64b8dc5e85a884dedb0d5aa89a"
   end
 
-  depends_on "json11"
+  depends_on "cdalvaro/tap/json11"
 
   def install
     prefix.install "include"
