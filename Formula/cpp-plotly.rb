@@ -11,9 +11,10 @@ class CppPlotly < Formula
   end
 
   bottle do
-    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/cpp-plotly-0.4.0"
-    sha256 cellar: :any_skip_relocation, big_sur:  "547a02b4a83e66b079253d3e100c98ec3f93e9aeb2a0d77f73d6be1220b6baeb"
-    sha256 cellar: :any_skip_relocation, catalina: "4f4a9e35dc9b2dd93762a16e0fbab5754a558f64b8dc5e85a884dedb0d5aa89a"
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/cpp-plotly-0.4.0_1"
+    sha256 cellar: :any_skip_relocation, ventura:  "276197c87b6520170f8432d931552fdd71f20f3323dfa455deef2ef8fbe29066"
+    sha256 cellar: :any_skip_relocation, monterey: "ecce8139bd6c2fe424f280a53bf94eabffa1f65dfeaf65242aa11e125ff33fc3"
+    sha256 cellar: :any_skip_relocation, big_sur:  "00e322765593ea8c73f8315badfff4666945970f2309fdf32dda9eed91080f1f"
   end
 
   depends_on "cdalvaro/tap/json11"
