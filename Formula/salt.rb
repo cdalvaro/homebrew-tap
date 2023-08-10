@@ -3,10 +3,9 @@ class Salt < Formula
 
   desc "Dynamic infrastructure communication bus"
   homepage "https://saltproject.io/"
-  url "https://files.pythonhosted.org/packages/6f/9e/4aaebe2d4effe04836115177c05593b85c0b17e08e5ef51a963d483fbc5f/salt-3006.1.tar.gz"
-  sha256 "95587bd611dea6affb6908d0ec2686cb7edb84c14144b4851776f127a60ec5b9"
+  url "https://files.pythonhosted.org/packages/b0/a0/1199833f647b3b1324408106daf726edcb3d29ce48220ef313532cb23cb6/salt-3006.2.tar.gz"
+  sha256 "f88d1a25e230d9ca3dfde13dadd46607a2b1750ab55a86359c5a4251e771f167"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/saltstack/salt.git", branch: "master"
 
   bottle do
@@ -41,8 +40,8 @@ class Salt < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
-    sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "cffi" do
@@ -50,9 +49,9 @@ class Salt < Formula
     sha256 "c9a875ce9d7fe32887784274dd533c57909b7b1dcadcc128a2ac21331a9765dd"
   end
 
-  resource "chardet" do
-    url "https://files.pythonhosted.org/packages/fc/bb/a5768c230f9ddb03acc9ef3f0d4a3cf93462473795d18e9535498c8f929d/chardet-3.0.4.tar.gz"
-    sha256 "84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae"
+  resource "charset-normalizer" do
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "cheroot" do
@@ -71,8 +70,8 @@ class Salt < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/fa/f3/f4b8c175ea9a1de650b0085858059050b7953a93d66c97ed89b93b232996/cryptography-39.0.2.tar.gz"
-    sha256 "bc5b871e977c8ee5a1bbc42fa8d19bcc08baf0c51cbf1586b0e87a2694dde42f"
+    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
+    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "distro" do
@@ -98,6 +97,11 @@ class Salt < Formula
   resource "immutables" do
     url "https://files.pythonhosted.org/packages/d5/33/1187e0fcc0a521a72234b011e06cff99f8a204e1125ea791c190bd780de7/immutables-0.15.tar.gz"
     sha256 "3713ab1ebbb6946b7ce1387bb9d1d7f5e09c45add58c2a2ee65f963c171e746b"
+  end
+
+  resource "importlib-metadata" do
+    url "https://files.pythonhosted.org/packages/90/07/6397ad02d31bddf1841c9ad3ec30a693a3ff208e09c2ef45c9a8a5f85156/importlib_metadata-6.0.0.tar.gz"
+    sha256 "e354bedeb60efa6affdcc8ae121b73544a7aa74156d047311948f6d711cd378d"
   end
 
   resource "jaraco.classes" do
@@ -138,11 +142,6 @@ class Salt < Formula
   resource "looseversion" do
     url "https://files.pythonhosted.org/packages/5b/c8/6d304ae42f4088b66c1c94174831a1989659c0abe09d953e16ad43242ca7/looseversion-1.0.2.tar.gz"
     sha256 "8b9f2e649eb81620c4527ba33ba87505eb69d4bb3f66523b34182a0450c294bc"
-  end
-
-  resource "Mako" do
-    url "https://files.pythonhosted.org/packages/5c/db/2d2d88b924aa4674a080aae83b59ea19d593250bfe5ed789947c21736785/Mako-1.1.4.tar.gz"
-    sha256 "17831f0b7087c313c0ffae2bcbbd3c1d5ba9eeac9c38f2eb7b50e8c99fe9d5ab"
   end
 
   resource "MarkupSafe" do
@@ -201,8 +200,8 @@ class Salt < Formula
   end
 
   resource "pyOpenSSL" do
-    url "https://files.pythonhosted.org/packages/af/6e/0706d5e0eac08fcff586366f5198c9bf0a8b46f0f45b1858324e0d94c295/pyOpenSSL-23.0.0.tar.gz"
-    sha256 "c1cc5f86bcacefc84dada7d31175cae1b1518d5f60d3d0bb595a67822a868a6f"
+    url "https://files.pythonhosted.org/packages/be/df/75a6525d8988a89aed2393347e9db27a56cb38a3e864314fac223e905aef/pyOpenSSL-23.2.0.tar.gz"
+    sha256 "276f931f55a452e7dea69c7173e984eb2a4407ce413c918aa34b55f82f9b8bac"
   end
 
   resource "python-dateutil" do
@@ -231,8 +230,8 @@ class Salt < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/6b/47/c14abc08432ab22dc18b9892252efaf005ab44066de871e72a38d6af464b/requests-2.25.1.tar.gz"
-    sha256 "27973dd4a904a4f13b263a19c866c13b92a39ed1c964655f025f3f8d3d75b804"
+    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
+    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
   resource "setproctitle" do
@@ -268,6 +267,11 @@ class Salt < Formula
   resource "zc.lockfile" do
     url "https://files.pythonhosted.org/packages/11/98/f21922d501ab29d62665e7460c94f5ed485fd9d8348c126697947643a881/zc.lockfile-2.0.tar.gz"
     sha256 "307ad78227e48be260e64896ec8886edc7eae22d8ec53e4d528ab5537a83203b"
+  end
+
+  resource "zipp" do
+    url "https://files.pythonhosted.org/packages/e2/45/f3b987ad5bf9e08095c1ebe6352238be36f25dd106fde424a160061dce6d/zipp-3.16.2.tar.gz"
+    sha256 "ebc15946aa78bd63458992fc81ec3b6f7b1e92d51c35e6de1c3804e73b799147"
   end
 
   def install
