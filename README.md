@@ -37,7 +37,7 @@ brew install cdalvaro/tap/cpp-jwt
 Generate html/javascript charts from C++ data using javascript library plotly.js.
 
 ```sh
-brew install cdalvaro/tap/cppplotly
+brew install cdalvaro/tap/cpp-plotly
 ```
 
 [Formula/cpp-plotly.rb](Formula/cpp-plotly.rb)
@@ -107,5 +107,5 @@ brew install cdalvaro/tap/wxwidgets
 
 More documentation is available at: [Homebrew - Taps](https://docs.brew.sh/Taps)
 
-[homebrew_tap_badge]: https://img.shields.io/badge/brew%20tap-cdalvaro/tap-orange?style=flat-square&logo=Homebrew&color=FBB040
+[homebrew_tap_badge]: https://img.shields.io/badge/brew%20tap-cdalvaro/tap-orange?logo=Homebrew&color=FBB040
 [homebrew_tap_url]: https://github.com/cdalvaro/homebrew-tap
