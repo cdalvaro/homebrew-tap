@@ -1,57 +1,33 @@
-cask 'salt' do
-  arch arm: 'arm64', intel: 'x86_64'
+cask "salt" do
+  arch arm: "arm64", intel: "x86_64"
 
-  version '3006.1'
-  sha256 arm: '',
-         intel: '21b3dafd8b3e2dd8e4fe7c63dcddec8faac94b953904ffd74ac1cc8f027498a1'
+  version "3006.2"
+  sha256 arm:   "",
+         intel: "1dec46d448a0b4c46079928c82e9d6e907d3b858c280764730a06aacdb458b59"
 
   url "https://repo.saltproject.io/salt/py3/macos/minor/#{version}/salt-#{version}-py3-#{arch}.pkg"
-  name 'Salt'
-  desc 'Salt is the world’s fastest, most intelligent and scalable automation engine'
-  homepage 'https://saltproject.io'
+  name "Salt"
+  desc "World's fastest, most intelligent and scalable automation engine"
+  homepage "https://saltproject.io/"
 
   livecheck do
-    url 'https://repo.saltproject.io/salt/py3/macos/'
+    url "https://repo.saltproject.io/salt/py3/macos/"
     regex(%r{(\d+(?:\.\d+)?(?:-\d+)?)/})
   end
 
+  conflicts_with formula: "salt"
+
   pkg "salt-#{version}-py3-#{arch}.pkg"
 
-  on_arm do
-    postflight do
-      temp_dir = Pathname(Dir.mktempdir)
-      %w[api master minion syndic].each do |daemon|
-        plist_file = "/Library/LaunchDaemons/com.saltstack.salt.#{daemon}.plist"
-        p "Modifying #{plist_file}"
-        next unless File.exist?(plist_file)
-
-        FileUtils.makedirs temp_dir
-        mod_plist_file = temp_dir.join(File.basename(plist_file))
-        FileUtils.copy plist_file, mod_plist_file
-
-        path = `plutil -extract EnvironmentVariables.PATH raw -expect string -n "#{mod_plist_file}"`
-        next unless $?.success?
-
-        system 'putil', '-replace', 'EnvironmentVariables.PATH', '-string', "#{HOMEBRE_PREFIX.to_s}/bin:#{path}", mod_plist_file
-        next unless $?.success?
-
-        system 'plutil', '-insert', 'EnvironmentVariables.HOMEBREW_PREFIX', '-string', HOMEBREW_PREFIX.to_s, mod_plist_file
-        next unless $?.success?
-
-        FileUtils.move mod_plist_file, plist_file
-      end
-    end
-  end
-
-  uninstall pkgutil: [
-              'com.saltstack.salt'
+  uninstall pkgutil:   [
+              "com.saltstack.salt",
             ],
             launchctl: [
-              'com.saltstack.salt.*'
+              "com.saltstack.salt.*",
             ]
 
   zap trash: [
-    '/etc/salt'
+    "/etc/salt",
   ]
 
   def caveats
