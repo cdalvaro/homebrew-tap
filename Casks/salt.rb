@@ -16,6 +16,7 @@ cask "salt" do
   end
 
   conflicts_with formula: "salt"
+  depends_on arch: :x86_64
 
   pkg "salt-#{version}-py3-#{arch}.pkg"
 
