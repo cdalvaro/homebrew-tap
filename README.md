@@ -5,7 +5,7 @@
 [@cdalvaro](https://github.com/cdalvaro)'s custom formulae for the [Homebrew package manager](https://brew.sh).
 
 <p align="center">
-  <img src="assets/homebrew-tap-banner.png" height=320px>
+  <a href="#"><img src="assets/homebrew-tap-banner.png" height=320px></a>
 </p>
 
 ## What is this?
