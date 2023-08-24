@@ -1,8 +1,14 @@
 [![hombrew tap cdalvaro][homebrew_tap_badge]][homebrew_tap_url]
 
-# <img src="https://simpleicons.org/icons/homebrew.svg" height=24pt> Homebrew Custom Tap
+# <img src="assets/homebrew.svg" height=24pt> Homebrew Custom Tap
 
-[@cdalvaro](https://github.com/cdalvaro) custom formulae for the [Homebrew package manager](https://brew.sh).
+[@cdalvaro](https://github.com/cdalvaro)'s custom formulae for the [Homebrew package manager](https://brew.sh).
+
+<img src="assets/homebrew-tap-banner.png" height=50%>
+
+## What is this?
+
+This is a [Homebrew tap](https://docs.brew.sh/Taps) containing formulae for software that I use and that is not available in the main Homebrew repositories.
 
 ## How to enable this tap?
 
@@ -94,7 +100,6 @@ brew install cdalvaro/tap/simple-web-server
 
 #### `wxwidgets`<a href="https://github.com/wxWidgets/wxWidgets"><img src="https://img.shields.io/badge/wxWidgets-wxWidgets-grey?logo=github&color=181717" align="right"/></a>
 
-
 Cross-Platform GUI Library.
 
 ```sh
@@ -102,6 +107,33 @@ brew install cdalvaro/tap/wxwidgets
 ```
 
 [Formula/wxwidgets.rb](Formula/wxwidgets.rb)
+
+## Available casks
+
+#### `autofirma`<a href="https://firmaelectronica.gob.es/Home/Descargas.html"><img src="https://img.shields.io/badge/Government%20of%20Spain-autofirma-grey?color=70130B" align="right"/></a>
+
+Aplicación de firma electrónica desarrollada por el Ministerio de Asuntos Económicos y Transformación Digital.
+
+Al poder ser ejecutada desde el navegador, permite la firma en páginas de Administración Electrónica cuando se requiere la firma en un procedimiento administrativo.
+
+```sh
+brew install --cask cdalvaro/tap/autofirma
+```
+
+[Casks/autofirma.rb](Casks/autofirma.rb)
+
+#### `salt`<a href="https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/macos.html"><img src="https://img.shields.io/badge/saltstack-salt-grey?logo=saltproject&color=57BCAD" align="right"/></a>
+
+Software to automate the management and configuration of any infrastructure or application at scale.
+
+This cask installs salt using the official installation package instead
+of building the whole package from source as the formula does.
+
+```sh
+brew install --cask cdalvaro/tap/salt
+```
+
+[Casks/salt.rb](Casks/salt.rb)
 
 ## More Documentation
 
