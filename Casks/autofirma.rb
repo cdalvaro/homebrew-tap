@@ -23,13 +23,14 @@ cask "autofirma" do
   uninstall_postflight do
     ["AutoFirma ROOT", "127.0.0.1"].each do |cert|
       stdout, * = system_command "/usr/bin/security",
-                                args: ["find-certificate", "-a", "-c", cert, "-Z"],
-                                sudo: true
+                                 args: ["find-certificate", "-a", "-c", cert, "-Z"],
+                                 sudo: true
       hashes = stdout.lines.grep(/^SHA-256 hash:/) { |l| l.split(":").second.strip }
       hashes.each do |h|
+        puts "Removing certificate #{cert} (#{h})"
         system_command "/usr/bin/security",
-                      args: ["delete-certificate", "-Z", h],
-                      sudo: true
+                       args: ["delete-certificate", "-Z", h],
+                       sudo: true
       end
     end
   end
