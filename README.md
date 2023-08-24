@@ -20,6 +20,21 @@ You can directly type `brew install cdalvaro/tap/<formula>` to install the speci
 
 ## Available formulae
 
+<details>
+  <summary>Formulae list</summary>
+  <ul>
+    <li><a href="#catboost-cli">catboost-cli</a></li>
+    <li><a href="#cpp-jwt">cpp-jwt</a></li>
+    <li><a href="#cpp-plotly">cpp-plotly</a></li>
+    <li><a href="#cpp-zmq">cpp-zmq</a></li>
+    <li><a href="#howard-hinnant-date">howard-hinnant-date</a></li>
+    <li><a href="#json11">json11</a></li>
+    <li><a href="#salt">salt</a></li>
+    <li><a href="#simple-web-server">simple-web-server</a></li>
+    <li><a href="#wxwidgets">wxwidgets</a></li>
+  </ul>
+</details>
+
 #### `catboost-cli`<a href="https://github.com/catboost/catboost"><img src="https://img.shields.io/badge/catboost-catboost-grey?logo=github&color=181717" align="right"/></a>
 
 Fast, scalable, high performance Gradient Boosting on Decision Trees cli tool.
