@@ -4,7 +4,9 @@
 
 [@cdalvaro](https://github.com/cdalvaro)'s custom formulae for the [Homebrew package manager](https://brew.sh).
 
-<img src="assets/homebrew-tap-banner.png" height=320px>
+<p align="center">
+  <img src="assets/homebrew-tap-banner.png" height=320px>
+</p>
 
 ## What is this?
 
