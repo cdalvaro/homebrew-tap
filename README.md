@@ -154,6 +154,8 @@ Software to automate the management and configuration of any infrastructure or a
 This cask installs salt using the official installation package instead
 of building the whole package from source as the formula does.
 
+⚠️ _This cask is currently only available for Intel Macs._ (See: [saltstack/salt#60560](https://github.com/saltstack/salt/issues/60560))
+
 ```sh
 brew install --cask cdalvaro/tap/salt
 ```
