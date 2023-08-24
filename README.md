@@ -127,6 +127,14 @@ brew install cdalvaro/tap/wxwidgets
 
 ## Available casks
 
+<details>
+  <summary>Casks list</summary>
+  <ul>
+    <li><a href="#autofirma">autofirma</a></li>
+    <li><a href="#salt-1">salt</a></li>
+  </ul>
+</details>
+
 #### `autofirma`<a href="https://firmaelectronica.gob.es/Home/Descargas.html"><img src="https://img.shields.io/badge/Government%20of%20Spain-autofirma-grey?color=70130B" align="right"/></a>
 
 Aplicación de firma electrónica desarrollada por el Ministerio de Asuntos Económicos y Transformación Digital.
