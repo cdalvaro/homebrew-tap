@@ -1,4 +1,32 @@
 cask "salt" do
+  module Utils
+    def self.patch_plist(plist_file)
+      xml, = system_command! "plutil",
+                             args: ["-convert", "xml1", "-o", "-", "--", plist_file],
+                             sudo: true
+      xml = Plist.parse_xml(xml)
+
+      xml["EnvironmentVariables"] = {} unless xml.key?("EnvironmentVariables")
+
+      xml["EnvironmentVariables"]["PATH"] = if xml["EnvironmentVariables"].key?("PATH")
+        "#{HOMEBREW_PREFIX}/bin:#{xml["EnvironmentVariables"]["PATH"]}"
+      else
+        "#{HOMEBREW_PREFIX}/bin"
+      end
+
+      xml["EnvironmentVariables"]["HOMEBREW_PREFIX"] = HOMEBREW_PREFIX.to_s
+
+      new_plist_file = "/tmp/#{File.basename(plist_file)}"
+      File.write(new_plist_file, xml.to_plist)
+      system_command! "plutil",
+                      args: ["-lint", new_plist_file]
+
+      system_command! "mv",
+                      args: [new_plist_file, plist_file],
+                      sudo: true
+    end
+  end
+
   arch arm: "arm64", intel: "x86_64"
 
   version "3006.2"
@@ -19,6 +47,13 @@ cask "salt" do
   depends_on arch: :x86_64
 
   pkg "salt-#{version}-py3-#{arch}.pkg"
+
+  postflight do
+    %w[api master minion syndic].each do |daemon|
+      plist_file = "/Library/LaunchDaemons/com.saltstack.salt.#{daemon}.plist"
+      Utils.patch_plist(plist_file) if File.exist?(plist_file)
+    end
+  end
 
   uninstall pkgutil:   [
               "com.saltstack.salt",
