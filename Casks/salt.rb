@@ -46,6 +46,9 @@ cask "salt" do
       system_command! "mv",
                       args: [new_plist_file, plist_file],
                       sudo: true
+      system_command! "chown",
+                      args: ["root:wheel", "plist_file"],
+                      sudo: true
     end
   end
 
