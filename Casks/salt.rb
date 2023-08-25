@@ -11,8 +11,8 @@ cask "salt" do
   homepage "https://saltproject.io/"
 
   livecheck do
-    url "https://repo.saltproject.io/salt/py3/macos/"
-    regex(%r{(\d+(?:\.\d+)?(?:-\d+)?)/})
+    url "https://repo.saltproject.io/salt/py3/macos/latest"
+    regex(%r{salt-(\d+(?:\.\d+)?(?:-\d+)?)-py3-#{arch}\.pkg})
   end
 
   conflicts_with formula: "salt"
