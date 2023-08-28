@@ -73,10 +73,10 @@ cask "salt" do
 
       Load services you need:
 
-      sudo launchctl load -w com.saltstack.salt.api
-      sudo launchctl load -w com.saltstack.salt.master
-      sudo launchctl load -w com.saltstack.salt.minion
-      sudo launchctl load -w com.saltstack.salt.syndic
+      sudo launchctl load -w /Library/LaunchDaemons/com.saltstack.salt.api
+      sudo launchctl load -w /Library/LaunchDaemons/com.saltstack.salt.master
+      sudo launchctl load -w /Library/LaunchDaemons/com.saltstack.salt.minion
+      sudo launchctl load -w /Library/LaunchDaemons/com.saltstack.salt.syndic
     CAVEATS
   end
 end
