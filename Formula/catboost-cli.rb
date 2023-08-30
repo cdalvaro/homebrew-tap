@@ -1,8 +1,8 @@
 class CatboostCli < Formula
   desc "Fast, scalable, high performance Gradient Boosting on Decision Trees cli tool"
   homepage "https://catboost.ai"
-  url "https://github.com/catboost/catboost/archive/refs/tags/v1.2.tar.gz"
-  sha256 "59aa2c1690fff4ac38696f850a951484c844f0f40a0d0ab3a5b5dc588b09ee9b"
+  url "https://github.com/catboost/catboost/archive/refs/tags/v1.2.1.tar.gz"
+  sha256 "b1cf4458415a639f26e953bc4e2877d68d2a711f457a725ef93cbe24363725f0"
   license "Apache-2.0"
   head "https://github.com/catboost/catboost.git"
 
