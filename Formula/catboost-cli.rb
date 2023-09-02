@@ -5,11 +5,12 @@ class CatboostCli < Formula
       tag:      "v1.2.1",
       revision: "d03b246cae23490dcf991cf822be110d6f818665"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/catboost/catboost.git", branch: "master"
 
   depends_on "cmake" => :build
   depends_on "conan@1" => :build
+  depends_on "ninja" => :build
 
   uses_from_macos "llvm" => :build
 
@@ -27,12 +28,9 @@ class CatboostCli < Formula
     ]
 
     cmakepath = buildpath/"cmake-build"
-    system "cmake", "-S", ".", "-B", cmakepath, *args, *std_cmake_args
-
-    cd cmakepath/"catboost/app" do
-      system "cmake", "--build", "."
-      bin.install "catboost"
-    end
+    system "cmake", "-S", ".", "-B", cmakepath, "-G", "Ninja", *args, *std_cmake_args
+    system "ninja", "-C", cmakepath, "catboost"
+    bin.install cmakepath/"catboost/app/catboost"
   end
 
   test do
