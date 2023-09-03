@@ -8,6 +8,14 @@ class CatboostCli < Formula
   revision 3
   head "https://github.com/catboost/catboost.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/catboost-cli-1.2.1_3"
+    sha256 cellar: :any_skip_relocation, ventura:      "cf5652a796ce4a662a7ce90c5e7264890e8509202d6f784386f8136729197556"
+    sha256 cellar: :any_skip_relocation, monterey:     "445e8c633a6ac6e5da3356fd3e01e54211cb9d72ce52d49e6c3f257fa2f29db3"
+    sha256 cellar: :any_skip_relocation, big_sur:      "75cb0eeed6f94f74c98c8b5cbe3d9b0fba4c5613878626fe9ac07587f24ad775"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "93bc65e5c57b7b08acbf65ffdecc91f50d229a420c189c834f3ddd37a8743f67"
+  end
+
   depends_on "cmake" => :build
   depends_on "conan@1" => :build
   depends_on "ninja" => :build
