@@ -6,6 +6,7 @@ class Salt < Formula
   url "https://files.pythonhosted.org/packages/b0/a0/1199833f647b3b1324408106daf726edcb3d29ce48220ef313532cb23cb6/salt-3006.2.tar.gz"
   sha256 "f88d1a25e230d9ca3dfde13dadd46607a2b1750ab55a86359c5a4251e771f167"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/saltstack/salt.git", branch: "master"
 
   bottle do
@@ -17,9 +18,9 @@ class Salt < Formula
 
   depends_on "rust" => :build
   depends_on "swig" => :build
-  depends_on "libgit2"
+  depends_on "libgit2@1.6"
   depends_on "libyaml"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "python@3.10"
   depends_on "six"
   depends_on "zeromq"
@@ -195,8 +196,8 @@ class Salt < Formula
   end
 
   resource "pygit2" do
-    url "https://files.pythonhosted.org/packages/7f/00/075f21ae474fcef679ba1f71b9ecd534493792b508b1919021fb2be67eba/pygit2-1.12.0.tar.gz"
-    sha256 "e9440d08665e35278989939590a53f37a938eada4f9446844930aa2ee30d73be"
+    url "https://files.pythonhosted.org/packages/db/26/cd0d68706e9511ca07b10d53f42e70d4c57b3504f4a0fd675e4617ad7a60/pygit2-1.12.2.tar.gz"
+    sha256 "56e85d0e66de957d599d1efb2409d39afeefd8f01009bfda0796b42a4b678358"
   end
 
   resource "pyOpenSSL" do
@@ -300,7 +301,7 @@ class Salt < Formula
     output = shell_output("#{bin}/salt --config-dir=#{testpath} --log-file=/dev/null --versions")
     assert_match "Salt: #{version}", output
     assert_match "Python: #{Formula["python@3.10"].version}", output
-    assert_match "libgit2: #{Formula["libgit2"].version}", output
+    assert_match "libgit2: #{Formula["libgit2@1.6"].version}", output
     assert_match "M2Crypto: Not Installed", output
   end
 end
