@@ -6,7 +6,7 @@ class Salt < Formula
   url "https://files.pythonhosted.org/packages/b0/a0/1199833f647b3b1324408106daf726edcb3d29ce48220ef313532cb23cb6/salt-3006.2.tar.gz"
   sha256 "f88d1a25e230d9ca3dfde13dadd46607a2b1750ab55a86359c5a4251e771f167"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/saltstack/salt.git", branch: "master"
 
   bottle do
