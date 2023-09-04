@@ -11,10 +11,11 @@ class Salt < Formula
 
   bottle do
     root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/salt-3006.2_3"
-    sha256 cellar: :any,                 ventura:      "ecd99f2c14f8da293309cf572ea86aaae8a22d4fdd1c1fbd73c8a13747b6c4ba"
-    sha256 cellar: :any,                 monterey:     "b63f22fe3a3648ee1c31ae304593b03cb17d26d93d682cb8c711ec0045cbc638"
-    sha256 cellar: :any,                 big_sur:      "227b0e89eac54f2c20edb05598e97b192f111f117c5aed9d2527657575fecbf9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e4f02e6c4bcdb588c31b8d34da3ca08f60399087053476e1a66c1ea5fd6362ca"
+    sha256 cellar: :any,                 arm64_ventura: "a8c348a9d92e5cc894a04eb0e49a51afb9c78684989ea0bc742ea8e1f440ff72"
+    sha256 cellar: :any,                 ventura:       "ecd99f2c14f8da293309cf572ea86aaae8a22d4fdd1c1fbd73c8a13747b6c4ba"
+    sha256 cellar: :any,                 monterey:      "b63f22fe3a3648ee1c31ae304593b03cb17d26d93d682cb8c711ec0045cbc638"
+    sha256 cellar: :any,                 big_sur:       "227b0e89eac54f2c20edb05598e97b192f111f117c5aed9d2527657575fecbf9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4f02e6c4bcdb588c31b8d34da3ca08f60399087053476e1a66c1ea5fd6362ca"
   end
 
   depends_on "rust" => :build
