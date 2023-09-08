@@ -3,10 +3,9 @@ class Salt < Formula
 
   desc "Dynamic infrastructure communication bus"
   homepage "https://saltproject.io/"
-  url "https://files.pythonhosted.org/packages/b0/a0/1199833f647b3b1324408106daf726edcb3d29ce48220ef313532cb23cb6/salt-3006.2.tar.gz"
-  sha256 "f88d1a25e230d9ca3dfde13dadd46607a2b1750ab55a86359c5a4251e771f167"
+  url "https://files.pythonhosted.org/packages/65/75/409ecd934db9774d2392db62f8c148847efd304b15c53100ffe7d327f949/salt-3006.3.tar.gz"
+  sha256 "7e53fbcc44c49f8d6e67cb19cada063800ca29ed7f15af972527531aa856e42b"
   license "Apache-2.0"
-  revision 3
   head "https://github.com/saltstack/salt.git", branch: "master"
 
   bottle do
@@ -20,7 +19,7 @@ class Salt < Formula
 
   depends_on "rust" => :build
   depends_on "swig" => :build
-  depends_on "libgit2@1.6"
+  depends_on "libgit2"
   depends_on "libyaml"
   depends_on "openssl@3"
   depends_on "python@3.10"
@@ -88,8 +87,8 @@ class Salt < Formula
   end
 
   resource "GitPython" do
-    url "https://files.pythonhosted.org/packages/ef/8d/50658d134d89e080bb33eb8e2f75d17563b5a9dfb75383ea1a78e1df6fff/GitPython-3.1.30.tar.gz"
-    sha256 "769c2d83e13f5d938b7688479da374c4e3d49f71549aaf462b646db9602ea6f8"
+    url "https://files.pythonhosted.org/packages/87/56/6dcdfde2f3a747988d1693100224fb88fc1d3bbcb3f18377b2a3ef53a70a/GitPython-3.1.32.tar.gz"
+    sha256 "8d9b8cb1e80b9735e8717c9362079d3ce4c6e5ddeebedd0361b228c3a67a62f6"
   end
 
   resource "idna" do
@@ -198,8 +197,8 @@ class Salt < Formula
   end
 
   resource "pygit2" do
-    url "https://files.pythonhosted.org/packages/db/26/cd0d68706e9511ca07b10d53f42e70d4c57b3504f4a0fd675e4617ad7a60/pygit2-1.12.2.tar.gz"
-    sha256 "56e85d0e66de957d599d1efb2409d39afeefd8f01009bfda0796b42a4b678358"
+    url "https://files.pythonhosted.org/packages/82/08/77f77ec32b6d1363082be00c572f970d2a6200abf42df6d6ca86b8cd30e3/pygit2-1.13.0.tar.gz"
+    sha256 "6dde37436fab14264ad3d6cbc5aae3fd555eb9a9680a7bfdd6e564cd77b5e2b8"
   end
 
   resource "pyOpenSSL" do
@@ -278,7 +277,7 @@ class Salt < Formula
   end
 
   def install
-    ENV["SWIG_FEATURES"] = "-I#{Formula["openssl@1.1"].opt_include}"
+    ENV["SWIG_FEATURES"] = "-I#{Formula["openssl@3"].opt_include}"
 
     virtualenv_install_with_resources
 
@@ -303,7 +302,7 @@ class Salt < Formula
     output = shell_output("#{bin}/salt --config-dir=#{testpath} --log-file=/dev/null --versions")
     assert_match "Salt: #{version}", output
     assert_match "Python: #{Formula["python@3.10"].version}", output
-    assert_match "libgit2: #{Formula["libgit2@1.6"].version}", output
+    assert_match "libgit2: #{Formula["libgit2"].version}", output
     assert_match "M2Crypto: Not Installed", output
   end
 end
