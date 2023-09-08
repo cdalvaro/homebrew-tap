@@ -1,9 +1,9 @@
 cask "salt" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "3006.2"
+  version "3006.3"
   sha256 arm:   "",
-         intel: "1dec46d448a0b4c46079928c82e9d6e907d3b858c280764730a06aacdb458b59"
+         intel: "370018cf745a1b56592eff34dc66884b692bd6447be4f6010525cba83fbe972d"
 
   url "https://repo.saltproject.io/salt/py3/macos/minor/#{version}/salt-#{version}-py3-#{arch}.pkg"
   name "Salt"
