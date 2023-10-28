@@ -1,7 +1,7 @@
 class Json11 < Formula
   desc     "Tiny JSON library for C++11"
   homepage "https://github.com/dropbox/json11"
-  url      "https://github.com/dropbox/json11/archive/v1.0.0.tar.gz"
+  url      "https://github.com/dropbox/json11/archive/refs/tags/v1.0.0.tar.gz"
   sha256   "bab960eebc084d26aaf117b8b8809aecec1e86e371a173655b7dffb49383b0bf"
   license  "MIT"
 
