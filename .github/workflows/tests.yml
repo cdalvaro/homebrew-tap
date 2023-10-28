@@ -13,7 +13,7 @@ jobs:
   test-bot:
     strategy:
       matrix:
-        os: [ macOS-11, macOS-12, macOS-13, macos-13-xlarge, ubuntu-latest ]
+        os: [ macOS-11, macOS-12, macOS-13, macos-13-xlarge, ubuntu-22.04 ]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Set up Homebrew
@@ -22,15 +22,11 @@ jobs:
 
       - name: Cache Homebrew Bundler RubyGems
         id: cache
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: ${{ steps.set-up-homebrew.outputs.gems-path }}
           key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
           restore-keys: ${{ runner.os }}-rubygems-
-
-      - name: Install Homebrew Bundler RubyGems
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: brew install-bundler-gems
 
       - run: brew test-bot --only-cleanup-before
 
