@@ -10,6 +10,7 @@ class Salt < Formula
 
   bottle do
     root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/salt-3006.4"
+    sha256 cellar: :any,                 arm64_sonoma: "306d80330bf6d06532066ce196b2f2d90d4d6d34b0e55f67ba51ec656faa8bfd"
     sha256 cellar: :any,                 ventura:      "f33f66c2266ab2323ea08696f2a6e205a447a3f9d1539fed841e82acaab58b39"
     sha256 cellar: :any,                 monterey:     "515f48e403ed89f58a62ad4000a59ed65924f61d6910abffef5e9424ad86d00f"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "ebb4e2d7872626c3460bd4f6d92a3d05977609c3d3f9d71cc5ba5538b976e30a"
