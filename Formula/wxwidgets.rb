@@ -37,7 +37,7 @@ class Wxwidgets < Formula
     depends_on "mesa-glu"
   end
 
-  patch :p0, :DATA if build.with?("enable-abort")
+  patch :DATA if build.with?("enable-abort")
 
   def install
     # Remove all bundled libraries excluding `nanosvg` which isn't available as formula
