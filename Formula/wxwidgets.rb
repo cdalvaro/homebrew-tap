@@ -12,12 +12,10 @@ class Wxwidgets < Formula
   end
 
   bottle do
-    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/wxwidgets-3.2.3"
-    sha256 cellar: :any,                 arm64_ventura: "23b6d21ce5c67014fb7bb6cb68e2142b6f32d265ec0751dab56e914240018d3c"
-    sha256 cellar: :any,                 ventura:       "854cdfb36954bc719c92c4e181b024df064bb0d9acfbc1ac95b70405b0d0aaef"
-    sha256 cellar: :any,                 monterey:      "0b67dc2780c21d4d7faf514bb56a97143de727df10a283f5553833c6de4aa705"
-    sha256 cellar: :any,                 big_sur:       "ad21cfea7a4a42e4cae21af3517f3017d90d12a6d45c8c70f60f0aa322ddd218"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7472744d0182364e665dde646d6b20f9302d628e73e62fdd2bc960d4f05388d"
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/wxwidgets-3.2.4"
+    sha256 cellar: :any,                 ventura:      "41e27b329a45192e790f14c795058d4d4c433f973e644ad9db65ba40315d4087"
+    sha256 cellar: :any,                 monterey:     "492221be386762da96c3d9f27f431eac72eab0ac9b3fc4971a91d80c0b2d69f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1ddae289be426a2ec243cbb6dfd7cbedb692b3f94bb3201931f6fafd5d5d3347"
   end
 
   option "with-enable-abort", "apply patch patch-make-public-enable-abort"
