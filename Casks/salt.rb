@@ -53,7 +53,10 @@ cask "salt" do
               "com.saltstack.salt",
             ],
             launchctl: [
-              "com.saltstack.salt.*",
+              "com.saltstack.salt.api",
+              "com.saltstack.salt.master",
+              "com.saltstack.salt.minion",
+              "com.saltstack.salt.syndic",
             ]
 
   zap trash: [
