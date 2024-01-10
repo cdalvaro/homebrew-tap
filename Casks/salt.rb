@@ -7,12 +7,12 @@ cask "salt" do
 
   url "https://repo.saltproject.io/salt/py3/macos/minor/#{version}/salt-#{version}-py3-#{arch}.pkg"
   name "Salt"
-  desc "World's fastest, most intelligent and scalable automation engine"
+  desc "Automation and infrastructure management engine"
   homepage "https://saltproject.io/"
 
   livecheck do
     url "https://repo.saltproject.io/salt/py3/macos/latest"
-    regex(/salt-(\d+(?:\.\d+)?(?:-\d+)?)-py3-#{arch}\.pkg/)
+    regex(/salt[._-]v?(\d+(?:\.\d+)+)-py3-#{arch}\.pkg/)
   end
 
   conflicts_with formula: "salt"
@@ -30,6 +30,7 @@ cask "salt" do
 
       xml["EnvironmentVariables"] = {} unless xml.key?("EnvironmentVariables")
       xml["EnvironmentVariables"]["HOMEBREW_PREFIX"] = HOMEBREW_PREFIX.to_s
+      xml["EnvironmentVariables"]["HOME"] ||= "/var/root"
 
       path = xml["EnvironmentVariables"]["PATH"] || "/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       path = "#{HOMEBREW_PREFIX}/bin:#{path}" unless path.split(":").include?("#{HOMEBREW_PREFIX}/bin")
@@ -49,36 +50,26 @@ cask "salt" do
     end
   end
 
-  uninstall pkgutil:   [
-              "com.saltstack.salt",
-            ],
-            launchctl: [
+  uninstall launchctl: [
               "com.saltstack.salt.api",
               "com.saltstack.salt.master",
               "com.saltstack.salt.minion",
               "com.saltstack.salt.syndic",
+            ],
+            pkgutil:   [
+              "com.saltstack.salt",
             ]
 
-  zap trash: [
-    "/etc/salt",
-  ]
+  zap trash: "/etc/salt"
 
   def caveats
     <<~CAVEATS
-      After installation, configure the Salt minion ID, and the Salt master location,
-      replacing the placeholder text with custom information:
+      Included services:
 
-      sudo salt-config -i [MINION_ID] -m [SALT_MASTER_HOST]
-
-      See Configure the Salt master and minions for more configuration options:
-      https://docs.saltproject.io/salt/install-guide/en/latest/topics/configure-master-minion.html
-
-      Load services you need:
-
-      sudo launchctl load -w /Library/LaunchDaemons/com.saltstack.salt.api
-      sudo launchctl load -w /Library/LaunchDaemons/com.saltstack.salt.master
-      sudo launchctl load -w /Library/LaunchDaemons/com.saltstack.salt.minion
-      sudo launchctl load -w /Library/LaunchDaemons/com.saltstack.salt.syndic
+      sudo launchctl load -w /Library/LaunchDaemons/com.saltstack.salt.api.plist
+      sudo launchctl load -w /Library/LaunchDaemons/com.saltstack.salt.master.plist
+      sudo launchctl load -w /Library/LaunchDaemons/com.saltstack.salt.minion.plist
+      sudo launchctl load -w /Library/LaunchDaemons/com.saltstack.salt.syndic.plist
     CAVEATS
   end
 end
