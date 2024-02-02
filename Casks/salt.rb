@@ -1,4 +1,6 @@
 module Utils
+  extend SystemCommand::Mixin
+
   def self.patch_plist(daemon)
     plist_file = "/Library/LaunchDaemons/com.saltstack.salt.#{daemon}.plist"
     xml, = system_command "plutil",
