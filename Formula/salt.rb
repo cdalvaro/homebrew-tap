@@ -9,11 +9,8 @@ class Salt < Formula
   head "https://github.com/saltstack/salt.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/salt-3006.5"
-    sha256 cellar: :any,                 arm64_sonoma: "5c0f5fcbc80e03cbe3557cb2c7e026a91023082dae1b86fcb792d788e7c706a5"
-    sha256 cellar: :any,                 ventura:      "e4640165c2648a5548a21458bb4db9f7fb548eea994cf8150b2c02907639e6cd"
-    sha256 cellar: :any,                 monterey:     "f58838fdda967bc2902022fe8d8103966029def9afb8fdfdabe6d3c25cce61bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5a65282991778877cd799cb8c06fed299e89420e694f560c5b046d406451eeb1"
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/salt-3006.6"
+    sha256 cellar: :any, ventura: "8fa242fb21823679ef261faeac8fd16392be23eee86233059336e5b8ad8c6501"
   end
 
   depends_on "rust" => :build
