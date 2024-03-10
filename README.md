@@ -40,7 +40,7 @@ You can directly type `brew install cdalvaro/tap/<formula>` to install the speci
 ### `catboost-cli`
 
 [![Badge](https://img.shields.io/badge/catboost-catboost-grey?logo=github&color=181717)](https://github.com/catboost/catboost)
-[![Badge](https://img.shields.io/badge/Formula-catboost--cli-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/catboost-cli.rb)
+[![Badge](https://img.shields.io/badge/Formula-catboost--cli-grey?logo=ruby&color=FBB040&logoColor=CC342D)](/Formula/catboost-cli.rb)
 
 Fast, scalable, high performance Gradient Boosting on Decision Trees cli tool.
 
@@ -53,7 +53,7 @@ This formula is not available in homebrew-core repository because it does not me
 ### `cpp-jwt`
 
 [![Badge](https://img.shields.io/badge/arun11299-cpp--jwt-grey?logo=github&color=181717)](https://github.com/arun11299/cpp-jwt)
-[![Badge](https://img.shields.io/badge/Formula-cpp--jwt-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/cpp-jwt.rb)
+[![Badge](https://img.shields.io/badge/Formula-cpp--jwt-grey?logo=ruby&color=FBB040&logoColor=CC342D)](/Formula/cpp-jwt.rb)
 
 JSON Web Token library for C++.
 
@@ -66,7 +66,7 @@ This is a header only C++ library, so it is not available in homebrew-core. But,
 ### `cpp-plotly`
 
 [![Badge](https://img.shields.io/badge/pablrod-cppplotly-grey?logo=github&color=181717)](https://github.com/pablrod/cppplotly)
-[![Badge](https://img.shields.io/badge/Formula-cpp--plotly-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/cpp-plotly.rb)
+[![Badge](https://img.shields.io/badge/Formula-cpp--plotly-grey?logo=ruby&color=FBB040&logoColor=CC342D)](/Formula/cpp-plotly.rb)
 
 Generate html/javascript charts from C++ data using javascript library plotly.js.
 
@@ -79,7 +79,7 @@ This is a header only C++ library, so it is not available in homebrew-core. But,
 ### `cpp-zmq`
 
 [![Badge](https://img.shields.io/badge/zeromq-cppzmq-grey?logo=github&color=181717)](https://github.com/zeromq/cppzmq)
-[![Badge](https://img.shields.io/badge/Formula-cpp--zmq-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/cpp-zmq.rb)
+[![Badge](https://img.shields.io/badge/Formula-cpp--zmq-grey?logo=ruby&color=FBB040&logoColor=CC342D)](/Formula/cpp-zmq.rb)
 
 Header-only C++ binding for libzmq.
 
@@ -92,7 +92,7 @@ This is a header only C++ library, so it is not available in homebrew-core. But,
 ### `howard-hinnant-date`
 
 [![Badge](https://img.shields.io/badge/HowardHinnant-date-grey?logo=github&color=181717)](https://github.com/HowardHinnant/date)
-[![Badge](https://img.shields.io/badge/Formula-howard--hinnant--date-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/howard-hinnant-date.rb)
+[![Badge](https://img.shields.io/badge/Formula-howard--hinnant--date-grey?logo=ruby&color=FBB040&logoColor=CC342D)](/Formula/howard-hinnant-date.rb)
 
 A date and time library based on the C++11/14/17 \<chrono\> header.
 
@@ -105,7 +105,7 @@ This formula [is available](https://github.com/Homebrew/homebrew-core/blob/maste
 ### `json11`
 
 [![Badge](https://img.shields.io/badge/dropbox-json11-grey?logo=github&color=181717)](https://github.com/dropbox/json11)
-[![Badge](https://img.shields.io/badge/Formula-json11-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/json11.rb)
+[![Badge](https://img.shields.io/badge/Formula-json11-grey?logo=ruby&color=FBB040&logoColor=CC342D)](/Formula/json11.rb)
 
 A tiny JSON library for C++11.
 
@@ -118,7 +118,7 @@ This is a header only C++ library and the project was archived on March 2020, so
 ### `salt`
 
 [![Badge](https://img.shields.io/badge/saltstack-salt-grey?logo=github&color=181717)](https://github.com/saltstack/salt)
-[![Badge](https://img.shields.io/badge/Formula-salt-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/salt.rb)
+[![Badge](https://img.shields.io/badge/Formula-salt-grey?logo=ruby&color=FBB040&logoColor=CC342D)](/Formula/salt.rb)
 
 Software to automate the management and configuration of any infrastructure or application at scale.
 
@@ -131,7 +131,7 @@ Salt now uses a vendored python, so [it was removed](https://github.com/Homebrew
 ### `simple-web-server`
 
 [![Badge](https://img.shields.io/badge/eidheim-Simple--Web--Server-grey?logo=gitlab&color=FC6D26)](https://gitlab.com/eidheim/Simple-Web-Server)
-[![Badge](https://img.shields.io/badge/Formula-simple--web--server-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/simple-web-server.rb)
+[![Badge](https://img.shields.io/badge/Formula-simple--web--server-grey?logo=ruby&color=FBB040&logoColor=CC342D)](/Formula/simple-web-server.rb)
 
 A very simple, fast, multithreaded, platform independent HTTP and HTTPS server and client library implemented using C++11 and Boost.Asio.
 
@@ -142,7 +142,7 @@ brew install cdalvaro/tap/simple-web-server
 ### `wxwidgets`
 
 [![Badge](https://img.shields.io/badge/wxWidgets-wxWidgets-grey?logo=github&color=181717)](https://github.com/wxWidgets/wxWidgets)
-[![Badge](https://img.shields.io/badge/Formula-wxwidgets-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/wxwidgets.rb)
+[![Badge](https://img.shields.io/badge/Formula-wxwidgets-grey?logo=ruby&color=FBB040&logoColor=CC342D)](/Formula/wxwidgets.rb)
 
 Cross-Platform GUI Library.
 
