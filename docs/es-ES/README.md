@@ -1,4 +1,4 @@
-# <img src="assets/homebrew.svg" height=24pt> Homebrew Custom Tap
+# <img src="/assets/homebrew.svg" height=24pt> Homebrew Custom Tap
 
 <p align="center">
   <a href="#"><img src="/assets/homebrew-tap-banner.png" height=320px></a>
@@ -37,7 +37,7 @@ Puedes introducir directamente `brew install cdalvaro/tap/<formula>` para instal
   </ul>
 </details>
 
-#### `catboost-cli`
+### `catboost-cli`
 
 [![Badge](https://img.shields.io/badge/catboost-catboost-grey?logo=github&color=181717)](https://github.com/catboost/catboost)
 [![Badge](https://img.shields.io/badge/Formula-catboost--cli-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/catboost-cli.rb)
@@ -50,7 +50,7 @@ brew install cdalvaro/tap/catboost-cli
 
 Esta fórmula no está disponible en el repositorio homebrew-core porque no cumple con los criterios de aceptación. Consulta [Homebrew/homebrew-core#140960](https://github.com/Homebrew/homebrew-core/pull/140960#issuecomment-1704292670) para más información.
 
-#### `cpp-jwt`
+### `cpp-jwt`
 
 [![Badge](https://img.shields.io/badge/arun11299-cpp--jwt-grey?logo=github&color=181717)](https://github.com/arun11299/cpp-jwt)
 [![Badge](https://img.shields.io/badge/Formula-cpp--jwt-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/cpp-jwt.rb)
@@ -63,7 +63,7 @@ brew install cdalvaro/tap/cpp-jwt
 
 Al tratarse de una librería de C++ compuesta únicamente por archivos de cabecera, no cumple los criterios de aceptación de homebrew-core. Pero por comodidad, está disponible en este tap.
 
-#### `cpp-plotly`
+### `cpp-plotly`
 
 [![Badge](https://img.shields.io/badge/pablrod-cppplotly-grey?logo=github&color=181717)](https://github.com/pablrod/cppplotly)
 [![Badge](https://img.shields.io/badge/Formula-cpp--plotly-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/cpp-plotly.rb)
@@ -76,7 +76,7 @@ brew install cdalvaro/tap/cpp-plotly
 
 Al tratarse de una librería de C++ compuesta únicamente por archivos de cabecera, no cumple los criterios de aceptación de homebrew-core. Pero por comodidad, está disponible en este tap.
 
-#### `cpp-zmq`
+### `cpp-zmq`
 
 [![Badge](https://img.shields.io/badge/zeromq-cppzmq-grey?logo=github&color=181717)](https://github.com/zeromq/cppzmq)
 [![Badge](https://img.shields.io/badge/Formula-cpp--zmq-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/cpp-zmq.rb)
@@ -89,7 +89,7 @@ brew install cdalvaro/tap/cpp-zmq
 
 Al tratarse de una librería de C++ compuesta únicamente por archivos de cabecera, no cumple los criterios de aceptación de homebrew-core. Pero por comodidad, está disponible en este tap.
 
-#### `howard-hinnant-date`
+### `howard-hinnant-date`
 
 [![Badge](https://img.shields.io/badge/HowardHinnant-date-grey?logo=github&color=181717)](https://github.com/HowardHinnant/date)
 [![Badge](https://img.shields.io/badge/Formula-howard--hinnant--date-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/howard-hinnant-date.rb)
@@ -102,7 +102,7 @@ brew install cdalvaro/tap/howard-hinnant-date
 
 Esta fórmula [está disponible](https://github.com/Homebrew/homebrew-core/blob/master/Formula/h/howard-hinnant-date.rb) en el repositorio homebrew-core. Pero he añadido la opción `--without-string-view` para deshabilitar el uso de `std::string_view` en la librería. Esto se debe a que `std::string_view` no está disponible en versiones anteriores a C++17.
 
-#### `json11`
+### `json11`
 
 [![Badge](https://img.shields.io/badge/dropbox-json11-grey?logo=github&color=181717)](https://github.com/dropbox/json11)
 [![Badge](https://img.shields.io/badge/Formula-json11-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/json11.rb)
@@ -115,7 +115,7 @@ brew install cdalvaro/tap/json11
 
 Se trata de una librería compuesta únicamente por archivos de cabecera y además el proyecto fue archivado en marzo de 2020, por lo que no está disponible en homebrew-core.
 
-#### `salt`
+### `salt`
 
 [![Badge](https://img.shields.io/badge/saltstack-salt-grey?logo=github&color=181717)](https://github.com/saltstack/salt)
 [![Badge](https://img.shields.io/badge/Formula-salt-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/salt.rb)
@@ -128,7 +128,7 @@ brew install cdalvaro/tap/salt
 
 Salt usa su propia versión de python, por lo que [fue eliminado](https://github.com/Homebrew/homebrew-core/pull/157157) del repository homebrew-core. Pero lo mantengo actualizado por comodidad para instalarlo en mi NAS de Synology.
 
-#### `simple-web-server`
+### `simple-web-server`
 
 [![Badge](https://img.shields.io/badge/eidheim-Simple--Web--Server-grey?logo=gitlab&color=FC6D26)](https://gitlab.com/eidheim/Simple-Web-Server)
 [![Badge](https://img.shields.io/badge/Formula-simple--web--server-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/simple-web-server.rb)
@@ -139,7 +139,7 @@ Servidor y cliente HTTP y HTTPS muy simple, rápido, multihilo e independiente d
 brew install cdalvaro/tap/simple-web-server
 ```
 
-#### `wxwidgets`
+### `wxwidgets`
 
 [![Badge](https://img.shields.io/badge/wxWidgets-wxWidgets-grey?logo=github&color=181717)](https://github.com/wxWidgets/wxWidgets)
 [![Badge](https://img.shields.io/badge/Formula-wxwidgets-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/wxwidgets.rb)
@@ -152,7 +152,7 @@ brew install cdalvaro/tap/wxwidgets
 
 Esta fórmula [está disponible](https://github.com/Homebrew/homebrew-core/blob/master/Formula/w/wxwidgets.rb) en el repositorio homebrew-core. Pero he añadido la opción `--with-enable-abort` para permitir la cancelación de una tarea en ejecución utilizando un `wxGenericProgressDialog`.
 
-## Available casks
+## Casks disponibles
 
 <details>
   <summary>Lista de casks</summary>
@@ -162,7 +162,7 @@ Esta fórmula [está disponible](https://github.com/Homebrew/homebrew-core/blob/
   </ul>
 </details>
 
-#### `autofirma`
+### `autofirma`
 
 [![Badge](https://img.shields.io/badge/Government%20of%20Spain-autofirma-grey?color=70130B)](https://firmaelectronica.gob.es/Home/Descargas.html)
 [![Badge](https://img.shields.io/badge/Cask-autofirma-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Cask/autofirma.rb)
@@ -177,7 +177,7 @@ brew install --cask cdalvaro/tap/autofirma
 
 Este cask [está disponible](https://github.com/Homebrew/homebrew-cask/blob/master/Casks/a/autofirma.rb) en el repositorio homebrew-cask. Sin embargo, el script postflight de desinstalación no funciona correctamente, por lo que lo he corregido en este tap. Intenté corregirlo en el repositorio principal, pero [no fue aceptado](https://github.com/Homebrew/homebrew-cask/pull/151676#issuecomment-1687230223).
 
-#### `salt`
+### `salt`
 
 [![Badge](https://img.shields.io/badge/saltstack-salt-grey?logo=saltproject&color=57BCAD)](https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/macos.html)
 [![Badge](https://img.shields.io/badge/Cask-salt-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Cask/salt.rb)

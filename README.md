@@ -1,4 +1,4 @@
-# <img src="assets/homebrew.svg" height=24pt> Homebrew Custom Tap
+# <img src="/assets/homebrew.svg" height=24pt> Homebrew Custom Tap
 
 <p align="center">
   <a href="#"><img src="/assets/homebrew-tap-banner.png" height=320px></a>
@@ -37,7 +37,7 @@ You can directly type `brew install cdalvaro/tap/<formula>` to install the speci
   </ul>
 </details>
 
-#### `catboost-cli`
+### `catboost-cli`
 
 [![Badge](https://img.shields.io/badge/catboost-catboost-grey?logo=github&color=181717)](https://github.com/catboost/catboost)
 [![Badge](https://img.shields.io/badge/Formula-catboost--cli-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/catboost-cli.rb)
@@ -50,7 +50,7 @@ brew install cdalvaro/tap/catboost-cli
 
 This formula is not available in homebrew-core repository because it does not meet the acceptance criteria. See [Homebrew/homebrew-core#140960](https://github.com/Homebrew/homebrew-core/pull/140960#issuecomment-1704292670) for more information.
 
-#### `cpp-jwt`
+### `cpp-jwt`
 
 [![Badge](https://img.shields.io/badge/arun11299-cpp--jwt-grey?logo=github&color=181717)](https://github.com/arun11299/cpp-jwt)
 [![Badge](https://img.shields.io/badge/Formula-cpp--jwt-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/cpp-jwt.rb)
@@ -63,7 +63,7 @@ brew install cdalvaro/tap/cpp-jwt
 
 This is a header only C++ library, so it is not available in homebrew-core. But, for convenience, it is available in this tap.
 
-#### `cpp-plotly`
+### `cpp-plotly`
 
 [![Badge](https://img.shields.io/badge/pablrod-cppplotly-grey?logo=github&color=181717)](https://github.com/pablrod/cppplotly)
 [![Badge](https://img.shields.io/badge/Formula-cpp--plotly-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/cpp-plotly.rb)
@@ -76,7 +76,7 @@ brew install cdalvaro/tap/cpp-plotly
 
 This is a header only C++ library, so it is not available in homebrew-core. But, for convenience, it is available in this tap.
 
-#### `cpp-zmq`
+### `cpp-zmq`
 
 [![Badge](https://img.shields.io/badge/zeromq-cppzmq-grey?logo=github&color=181717)](https://github.com/zeromq/cppzmq)
 [![Badge](https://img.shields.io/badge/Formula-cpp--zmq-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/cpp-zmq.rb)
@@ -89,7 +89,7 @@ brew install cdalvaro/tap/cpp-zmq
 
 This is a header only C++ library, so it is not available in homebrew-core. But, for convenience, it is available in this tap.
 
-#### `howard-hinnant-date`
+### `howard-hinnant-date`
 
 [![Badge](https://img.shields.io/badge/HowardHinnant-date-grey?logo=github&color=181717)](https://github.com/HowardHinnant/date)
 [![Badge](https://img.shields.io/badge/Formula-howard--hinnant--date-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/howard-hinnant-date.rb)
@@ -102,7 +102,7 @@ brew install cdalvaro/tap/howard-hinnant-date
 
 This formula [is available](https://github.com/Homebrew/homebrew-core/blob/master/Formula/h/howard-hinnant-date.rb) at homebrew-core repository. But I have added the option `--without-string-view` to disable the use of `std::string_view` in the library. This is because `std::string_view` is not available in versions earlier than C++17.
 
-#### `json11`
+### `json11`
 
 [![Badge](https://img.shields.io/badge/dropbox-json11-grey?logo=github&color=181717)](https://github.com/dropbox/json11)
 [![Badge](https://img.shields.io/badge/Formula-json11-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/json11.rb)
@@ -115,7 +115,7 @@ brew install cdalvaro/tap/json11
 
 This is a header only C++ library and the project was archived on March 2020, so it is not available in homebrew-core.
 
-#### `salt`
+### `salt`
 
 [![Badge](https://img.shields.io/badge/saltstack-salt-grey?logo=github&color=181717)](https://github.com/saltstack/salt)
 [![Badge](https://img.shields.io/badge/Formula-salt-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/salt.rb)
@@ -128,7 +128,7 @@ brew install cdalvaro/tap/salt
 
 Salt now uses a vendored python, so [it was removed](https://github.com/Homebrew/homebrew-core/pull/157157) from homebrew-core. But I keep it updated for convenience to install it on my Synology NAS.
 
-#### `simple-web-server`
+### `simple-web-server`
 
 [![Badge](https://img.shields.io/badge/eidheim-Simple--Web--Server-grey?logo=gitlab&color=FC6D26)](https://gitlab.com/eidheim/Simple-Web-Server)
 [![Badge](https://img.shields.io/badge/Formula-simple--web--server-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/simple-web-server.rb)
@@ -139,7 +139,7 @@ A very simple, fast, multithreaded, platform independent HTTP and HTTPS server a
 brew install cdalvaro/tap/simple-web-server
 ```
 
-#### `wxwidgets`
+### `wxwidgets`
 
 [![Badge](https://img.shields.io/badge/wxWidgets-wxWidgets-grey?logo=github&color=181717)](https://github.com/wxWidgets/wxWidgets)
 [![Badge](https://img.shields.io/badge/Formula-wxwidgets-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Formula/wxwidgets.rb)
@@ -162,7 +162,7 @@ This formula [is available](https://github.com/Homebrew/homebrew-core/blob/maste
   </ul>
 </details>
 
-#### `autofirma`
+### `autofirma`
 
 [![Badge](https://img.shields.io/badge/Government%20of%20Spain-autofirma-grey?color=70130B)](https://firmaelectronica.gob.es/Home/Descargas.html)
 [![Badge](https://img.shields.io/badge/Cask-autofirma-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Cask/autofirma.rb)
@@ -177,7 +177,7 @@ brew install --cask cdalvaro/tap/autofirma
 
 This cask [is available](https://github.com/Homebrew/homebrew-cask/blob/master/Casks/a/autofirma.rb) at homebrew-cask repository. However, the uninstall postflight script is not working properly, so I've fixed it in this tap. I tried to fix it in the main repository, but [it was not accepted](https://github.com/Homebrew/homebrew-cask/pull/151676#issuecomment-1687230223).
 
-#### `salt`
+### `salt`
 
 [![Badge](https://img.shields.io/badge/saltstack-salt-grey?logo=saltproject&color=57BCAD)](https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/macos.html)
 [![Badge](https://img.shields.io/badge/Cask-salt-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Cask/salt.rb)
@@ -199,7 +199,7 @@ The patch adds:
 - `PATH` env variable containing the `HOMEBREW_PREFIX` bin directory.
 - `HOME` env variable containing the `root` home directory, to avoid an issue with `brew` command.
 
-## More Documentation
+## More documentation
 
 More documentation is available at: [Homebrew - Taps](https://docs.brew.sh/Taps)
 
