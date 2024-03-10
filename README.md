@@ -1,10 +1,12 @@
 # <img src="assets/homebrew.svg" height=24pt> Homebrew Custom Tap
 
 <p align="center">
-  <a href="#"><img src="assets/homebrew-tap-banner.png" height=320px></a>
+  <a href="#"><img src="/assets/homebrew-tap-banner.png" height=320px></a>
 </p>
 
 [![hombrew tap cdalvaro][homebrew_tap_badge]][homebrew_tap_url]
+
+Other languages: [🇪🇸 Español](/docs/es-ES/README.md)
 
 [@cdalvaro](https://github.com/cdalvaro)'s custom formulae for the [Homebrew package manager](https://brew.sh).
 
@@ -165,15 +167,15 @@ This formula [is available](https://github.com/Homebrew/homebrew-core/blob/maste
 [![Badge](https://img.shields.io/badge/Government%20of%20Spain-autofirma-grey?color=70130B)](https://firmaelectronica.gob.es/Home/Descargas.html)
 [![Badge](https://img.shields.io/badge/Cask-autofirma-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Cask/autofirma.rb)
 
-Aplicación de firma electrónica desarrollada por el Ministerio de Asuntos Económicos y Transformación Digital.
+Application for electronic signature developed by the Ministry of Economic Affairs and Digital Transformation of Spain.
 
-Al poder ser ejecutada desde el navegador, permite la firma en páginas de Administración Electrónica cuando se requiere la firma en un procedimiento administrativo.
+This application can be used from the browser, allowing the signature on electronic administration pages when a signature is required in an administrative procedure.
 
 ```sh
 brew install --cask cdalvaro/tap/autofirma
 ```
 
-This cask [is available](https://github.com/Homebrew/homebrew-cask/blob/master/Casks/a/autofirma.rb) at homebrew-cask repository. However, the uninstall postflight script is not working properly, so I haved fixed it in this tap. I tried to fix it in the main repository, but [it was not accepted](https://github.com/Homebrew/homebrew-cask/pull/151676#issuecomment-1687230223).
+This cask [is available](https://github.com/Homebrew/homebrew-cask/blob/master/Casks/a/autofirma.rb) at homebrew-cask repository. However, the uninstall postflight script is not working properly, so I've fixed it in this tap. I tried to fix it in the main repository, but [it was not accepted](https://github.com/Homebrew/homebrew-cask/pull/151676#issuecomment-1687230223).
 
 #### `salt`
 
