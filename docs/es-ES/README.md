@@ -8,7 +8,7 @@
 
 Otros idiomas: [🇺🇸 English](/docs/en-US/README.md)
 
-Fórmulas personalizadas de [@cdalvaro](https://github.com/cdalvaro) para el [gesto de paquetes Homebrew](https://brew.sh).
+Fórmulas personalizadas de [@cdalvaro](https://github.com/cdalvaro) para el [gestor de paquetes Homebrew](https://brew.sh).
 
 ## Qué es esto?
 
