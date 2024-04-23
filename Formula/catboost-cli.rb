@@ -1,9 +1,25 @@
+require "yaml"
+
+module ::Utils
+  def self.add_clang_version_to_conan_settings(version)
+    system "conan", "config", "init"
+    conan_home = safe_popen_read("conan", "config", "home").strip
+    settings_file = "#{conan_home}/settings.yml"
+    settings = YAML.load_file(settings_file, aliases: true)
+    clang_versions = settings["compiler"]["clang"]["version"]
+    unless clang_versions.include?(version)
+      clang_versions << version
+      File.write(settings_file, YAML.dump(settings))
+    end
+  end
+end
+
 class CatboostCli < Formula
   desc "Fast, scalable, high performance Gradient Boosting on Decision Trees cli tool"
   homepage "https://catboost.ai"
   url "https://github.com/catboost/catboost.git",
-      tag:      "v1.2.3",
-      revision: "fe0941b208f9c392ce788c314463b6816d335c6a"
+      tag:      "v1.2.5",
+      revision: "2605fe627ed4271aa8a87ff3564fb68de5f116f0"
   license "Apache-2.0"
   head "https://github.com/catboost/catboost.git", branch: "master"
 
@@ -28,6 +44,8 @@ class CatboostCli < Formula
   end
 
   def install
+    Utils.add_clang_version_to_conan_settings(Formula["llvm"].version.major.to_s) if ENV.key?("GITHUB_ACTIONS")
+
     args = [
       "-DCATBOOST_COMPONENTS=app",
       "-DHAVE_CUDA=NO",
