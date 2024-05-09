@@ -66,7 +66,7 @@ class CppJwt < Formula
     custom_args << "-DCPP_JWT_USE_VENDORED_NLOHMANN_JSON" if build.without? "nlohmann-json"
 
     system ENV.cxx, "-I#{include}", "-std=c++14",
-           "-I#{Formula["openssl@1.1"].include}",
+           "-I#{Formula["openssl"].include}",
            *custom_args,
            "test.cpp", "-o", "test"
     system "./test"
