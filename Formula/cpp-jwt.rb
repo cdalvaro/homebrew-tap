@@ -13,9 +13,11 @@ class CppJwt < Formula
   end
 
   bottle do
-    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/cpp-jwt-1.4"
-    sha256 cellar: :any_skip_relocation, big_sur:  "ed7a9f01766be9c176a6826100e14df3ecf7aa8e1d0bd1049a453916c8e9a0c1"
-    sha256 cellar: :any_skip_relocation, catalina: "71147f9332cc2a6ffe171f4d7e84937766e3bd7f89bc0c830da2c9f1a91e9c95"
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/cpp-jwt-1.4_1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "53c873902fd5e91c4a78fff61b329de72d8f97e1d4334e07a266ec3d101de421"
+    sha256 cellar: :any_skip_relocation, ventura:      "a0f64f16d5543ae43b239f173339f1342be4a09812ceeac87a542cd95ce14ce1"
+    sha256 cellar: :any_skip_relocation, monterey:     "282fbd87497e0da2bb36ac9b47d4efcfebe8293c7fe571f162fa0d89e451d8aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a01009d1d710c3a31789859cdce3788d2ab9228d67379634be6efd6a76cfdd4c"
   end
 
   option "with-nlohmann-json", "Use nlohmann-json library instead of the vendored one"
