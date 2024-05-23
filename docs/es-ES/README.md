@@ -1,8 +1,10 @@
 # <img src="/assets/homebrew.svg" height=24pt> Homebrew Custom Tap
 
-<p align="center">
-  <a href="#"><img src="/assets/homebrew-tap-banner.png" height=320px></a>
-</p>
+<picture align="center">
+  <source media="(prefers-color-scheme: dark)" srcset="/assets/homebrew-tap-banner-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="/assets/homebrew-tap-banner-light.png">
+  <img alt="cdalvaro's Homebrew tap banner." src="/assets/homebrew-tap-banner-light.png">
+</picture>
 
 [![hombrew tap cdalvaro][homebrew_tap_badge]][homebrew_tap_url]
 
