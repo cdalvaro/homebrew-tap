@@ -1,14 +1,14 @@
 class Wxwidgets < Formula
-  desc "Cross-platform C++ GUI toolkit (wxWidgets for macOS)"
+  desc "Cross-platform C++ GUI toolkit"
   homepage "https://www.wxwidgets.org"
-  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.4/wxWidgets-3.2.4.tar.bz2"
-  sha256 "0640e1ab716db5af2ecb7389dbef6138d7679261fbff730d23845ba838ca133e"
+  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.5/wxWidgets-3.2.5.tar.bz2"
+  sha256 "0ad86a3ad3e2e519b6a705248fc9226e3a09bbf069c6c692a02acf7c2d1c6b51"
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
   head "https://github.com/wxWidgets/wxWidgets.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
   end
 
   bottle do
@@ -18,7 +18,7 @@ class Wxwidgets < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "1ddae289be426a2ec243cbb6dfd7cbedb692b3f94bb3201931f6fafd5d5d3347"
   end
 
-  option "with-enable-abort", "apply patch patch-make-public-enable-abort"
+  option "with-enable-abort", "Allows to abort a wxProgressDialog"
 
   depends_on "pkg-config" => :build
   depends_on "jpeg-turbo"
