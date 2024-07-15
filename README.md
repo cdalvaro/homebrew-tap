@@ -167,7 +167,7 @@ This formula [is available](https://github.com/Homebrew/homebrew-core/blob/maste
 ### `autofirma`
 
 [![Badge](https://img.shields.io/badge/Government%20of%20Spain-autofirma-grey?color=70130B)](https://firmaelectronica.gob.es/Home/Descargas.html)
-[![Badge](https://img.shields.io/badge/Cask-autofirma-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Cask/autofirma.rb)
+[![Badge](https://img.shields.io/badge/Cask-autofirma-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Casks/autofirma.rb)
 
 Application for electronic signature developed by the Ministry of Economic Affairs and Digital Transformation of Spain.
 
@@ -182,7 +182,7 @@ This cask [is available](https://github.com/Homebrew/homebrew-cask/blob/master/C
 ### `salt`
 
 [![Badge](https://img.shields.io/badge/saltstack-salt-grey?logo=saltproject&color=57BCAD)](https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/macos.html)
-[![Badge](https://img.shields.io/badge/Cask-salt-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Cask/salt.rb)
+[![Badge](https://img.shields.io/badge/Cask-salt-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Casks/salt.rb)
 
 Software to automate the management and configuration of any infrastructure or application at scale.
 
