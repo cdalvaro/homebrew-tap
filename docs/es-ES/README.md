@@ -28,6 +28,7 @@ Puedes introducir directamente `brew install cdalvaro/tap/<formula>` para instal
   <summary>Lista de fórmulas</summary>
   <ul>
     <li><a href="#catboost-cli">catboost-cli</a></li>
+    <li><a href="#clang-format@14">clang-format@14</a></li>
     <li><a href="#cpp-jwt">cpp-jwt</a></li>
     <li><a href="#cpp-plotly">cpp-plotly</a></li>
     <li><a href="#cpp-zmq">cpp-zmq</a></li>
@@ -51,6 +52,19 @@ brew install cdalvaro/tap/catboost-cli
 ```
 
 Esta fórmula no está disponible en el repositorio homebrew-core porque no cumple con los criterios de aceptación. Consulta [Homebrew/homebrew-core#140960](https://github.com/Homebrew/homebrew-core/pull/140960#issuecomment-1704292670) para más información.
+
+### `clang-format@14`
+
+[![Badge](https://img.shields.io/badge/llvm-llvm--project-grey?logo=github&color=181717)](https://github.com/llvm/llvm-project)
+[![Badge](https://img.shields.io/badge/Formula-clang--format@14-grey?logo=ruby&color=FBB040&logoColor=CC342D)](/Formula/clang-format@14.rb)
+
+Herramientas para formatear C, C++, Obj-C, Java, JavaScript, TypeScript.
+
+Esta fórmula instala: `clang-format-14` y `git-clang-format-14` para evitar colisiones con las últimas versiones.
+
+```sh
+brew install cdalvaro/tap/clang-format@14
+```
 
 ### `cpp-jwt`
 
