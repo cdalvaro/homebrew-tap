@@ -11,6 +11,14 @@ class ClangFormatAT14 < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/clang-format@14-14.0.6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "c42b9a057f2dd44e0236ef3038895785d1103fbfbd92d47441df369e1efaff1a"
+    sha256 cellar: :any_skip_relocation, ventura:      "a6edc464bca70ccdffc602d427a1a2cd92abb5cce6b968aa4c098f40f1f1cd81"
+    sha256 cellar: :any_skip_relocation, monterey:     "e1d9b7db2bc019ea004e51508a8913d5b4a5c71a30c6ead8e74bff00258bfeeb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "aa609dcd859a9dc046a2c48858fde5ab8cf792632781c509fef0f79639637457"
+  end
+
   depends_on "cmake" => :build
 
   uses_from_macos "libxml2"
