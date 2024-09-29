@@ -18,8 +18,8 @@ class CatboostCli < Formula
   desc "Fast, scalable, high performance Gradient Boosting on Decision Trees cli tool"
   homepage "https://catboost.ai"
   url "https://github.com/catboost/catboost.git",
-      tag:      "v1.2.5",
-      revision: "2605fe627ed4271aa8a87ff3564fb68de5f116f0"
+    tag:      "v1.2.7",
+    revision: "f903943a8cd903a117c3d3c8421cc72d3910562c"
   license "Apache-2.0"
   head "https://github.com/catboost/catboost.git", branch: "master"
 
@@ -37,6 +37,10 @@ class CatboostCli < Formula
 
   uses_from_macos "llvm" => :build
 
+  on_linux do
+    depends_on "lld"
+  end
+
   resource "testdata" do
     url "https://github.com/catboost/tutorials.git",
         branch:   "master",
@@ -48,9 +52,35 @@ class CatboostCli < Formula
 
     args = [
       "-DCATBOOST_COMPONENTS=app",
-      "-DHAVE_CUDA=NO",
+      "-DCMAKE_POSITION_INDEPENDENT_CODE=On",
+      "-DHAVE_CUDA=no",
       "-DCMAKE_TOOLCHAIN_FILE=#{buildpath}/build/toolchains/clang.toolchain",
     ]
+
+    if OS.linux?
+      (buildpath / "disable_clang_warnings.diff").write <<~EOS
+        diff --git a/catboost/private/libs/functools/forward_as_const.h b/catboost/private/libs/functools/forward_as_const.h
+        index 0ac00cec33..db7ec5d6e1 100644
+        --- a/catboost/private/libs/functools/forward_as_const.h
+        +++ b/catboost/private/libs/functools/forward_as_const.h
+        @@ -1,5 +1,8 @@
+         #pragma once
+
+        +#pragma clang diagnostic push
+        +#pragma clang diagnostic ignored "-Wmissing-template-arg-list-after-template-kw"
+        +
+         #include <util/generic/yexception.h>
+         #include <util/system/yassert.h>
+
+        @@ -119,3 +122,5 @@ protected:
+                 }
+             }
+         };
+        +
+        +#pragma clang diagnostic pop
+      EOS
+      system "patch", "-p1", "-i", "disable_clang_warnings.diff"
+    end
 
     cmakepath = buildpath/"cmake-build"
     system "cmake", "-S", ".", "-B", cmakepath, "-G", "Ninja", *args, *std_cmake_args
