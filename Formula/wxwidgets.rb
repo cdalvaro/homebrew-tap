@@ -4,6 +4,7 @@ class Wxwidgets < Formula
   url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.6/wxWidgets-3.2.6.tar.bz2"
   sha256 "939e5b77ddc5b6092d1d7d29491fe67010a2433cf9b9c0d841ee4d04acb9dce7"
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
+  revision 1
   head "https://github.com/wxWidgets/wxWidgets.git", branch: "master"
 
   livecheck do
@@ -72,6 +73,10 @@ class Wxwidgets < Formula
       args << "--with-macosx-version-min=#{MacOS.version}"
       args << "--with-osx_cocoa"
       args << "--with-libiconv"
+
+      # Work around deprecated Carbon API, see
+      # https://github.com/wxWidgets/wxWidgets/issues/24724
+      inreplace "src/osx/carbon/dcscreen.cpp", "#if !wxOSX_USE_IPHONE", "#if 0" if MacOS.version >= :sequoia
     end
 
     system "./configure", *args
