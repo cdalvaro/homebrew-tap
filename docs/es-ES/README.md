@@ -181,7 +181,7 @@ Esta fórmula [está disponible](https://github.com/Homebrew/homebrew-core/blob/
 ### `autofirma`
 
 [![Badge](https://img.shields.io/badge/Government%20of%20Spain-autofirma-grey?color=70130B)](https://firmaelectronica.gob.es/Home/Descargas.html)
-[![Badge](https://img.shields.io/badge/Cask-autofirma-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Casks/autofirma.rb)
+[![Badge](https://img.shields.io/badge/Cask-autofirma-grey?logo=ruby&color=FBB040&logoColor=CC342D)](/Casks/autofirma.rb)
 
 Aplicación de firma electrónica desarrollada por el Ministerio de Asuntos Económicos y Transformación Digital.
 
@@ -196,7 +196,7 @@ Este cask [está disponible](https://github.com/Homebrew/homebrew-cask/blob/mast
 ### `salt`
 
 [![Badge](https://img.shields.io/badge/saltstack-salt-grey?logo=saltproject&color=57BCAD)](https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/macos.html)
-[![Badge](https://img.shields.io/badge/Cask-salt-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Casks/salt.rb)
+[![Badge](https://img.shields.io/badge/Cask-salt-grey?logo=ruby&color=FBB040&logoColor=CC342D)](/Casks/salt.rb)
 
 Software para automatizar la gestión y configuración de cualquier infraestructura o aplicación a escala.
 
