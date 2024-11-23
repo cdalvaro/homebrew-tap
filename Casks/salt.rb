@@ -20,8 +20,8 @@ cask "salt" do
 
   pkg "salt-#{version}-py3-#{arch}.pkg"
 
-  require_relative "../lib/patches/salt"
   postflight do
+    require_relative "#{`brew --repository cdalvaro/tap`.lines.first.chomp}/lib/patches/salt"
     %w[api master minion syndic].each { |daemon| Patches::Salt.patch_plist(daemon) }
   end
 
