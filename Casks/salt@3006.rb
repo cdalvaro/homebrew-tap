@@ -1,4 +1,3 @@
-
 require "patches/salt"
 
 cask "salt@3006" do
