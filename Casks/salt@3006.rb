@@ -1,4 +1,4 @@
-require "patches/salt"
+require_relative "../lib/patches/salt"
 
 cask "salt@3006" do
   arch arm: "arm64", intel: "x86_64"
