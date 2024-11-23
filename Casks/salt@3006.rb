@@ -9,7 +9,7 @@ cask "salt@3006" do
 
   url "https://packages.broadcom.com/artifactory/saltproject-generic/macos/#{version}/salt-#{version}-py3-#{arch}.pkg",
       verified: "packages.broadcom.com/artifactory/saltproject-generic/"
-  name "Salt"
+  name "Salt #{version} LTS"
   desc "Automation and infrastructure management engine"
   homepage "https://saltproject.io/"
 
@@ -23,7 +23,7 @@ cask "salt@3006" do
   pkg "salt-#{version}-py3-#{arch}.pkg"
 
   postflight do
-    %w[api master minion syndic].each { |daemon| Patches.Salt.patch_plist(daemon) }
+    %w[api master minion syndic].each { |daemon| Patches::Salt.patch_plist(daemon) }
   end
 
   uninstall launchctl: [
