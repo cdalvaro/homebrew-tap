@@ -15,10 +15,11 @@ cask "salt@3006" do
 
   livecheck do
     url "https://packages.broadcom.com/artifactory/saltproject-generic/macos"
-    regex(/href="3006\.\d+\/">(3006\.\d+)/i)
+    regex(%r{href="3006\.\d+/">(3006\.\d+)}i)
   end
 
   conflicts_with formula: "salt"
+  conflicts_with cask: "salt"
 
   pkg "salt-#{version}-py3-#{arch}.pkg"
 
