@@ -15,7 +15,7 @@ cask "salt@3006" do
 
   livecheck do
     url "https://packages.broadcom.com/artifactory/saltproject-generic/macos"
-    regex(/href="3006\.\d+">(3006\.\d+)/i)
+    regex(/href="3006\.\d+\/">(3006\.\d+)/i)
   end
 
   conflicts_with formula: "salt"
