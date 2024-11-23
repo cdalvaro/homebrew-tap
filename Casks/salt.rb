@@ -1,5 +1,3 @@
-require_relative "../lib/patches/salt"
-
 cask "salt" do
   arch arm: "arm64", intel: "x86_64"
 
@@ -19,10 +17,10 @@ cask "salt" do
   end
 
   conflicts_with formula: "salt"
-  conflicts_with cask: "salt@3006"
 
   pkg "salt-#{version}-py3-#{arch}.pkg"
 
+  require_relative "../lib/patches/salt"
   postflight do
     %w[api master minion syndic].each { |daemon| Patches::Salt.patch_plist(daemon) }
   end
