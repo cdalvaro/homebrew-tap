@@ -22,7 +22,7 @@ cask "salt" do
 
   postflight do
     require_relative "../lib/patches/salt"
-    %w[api master minion syndic].each { |daemon| Utils.patch_plist(daemon) }
+    %w[api master minion syndic].each { |daemon| Patches::Salt.patch_plist(daemon) }
   end
 
   uninstall launchctl: [
