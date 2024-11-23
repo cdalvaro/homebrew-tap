@@ -8,9 +8,9 @@ module Patches
 
     def self.patch_plist(daemon)
       plist_file = "/Library/LaunchDaemons/com.saltstack.salt.#{daemon}.plist"
-      xml, status = system_command "plutil",
-                                   args: ["-convert", "xml1", "-o", "-", "--", plist_file],
-                                   sudo: true
+      xml, _, status = system_command "plutil",
+                                      args: ["-convert", "xml1", "-o", "-", "--", plist_file],
+                                      sudo: true
 
       return unless status.success?
 

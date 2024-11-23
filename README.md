@@ -175,6 +175,7 @@ This formula [is available](https://github.com/Homebrew/homebrew-core/blob/maste
   <ul>
     <li><a href="#autofirma">autofirma</a></li>
     <li><a href="#salt-1">salt</a></li>
+    <li><a href="#salt3006">salt@3006</a></li>
   </ul>
 </details>
 
@@ -195,12 +196,12 @@ This cask [is available](https://github.com/Homebrew/homebrew-cask/blob/master/C
 
 ### `salt`
 
-[![Badge](https://img.shields.io/badge/saltstack-salt-grey?logo=saltproject&color=57BCAD)](https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/macos.html)
+[![Badge](https://img.shields.io/badge/saltstack-salt%20STS-grey?logo=saltproject&color=57BCAD)](https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/macos.html#sts-downloads)
 [![Badge](https://img.shields.io/badge/Cask-salt-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Casks/salt.rb)
 
 Software to automate the management and configuration of any infrastructure or application at scale.
 
-This cask installs salt using the official installation package instead
+This cask installs salt STS using the official installation package instead
 of building the whole package from source as the formula does.
 
 ```sh
@@ -214,6 +215,22 @@ The patch adds:
 - `HOMEBREW_PREFIX` to the environment.
 - `PATH` env variable containing the `HOMEBREW_PREFIX` bin directory.
 - `HOME` env variable containing the `root` home directory, to avoid an issue with `brew` command.
+
+### `salt@3006`
+
+[![Badge](https://img.shields.io/badge/saltstack-salt%20LTS-grey?logo=saltproject&color=57BCAD)](https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/macos.html#lts-downloads)
+[![Badge](https://img.shields.io/badge/Cask-salt@3006-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Casks/salt@3006.rb)
+
+Software to automate the management and configuration of any infrastructure or application at scale.
+
+This cask installs salt LTS using the official installation package instead
+of building the whole package from source as the formula does.
+
+```sh
+brew install --cask cdalvaro/tap/salt@3006
+```
+
+This cask includes all patches from the [`salt`](#salt-1) cask.
 
 ## More documentation
 
