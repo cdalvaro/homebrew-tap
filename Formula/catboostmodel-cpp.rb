@@ -14,7 +14,7 @@ module ::Utils
   end
 end
 
-class CatboostModelCpp < Formula
+class CatboostmodelCpp < Formula
   desc "Gradient Boosting on Decision Trees C++ Model Library"
   homepage "https://catboost.ai"
   url "https://github.com/catboost/catboost.git",
