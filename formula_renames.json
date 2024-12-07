@@ -1,5 +1,6 @@
 {
   "cppzmq": "cpp-zmq",
   "catboost": "catboost-cli",
+  "catboost-model-cpp": "catboostmodel-cpp",
   "wxmac": "wxwidgets"
 }
