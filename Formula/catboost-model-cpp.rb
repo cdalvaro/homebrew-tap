@@ -23,6 +23,14 @@ class CatboostModelCpp < Formula
   license "Apache-2.0"
   head "https://github.com/catboost/catboost.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/cdalvaro/tap"
+    sha256 cellar: :any,                 arm64_sequoia: "0413acd498bd4906224e8a9eaade83d72b2125a363077b923cbe4b1ef109b277"
+    sha256 cellar: :any,                 arm64_sonoma:  "00b058eeafc856a5b7001255484b3eba803ecd0eae44c8c6006f617733f379dd"
+    sha256 cellar: :any,                 ventura:       "5aca89d51cb03ce2cdba45bd941c7f97fdc8a2f231bc8e00081db8b56cf0c928"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4f774ebb90d59ad6f3f1488ab2c65520f27c5aa94e51f26e95c524cf4cf5afb"
+  end
+
   depends_on "cmake" => :build
   depends_on "conan@1" => :build
   depends_on "ninja" => :build
