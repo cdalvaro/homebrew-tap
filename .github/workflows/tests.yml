@@ -13,7 +13,7 @@ jobs:
   test-bot:
     strategy:
       matrix:
-        os: [macOS-13, macOS-14, macOS-15, ubuntu-latest]
+        os: [macOS-13, macOS-14, macOS-15, ubuntu-22.04]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Set up Homebrew
@@ -21,12 +21,11 @@ jobs:
         uses: Homebrew/actions/setup-homebrew@master
 
       - name: Cache Homebrew Bundler RubyGems
-        id: cache
         uses: actions/cache@v4
         with:
           path: ${{ steps.set-up-homebrew.outputs.gems-path }}
-          key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
-          restore-keys: ${{ runner.os }}-rubygems-
+          key: ${{ matrix.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
+          restore-keys: ${{ matrix.os }}-rubygems-
 
       - run: brew test-bot --only-cleanup-before
 
@@ -34,12 +33,12 @@ jobs:
 
       - run: brew test-bot --only-tap-syntax
 
-      - run: brew test-bot --only-formulae
+      - run: brew test-bot --only-formulae --root-url='https://ghcr.io/v2/cdalvaro/tap'
         if: github.event_name == 'pull_request'
 
       - name: Upload bottles as artifact
         if: always() && github.event_name == 'pull_request'
         uses: actions/upload-artifact@v4
         with:
-          name: bottles
+          name: bottles_${{ matrix.os }}
           path: "*.bottle.*"
