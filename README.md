@@ -28,6 +28,7 @@ You can directly type `brew install cdalvaro/tap/<formula>` to install the speci
   <summary>Formulae list</summary>
   <ul>
     <li><a href="#catboost-cli">catboost-cli</a></li>
+    <li><a href="#catboostmodel-cpp">catboostmodel-cpp</a></li>
     <li><a href="#clang-format@14">clang-format@14</a></li>
     <li><a href="#cpp-jwt">cpp-jwt</a></li>
     <li><a href="#cpp-plotly">cpp-plotly</a></li>
@@ -52,6 +53,17 @@ brew install cdalvaro/tap/catboost-cli
 ```
 
 This formula is not available in homebrew-core repository because it does not meet the acceptance criteria. See [Homebrew/homebrew-core#140960](https://github.com/Homebrew/homebrew-core/pull/140960#issuecomment-1704292670) for more information.
+
+### `catboostmodel-cpp`
+
+[![Badge](https://img.shields.io/badge/catboost-catboost-grey?logo=github&color=181717)](https://github.com/catboost/catboost)
+[![Badge](https://img.shields.io/badge/Formula-catboostmodel--cpp-grey?logo=ruby&color=FBB040&logoColor=CC342D)](/Formula/catboostmodel-cpp.rb)
+
+Gradient Boosting on Decision Trees C++ Model Library.
+
+```sh
+brew install cdalvaro/tap/catboostmodel-cpp
+```
 
 ### `clang-format@14`
 
