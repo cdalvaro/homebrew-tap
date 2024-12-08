@@ -1,5 +1,3 @@
-# <img src="/assets/homebrew.svg" height=24pt> Homebrew Custom Tap
-
 <picture align="center">
   <source media="(prefers-color-scheme: dark)" srcset="/assets/homebrew-tap-banner-dark.png">
   <source media="(prefers-color-scheme: light)" srcset="/assets/homebrew-tap-banner-light.png">
@@ -62,8 +60,12 @@ Esta fórmula no está disponible en el repositorio homebrew-core porque no cump
 Librería de C++ del modelo Catboost Gradient Boosting basada en árboles de decisión.
 
 ```sh
-brew install cdalvaro/tap/catboost-cli
+brew install cdalvaro/tap/catboostmodel-cpp
 ```
+
+#### Parámetros Opcionales
+
+- `--with-static` Instala también la librería estática
 
 ### `clang-format@14`
 

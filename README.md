@@ -1,5 +1,3 @@
-# <img src="/assets/homebrew.svg" height=24pt> Homebrew Custom Tap
-
 <picture align="center">
   <source media="(prefers-color-scheme: dark)" srcset="/assets/homebrew-tap-banner-dark.png">
   <source media="(prefers-color-scheme: light)" srcset="/assets/homebrew-tap-banner-light.png">
@@ -64,6 +62,10 @@ Gradient Boosting on Decision Trees C++ Model Library.
 ```sh
 brew install cdalvaro/tap/catboostmodel-cpp
 ```
+
+#### Optional Parameters
+
+- `--with-static` Also install the static library
 
 ### `clang-format@14`
 
