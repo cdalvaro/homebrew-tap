@@ -31,6 +31,8 @@ class CatboostmodelCpp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7a291af06644fb0c3243484fa2dfab06b433387473ef45c2f7e475f8c877b03"
   end
 
+  option "with-static", "Also install the static library"
+
   depends_on "cmake" => :build
   depends_on "conan@1" => :build
   depends_on "ninja" => :build
@@ -51,16 +53,21 @@ class CatboostmodelCpp < Formula
 
     args = [
       "-DCATBOOST_COMPONENTS=libs",
-      "-DHAVE_CUDA=NO",
+      "-DHAVE_CUDA=no",
       "-DCMAKE_POSITION_INDEPENDENT_CODE=On",
       "-DCMAKE_TOOLCHAIN_FILE=#{buildpath}/build/toolchains/clang.toolchain",
     ]
 
+    targets = ["catboostmodel"]
+    targets << "catboostmodel_static" if build.with?("static")
+
     cmakepath = buildpath/"cmake-build"
     system "cmake", "-S", ".", "-B", cmakepath, "-G", "Ninja", *args, *std_cmake_args
-    system "ninja", "-C", cmakepath, "catboostmodel"
+    system "ninja", "-C", cmakepath, *targets
 
     lib.install cmakepath/"catboost/libs/model_interface/libcatboostmodel.#{OS.mac? ? "dylib" : "so"}"
+    lib.install Dir[cmakepath/"catboost/libs/model_interface/static/*.a"] if build.with?("static")
+
     %w[c_api.h wrapped_calcer.h].each do |header|
       (include/"catboost/model_interface").install Dir[buildpath/"catboost/libs/model_interface/#{header}"]
     end
@@ -81,5 +88,17 @@ class CatboostmodelCpp < Formula
     EOS
     system ENV.cxx, testpath/"test.cpp", "-std=c++1y", "-L#{lib}", "-lcatboostmodel", "-o", testpath/"test"
     resource("model.cbm").stage { system testpath/"test" }
+
+    if build.with?("static")
+      libs = [
+        lib/"libcatboostmodel_static.global.a",
+        lib/"libcatboostmodel_static.a",
+      ]
+
+      libs += %w[-lpthread -ldl] if OS.linux?
+
+      system ENV.cxx, testpath/"test.cpp", "-std=c++1y", *libs, "-o", testpath/"test_static"
+      resource("model.cbm").stage { system testpath/"test_static" }
+    end
   end
 end
