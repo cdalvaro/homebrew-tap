@@ -4,7 +4,7 @@ class Wxwidgets < Formula
   url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.6/wxWidgets-3.2.6.tar.bz2"
   sha256 "939e5b77ddc5b6092d1d7d29491fe67010a2433cf9b9c0d841ee4d04acb9dce7"
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
-  revision 1
+  revision 2
   head "https://github.com/wxWidgets/wxWidgets.git", branch: "master"
 
   livecheck do
@@ -37,9 +37,18 @@ class Wxwidgets < Formula
     depends_on "mesa-glu"
   end
 
-  patch :DATA if build.with?("enable-abort")
+  resource "enable_abort" do
+    url "https://raw.githubusercontent.com/cdalvaro/homebrew-tap/55724bef53cb80b9d6019f50cc915101c460bc48/patches/wxwidgets/enable_abort.diff"
+    sha256 "2c14fb49da7ab4144fba1793fde80eedcb6201d7bf765d9c1c17b1f0b90851c8"
+  end
 
   def install
+    if build.with? "enable-abort"
+      resource("enable_abort").stage do
+        system "patch", "-p1", "-d", buildpath, "-i", "#{pwd}/enable_abort.diff"
+      end
+    end
+
     # Remove all bundled libraries excluding `nanosvg` which isn't available as formula
     %w[catch pcre].each { |l| rm_r(buildpath/"3rdparty"/l) }
     %w[expat jpeg png tiff zlib].each { |l| rm_r(buildpath/"src"/l) }
@@ -98,75 +107,3 @@ class Wxwidgets < Formula
     system bin/"wx-config", "--libs"
   end
 end
-
-__END__
-diff --git a/include/wx/generic/progdlgg.h b/include/wx/generic/progdlgg.h
-index ba8fb0bcc5198affee86b47a0d5342457607c1b2..f14b5909c0ccf8eaf0705ea9e48d6659942e7148 100644
---- a/include/wx/generic/progdlgg.h
-+++ b/include/wx/generic/progdlgg.h
-@@ -174,7 +174,9 @@ private:
-     // shortcuts for enabling buttons
-     void EnableClose();
-     void EnableSkip(bool enable = true);
--    void EnableAbort(bool enable = true);
-+public:
-+    virtual void EnableAbort(bool enable = true);
-+private:
-     void DisableSkip() { EnableSkip(false); }
-     void DisableAbort() { EnableAbort(false); }
-
-diff --git a/include/wx/msw/progdlg.h b/include/wx/msw/progdlg.h
-index c22a79db91ba210fcc7329c3be4f3ad34287ca8b..dcd201aaef0b98653a0c853962032ee1277d2379 100644
---- a/include/wx/msw/progdlg.h
-+++ b/include/wx/msw/progdlg.h
-@@ -54,6 +54,8 @@ public:
-
-     virtual WXWidget GetHandle() const wxOVERRIDE;
-
-+    virtual void EnableAbort(bool enable = true) wxOVERRIDE;
-+
- private:
-     // Common part of Update() and Pulse().
-     //
-diff --git a/interface/wx/progdlg.h b/interface/wx/progdlg.h
-index 28ce778ed61d85bf7aae59e6a3d44290b54dd7c2..e0ada14805f1fe9f80b91994fc0b12d14ae65a5b 100644
---- a/interface/wx/progdlg.h
-+++ b/interface/wx/progdlg.h
-@@ -243,6 +243,14 @@ public:
-     */
-     virtual bool Update(int value, const wxString& newmsg = wxEmptyString,
-                         bool* skip = NULL);
-+
-+    /**
-+        Enables or disables de cancel/abort button
-+
-+        @param enable
-+            True then the progress dialog can be cancelled, false otherwise
-+    */
-+    virtual void EnableAbort(bool enable = true);
- };
-
-
-diff --git a/src/msw/progdlg.cpp b/src/msw/progdlg.cpp
-index 8525a85dba2b2881e8d7e76a994117a7e4718afd..9c4572b4cf23457df29a54f3884b274322e62edd 100644
---- a/src/msw/progdlg.cpp
-+++ b/src/msw/progdlg.cpp
-@@ -761,6 +761,18 @@ bool wxProgressDialog::WasCancelled() const
-     return wxGenericProgressDialog::WasCancelled();
- }
-
-+void wxProgressDialog::EnableAbort(bool enable) {
-+#ifdef wxHAS_MSW_TASKDIALOG
-+    if ( HasNativeTaskDialog() )
-+    {
-+        wxCriticalSectionLocker locker(m_sharedData->m_cs);
-+        if ( !(sharedData->m_style & wxPD_CAN_ABORT) )
-+            EnableCloseButtons(m_sharedData->m_hwnd, enable);
-+    }
-+#endif // wxHAS_MSW_TASKDIALOG
-+    wxGenericProgressDialog::EnableAbort(enable);
-+}
-+
- void wxProgressDialog::SetTitle(const wxString& title)
- {
- #ifdef wxHAS_MSW_TASKDIALOG
