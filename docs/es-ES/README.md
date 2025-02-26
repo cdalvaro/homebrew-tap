@@ -187,25 +187,10 @@ Esta fórmula [está disponible](https://github.com/Homebrew/homebrew-core/blob/
 <details>
   <summary>Lista de casks</summary>
   <ul>
-    <li><a href="#autofirma">autofirma</a></li>
     <li><a href="#salt-1">salt</a></li>
+    <li><a href="#salt3006">salt@3006</a></li>
   </ul>
 </details>
-
-### `autofirma`
-
-[![Badge](https://img.shields.io/badge/Government%20of%20Spain-autofirma-grey?color=70130B)](https://firmaelectronica.gob.es/Home/Descargas.html)
-[![Badge](https://img.shields.io/badge/Cask-autofirma-grey?logo=ruby&color=FBB040&logoColor=CC342D)](/Casks/autofirma.rb)
-
-Aplicación de firma electrónica desarrollada por el Ministerio de Asuntos Económicos y Transformación Digital.
-
-Al poder ser ejecutada desde el navegador, permite la firma en páginas de Administración Electrónica cuando se requiere la firma en un procedimiento administrativo.
-
-```sh
-brew install --cask cdalvaro/tap/autofirma
-```
-
-Este cask [está disponible](https://github.com/Homebrew/homebrew-cask/blob/master/Casks/a/autofirma.rb) en el repositorio homebrew-cask. Sin embargo, el script postflight de desinstalación no funciona correctamente, por lo que lo he corregido en este tap. Intenté corregirlo en el repositorio principal, pero [no fue aceptado](https://github.com/Homebrew/homebrew-cask/pull/151676#issuecomment-1687230223).
 
 ### `salt`
 
@@ -214,7 +199,7 @@ Este cask [está disponible](https://github.com/Homebrew/homebrew-cask/blob/mast
 
 Software para automatizar la gestión y configuración de cualquier infraestructura o aplicación a escala.
 
-Este cask instala salt usando el paquete de instalación oficial en lugar de construir el paquete completo desde el código fuente como hace la fórmula.
+Este cask instala salt STS usando el paquete de instalación oficial en lugar de construir el paquete completo desde el código fuente como hace la fórmula.
 
 ```sh
 brew install --cask cdalvaro/tap/salt
@@ -227,6 +212,25 @@ El parche añade:
 - La variable de entorno `HOMEBREW_PREFIX`.
 - La variable de entorno `PATH` en el directorio de binarios asociado a `HOMEBREW_PREFIX`.
 - La variable de entorno `HOME` con el directorio _home_ de `root`, para evitar un problema con el comando `brew`.
+
+## Más documentación
+
+Más documentación está disponible en: [Homebrew - Taps](https://docs.brew.sh/Taps)
+
+### `salt@3006`
+
+[![Badge](https://img.shields.io/badge/saltstack-salt%20LTS-grey?logo=saltproject&color=57BCAD)](https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/macos.html#lts-downloads)
+[![Badge](https://img.shields.io/badge/Cask-salt@3006-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Casks/salt@3006.rb)
+
+Software para automatizar la gestión y configuración de cualquier infraestructura o aplicación a escala.
+
+Este cask instala salt LTS usando el paquete de instalación oficial en lugar de construir el paquete completo desde el código fuente como hace la fórmula.
+
+```sh
+brew install --cask cdalvaro/tap/salt@3006
+```
+
+Este cask incluye todos los parches indicados en [`salt`](#salt-1).
 
 ## Más documentación
 

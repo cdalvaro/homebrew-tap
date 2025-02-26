@@ -187,26 +187,10 @@ This formula [is available](https://github.com/Homebrew/homebrew-core/blob/maste
 <details>
   <summary>Casks list</summary>
   <ul>
-    <li><a href="#autofirma">autofirma</a></li>
     <li><a href="#salt-1">salt</a></li>
     <li><a href="#salt3006">salt@3006</a></li>
   </ul>
 </details>
-
-### `autofirma`
-
-[![Badge](https://img.shields.io/badge/Government%20of%20Spain-autofirma-grey?color=70130B)](https://firmaelectronica.gob.es/Home/Descargas.html)
-[![Badge](https://img.shields.io/badge/Cask-autofirma-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Casks/autofirma.rb)
-
-Application for electronic signature developed by the Ministry of Economic Affairs and Digital Transformation of Spain.
-
-This application can be used from the browser, allowing the signature on electronic administration pages when a signature is required in an administrative procedure.
-
-```sh
-brew install --cask cdalvaro/tap/autofirma
-```
-
-This cask [is available](https://github.com/Homebrew/homebrew-cask/blob/master/Casks/a/autofirma.rb) at homebrew-cask repository. However, the uninstall postflight script is not working properly, so I've fixed it in this tap. I tried to fix it in the main repository, but [it was not accepted](https://github.com/Homebrew/homebrew-cask/pull/151676#issuecomment-1687230223).
 
 ### `salt`
 
