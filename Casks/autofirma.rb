@@ -5,8 +5,8 @@ cask "autofirma" do
   version "1.8.4"
   sha256 arm:          "2ffbf235fe0ff77c72707c674a67d4ffb924c05eca5910c7478dc96069c900a9",
          intel:        "a14b6203d597cd113a2f53d587d657320632011b29cea1fbeadfd663140bcbed",
-         arm64_linux:  "",
-         x86_64_linux: ""
+         arm64_linux:  :no_check,
+         x86_64_linux: :no_check
 
   url "https://estaticos.redsara.es/comunes/autofirma/#{version.major}/#{version.minor}/#{version.patch}/AutoFirma_Mac_#{arch}.zip",
       verified: "estaticos.redsara.es/comunes/autofirma/"
