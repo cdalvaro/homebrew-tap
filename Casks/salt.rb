@@ -17,6 +17,7 @@ cask "salt" do
   end
 
   conflicts_with formula: "salt"
+  depends_on macos: ">= :big_sur"
 
   pkg "salt-#{version}-py3-#{arch}.pkg"
 
