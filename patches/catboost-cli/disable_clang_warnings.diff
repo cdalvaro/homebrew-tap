@@ -1,19 +1,19 @@
 diff --git a/catboost/private/libs/functools/forward_as_const.h b/catboost/private/libs/functools/forward_as_const.h
-index 0ac00cec33..db7ec5d6e1 100644
+index 0ac00cec33..5077dda99b 100644
 --- a/catboost/private/libs/functools/forward_as_const.h
 +++ b/catboost/private/libs/functools/forward_as_const.h
 @@ -1,5 +1,8 @@
-    #pragma once
-
+ #pragma once
+ 
 +#pragma clang diagnostic push
 +#pragma clang diagnostic ignored "-Wmissing-template-arg-list-after-template-kw"
 +
-    #include <util/generic/yexception.h>
-    #include <util/system/yassert.h>
-
+ #include <util/generic/yexception.h>
+ #include <util/system/yassert.h>
+ 
 @@ -119,3 +122,5 @@ protected:
-            }
-        }
-    };
+         }
+     }
+ };
 +
 +#pragma clang diagnostic pop
