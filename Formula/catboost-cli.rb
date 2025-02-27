@@ -25,11 +25,11 @@ class CatboostCli < Formula
   head "https://github.com/catboost/catboost.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/catboost-cli-1.2.5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "f6663c246664072a707fbfba94c277cdd1cd3e9be215d122ba2da447159ecb6d"
-    sha256 cellar: :any_skip_relocation, ventura:      "dbd6b95cf9ae2e558d5de488220af12dd6fa61d49cadc7348f4886a7c07bd99c"
-    sha256 cellar: :any_skip_relocation, monterey:     "31fdc2ffa55461131070c5a93096df2ef32e8f029dfcb55ba8d05a9d1abf3cda"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "6d53035f0d4f00efae54d652799fed344f6f645bef975829c3b6209c2760775c"
+    root_url "https://ghcr.io/v2/cdalvaro/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "819a3816780727daf529031ce75100d8f73c93de675ceac91d624cbd3f382a3e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bfc60e148b491433769e11cd82c4bc70a2c98d3780646107a4e5ec1e973f9e6d"
+    sha256 cellar: :any_skip_relocation, ventura:       "a47ac5ded36947b7b8ff6bb5c77a783b61ec69c5e65d37c0b82e3f142c2eb024"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0620595b4b0945ca8f2e86ff2ebadf1624e77b7c1c0995507ff88432dab5a2a2"
   end
 
   depends_on "cmake" => :build
