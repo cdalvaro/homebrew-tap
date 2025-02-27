@@ -21,6 +21,7 @@ class CatboostCli < Formula
     tag:      "v1.2.7",
     revision: "f903943a8cd903a117c3d3c8421cc72d3910562c"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/catboost/catboost.git", branch: "master"
 
   bottle do
@@ -41,6 +42,11 @@ class CatboostCli < Formula
     depends_on "lld"
   end
 
+  resource "disable_clang_warnings" do
+    url "https://raw.githubusercontent.com/cdalvaro/homebrew-tap/e4af26f68ec938f1a03bd16d3c1feb2e7419ab03/patches/catboost-cli/disable_clang_warnings.diff"
+    sha256 "3659fadc68fae81fc760ef5dc0d2e9cb0982cfc3205e445f3a01df26c89517dd"
+  end
+
   resource "testdata" do
     url "https://github.com/catboost/tutorials.git",
         branch:   "master",
@@ -50,37 +56,18 @@ class CatboostCli < Formula
   def install
     Utils.add_clang_version_to_conan_settings(Formula["llvm"].version.major.to_s) if ENV.key?("GITHUB_ACTIONS")
 
+    if OS.linux?
+      resource("disable_clang_warnings").stage do
+        system "patch", "-p1", "-d", buildpath, "-i", "#{pwd}/disable_clang_warnings.diff"
+      end
+    end
+
     args = [
       "-DCATBOOST_COMPONENTS=app",
       "-DCMAKE_POSITION_INDEPENDENT_CODE=On",
       "-DHAVE_CUDA=no",
       "-DCMAKE_TOOLCHAIN_FILE=#{buildpath}/build/toolchains/clang.toolchain",
     ]
-
-    if OS.linux?
-      (buildpath / "disable_clang_warnings.diff").write <<~EOS
-        diff --git a/catboost/private/libs/functools/forward_as_const.h b/catboost/private/libs/functools/forward_as_const.h
-        index 0ac00cec33..db7ec5d6e1 100644
-        --- a/catboost/private/libs/functools/forward_as_const.h
-        +++ b/catboost/private/libs/functools/forward_as_const.h
-        @@ -1,5 +1,8 @@
-         #pragma once
-
-        +#pragma clang diagnostic push
-        +#pragma clang diagnostic ignored "-Wmissing-template-arg-list-after-template-kw"
-        +
-         #include <util/generic/yexception.h>
-         #include <util/system/yassert.h>
-
-        @@ -119,3 +122,5 @@ protected:
-                 }
-             }
-         };
-        +
-        +#pragma clang diagnostic pop
-      EOS
-      system "patch", "-p1", "-i", "disable_clang_warnings.diff"
-    end
 
     cmakepath = buildpath/"cmake-build"
     system "cmake", "-S", ".", "-B", cmakepath, "-G", "Ninja", *args, *std_cmake_args
