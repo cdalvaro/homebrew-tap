@@ -68,10 +68,11 @@ class CatboostCli < Formula
       "-DCMAKE_POSITION_INDEPENDENT_CODE=On",
       "-DHAVE_CUDA=no",
       "-DCMAKE_TOOLCHAIN_FILE=#{buildpath}/build/toolchains/clang.toolchain",
+      "-DOPENSSL_ROOT_DIR=#{Formula["openssl"].opt_prefix}",
     ]
 
     cmakepath = buildpath/"cmake-build"
-    system "cmake", "-S", ".", "-B", cmakepath, "-G", "Ninja", *args, *std_cmake_args
+    system "cmake", "-S", ".", "-B", cmakepath, "-G", "Ninja", *std_cmake_args, *args
     system "ninja", "-C", cmakepath, "catboost"
     bin.install cmakepath/"catboost/app/catboost"
   end
