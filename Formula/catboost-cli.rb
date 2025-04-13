@@ -1,27 +1,10 @@
-require "yaml"
-
-module ::Utils
-  def self.add_clang_version_to_conan_settings(version)
-    system "conan", "config", "init"
-    conan_home = safe_popen_read("conan", "config", "home").strip
-    settings_file = "#{conan_home}/settings.yml"
-    settings = YAML.load_file(settings_file, aliases: true)
-    clang_versions = settings["compiler"]["clang"]["version"]
-    unless clang_versions.include?(version)
-      clang_versions << version
-      File.write(settings_file, YAML.dump(settings))
-    end
-  end
-end
-
 class CatboostCli < Formula
   desc "Fast, scalable, high performance Gradient Boosting on Decision Trees cli tool"
   homepage "https://catboost.ai"
   url "https://github.com/catboost/catboost.git",
-    tag:      "v1.2.7",
-    revision: "f903943a8cd903a117c3d3c8421cc72d3910562c"
+    tag:      "v1.2.8",
+    revision: "0bcf252505e3d1cf01acd925dcd7026799512fb9"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/catboost/catboost.git", branch: "master"
 
   bottle do
@@ -33,18 +16,16 @@ class CatboostCli < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "conan@1" => :build
+  depends_on "conan" => :build
   depends_on "ninja" => :build
+  depends_on "openssl@3.0"
 
   uses_from_macos "llvm" => :build
 
   on_linux do
     depends_on "lld"
-  end
 
-  resource "disable_clang_warnings" do
-    url "https://raw.githubusercontent.com/cdalvaro/homebrew-tap/e4af26f68ec938f1a03bd16d3c1feb2e7419ab03/patches/catboost-cli/disable_clang_warnings.diff"
-    sha256 "3659fadc68fae81fc760ef5dc0d2e9cb0982cfc3205e445f3a01df26c89517dd"
+    patch :DATA
   end
 
   resource "testdata" do
@@ -54,11 +35,12 @@ class CatboostCli < Formula
   end
 
   def install
-    Utils.add_clang_version_to_conan_settings(Formula["llvm"].version.major.to_s) if ENV.key?("GITHUB_ACTIONS")
-
-    if OS.linux?
-      resource("disable_clang_warnings").stage do
-        system "patch", "-p1", "-d", buildpath, "-i", "#{pwd}/disable_clang_warnings.diff"
+    # Fix find_package openssl::openssl is OpenSSL::SSL
+    Dir.glob("**/CMakeLists.*.txt") do |file|
+      content = File.read(file)
+      if content.include?("openssl::openssl")
+        content.gsub!("openssl::openssl", "OpenSSL::SSL")
+        File.write(file, content)
       end
     end
 
@@ -67,10 +49,11 @@ class CatboostCli < Formula
       "-DCMAKE_POSITION_INDEPENDENT_CODE=On",
       "-DHAVE_CUDA=no",
       "-DCMAKE_TOOLCHAIN_FILE=#{buildpath}/build/toolchains/clang.toolchain",
+      "-DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=#{buildpath}/cmake/conan_provider.cmake",
     ]
 
     cmakepath = buildpath/"cmake-build"
-    system "cmake", "-S", ".", "-B", cmakepath, "-G", "Ninja", *args, *std_cmake_args
+    system "cmake", "-S", ".", "-B", cmakepath, "-G", "Ninja", *std_cmake_args, *args
     system "ninja", "-C", cmakepath, "catboost"
     bin.install cmakepath/"catboost/app/catboost"
   end
@@ -112,3 +95,19 @@ class CatboostCli < Formula
     end
   end
 end
+
+__END__
+diff --git a/conanfile.py b/conanfile.py
+index 72453fe00a..8f4479b721 100644
+--- a/conanfile.py
++++ b/conanfile.py
+@@ -13,9 +13,6 @@ class App(ConanFile):
+
+     default_options = {}
+
+-    def requirements(self):
+-        self.requires("openssl/3.0.15")
+-
+     def build_requirements(self):
+         self.tool_requires("ragel/6.10")
+         self.tool_requires("swig/4.0.2")
