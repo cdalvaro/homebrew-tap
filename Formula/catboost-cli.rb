@@ -1,25 +1,25 @@
-require "yaml"
+# require "yaml"
 
-module ::Utils
-  def self.add_clang_version_to_conan_settings(version)
-    system "conan", "config", "init"
-    conan_home = safe_popen_read("conan", "config", "home").strip
-    settings_file = "#{conan_home}/settings.yml"
-    settings = YAML.load_file(settings_file, aliases: true)
-    clang_versions = settings["compiler"]["clang"]["version"]
-    unless clang_versions.include?(version)
-      clang_versions << version
-      File.write(settings_file, YAML.dump(settings))
-    end
-  end
-end
+# module ::Utils
+#   def self.add_clang_version_to_conan_settings(version)
+#     system "conan", "config", "init"
+#     conan_home = safe_popen_read("conan", "config", "home").strip
+#     settings_file = "#{conan_home}/settings.yml"
+#     settings = YAML.load_file(settings_file, aliases: true)
+#     clang_versions = settings["compiler"]["clang"]["version"]
+#     unless clang_versions.include?(version)
+#       clang_versions << version
+#       File.write(settings_file, YAML.dump(settings))
+#     end
+#   end
+# end
 
 class CatboostCli < Formula
   desc "Fast, scalable, high performance Gradient Boosting on Decision Trees cli tool"
   homepage "https://catboost.ai"
   url "https://github.com/catboost/catboost.git",
-    tag:      "v1.2.7",
-    revision: "f903943a8cd903a117c3d3c8421cc72d3910562c"
+    tag:      "v1.2.8",
+    revision: "0bcf252505e3d1cf01acd925dcd7026799512fb9"
   license "Apache-2.0"
   revision 1
   head "https://github.com/catboost/catboost.git", branch: "master"
@@ -33,7 +33,7 @@ class CatboostCli < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "conan@1" => :build
+  depends_on "conan" => :build
   depends_on "ninja" => :build
 
   uses_from_macos "llvm" => :build
@@ -42,10 +42,10 @@ class CatboostCli < Formula
     depends_on "lld"
   end
 
-  resource "disable_clang_warnings" do
-    url "https://raw.githubusercontent.com/cdalvaro/homebrew-tap/e4af26f68ec938f1a03bd16d3c1feb2e7419ab03/patches/catboost-cli/disable_clang_warnings.diff"
-    sha256 "3659fadc68fae81fc760ef5dc0d2e9cb0982cfc3205e445f3a01df26c89517dd"
-  end
+  # resource "disable_clang_warnings" do
+  #   url "https://raw.githubusercontent.com/cdalvaro/homebrew-tap/e4af26f68ec938f1a03bd16d3c1feb2e7419ab03/patches/catboost-cli/disable_clang_warnings.diff"
+  #   sha256 "3659fadc68fae81fc760ef5dc0d2e9cb0982cfc3205e445f3a01df26c89517dd"
+  # end
 
   resource "testdata" do
     url "https://github.com/catboost/tutorials.git",
@@ -54,13 +54,13 @@ class CatboostCli < Formula
   end
 
   def install
-    Utils.add_clang_version_to_conan_settings(Formula["llvm"].version.major.to_s) if ENV.key?("GITHUB_ACTIONS")
+    # Utils.add_clang_version_to_conan_settings(Formula["llvm"].version.major.to_s) if ENV.key?("GITHUB_ACTIONS")
 
-    if OS.linux?
-      resource("disable_clang_warnings").stage do
-        system "patch", "-p1", "-d", buildpath, "-i", "#{pwd}/disable_clang_warnings.diff"
-      end
-    end
+    # if OS.linux?
+    #   resource("disable_clang_warnings").stage do
+    #     system "patch", "-p1", "-d", buildpath, "-i", "#{pwd}/disable_clang_warnings.diff"
+    #   end
+    # end
 
     args = [
       "-DCATBOOST_COMPONENTS=app",
