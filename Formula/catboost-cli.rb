@@ -35,6 +35,7 @@ class CatboostCli < Formula
   depends_on "cmake" => :build
   depends_on "conan" => :build
   depends_on "ninja" => :build
+  depends_on "openssl"
 
   uses_from_macos "llvm" => :build
 
