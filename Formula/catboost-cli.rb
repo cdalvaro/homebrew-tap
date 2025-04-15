@@ -1,18 +1,30 @@
-# require "yaml"
+require "yaml"
 
-# module ::Utils
-#   def self.add_clang_version_to_conan_settings(version)
-#     system "conan", "config", "init"
-#     conan_home = safe_popen_read("conan", "config", "home").strip
-#     settings_file = "#{conan_home}/settings.yml"
-#     settings = YAML.load_file(settings_file, aliases: true)
-#     clang_versions = settings["compiler"]["clang"]["version"]
-#     unless clang_versions.include?(version)
-#       clang_versions << version
-#       File.write(settings_file, YAML.dump(settings))
-#     end
-#   end
-# end
+module ::Utils
+  # def self.add_clang_version_to_conan_settings(version)
+  #   system "conan", "config", "init"
+  #   conan_home = safe_popen_read("conan", "config", "home").strip
+  #   settings_file = "#{conan_home}/settings.yml"
+  #   settings = YAML.load_file(settings_file, aliases: true)
+  #   clang_versions = settings["compiler"]["clang"]["version"]
+  #   unless clang_versions.include?(version)
+  #     clang_versions << version
+  #     File.write(settings_file, YAML.dump(settings))
+  #   end
+  # end
+
+  def self.add_cmake_openssl_alias
+    puts "Updating cmake files..."
+    Dir.glob("**/CMakeLists.*.txt") do |file|
+      content = File.read(file)
+      if content.include?("openssl::openssl")
+        puts "Actualizando fichero #{file}"
+        content.gsub!("openssl::openssl", "OpenSSL::SSL")
+        File.write(file, content)
+      end
+    end
+  end
+end
 
 class CatboostCli < Formula
   desc "Fast, scalable, high performance Gradient Boosting on Decision Trees cli tool"
@@ -21,7 +33,6 @@ class CatboostCli < Formula
     tag:      "v1.2.8",
     revision: "0bcf252505e3d1cf01acd925dcd7026799512fb9"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/catboost/catboost.git", branch: "master"
 
   bottle do
@@ -35,7 +46,6 @@ class CatboostCli < Formula
   depends_on "cmake" => :build
   depends_on "conan" => :build
   depends_on "ninja" => :build
-  depends_on "openssl"
 
   uses_from_macos "llvm" => :build
 
@@ -56,6 +66,7 @@ class CatboostCli < Formula
 
   def install
     # Utils.add_clang_version_to_conan_settings(Formula["llvm"].version.major.to_s) if ENV.key?("GITHUB_ACTIONS")
+    Utils.add_cmake_openssl_alias
 
     # if OS.linux?
     #   resource("disable_clang_warnings").stage do
@@ -68,7 +79,6 @@ class CatboostCli < Formula
       "-DCMAKE_POSITION_INDEPENDENT_CODE=On",
       "-DHAVE_CUDA=no",
       "-DCMAKE_TOOLCHAIN_FILE=#{buildpath}/build/toolchains/clang.toolchain",
-      "-DOPENSSL_ROOT_DIR=#{Formula["openssl"].opt_prefix}",
     ]
 
     cmakepath = buildpath/"cmake-build"
