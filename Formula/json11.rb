@@ -4,6 +4,7 @@ class Json11 < Formula
   url      "https://github.com/dropbox/json11/archive/refs/tags/v1.0.0.tar.gz"
   sha256   "bab960eebc084d26aaf117b8b8809aecec1e86e371a173655b7dffb49383b0bf"
   license  "MIT"
+  revision 1
 
   bottle do
     root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/json11-1.0.0"
@@ -15,7 +16,10 @@ class Json11 < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", ".", *std_cmake_args
+    custom_cmake_args = %w[
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+    ]
+    system "cmake", ".", *std_cmake_args, *custom_cmake_args
     system "make", "install"
   end
 
