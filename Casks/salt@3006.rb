@@ -1,12 +1,16 @@
 cask "salt@3006" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "3006.9"
-  sha256 arm:          "81fca1bcd46eed09a6f5b97451a1238a6a78a97a1af6757cf6a73b2bb7b6db6d",
-         intel:        "5366e96e38073863522c2fc8097c97f7698a84c22f9899cbdf796b1e8b45b1e0",
-         # linux sha256 hashes are invented
-         x86_64_linux: "1a2aee7f1ddc999993d4d7d42a150c5e602bc17281678050b8ed79a0500cc90f",
-         arm64_linux:  "bd766af7e692afceb727a6f88e24e6e68d9882aeb3e8348412f6c03d96537c75"
+  version "3006.10"
+
+  on_macos do
+    sha256 arm:   "068e1d1eb3eba60909688b03956e368c4203210b013d4dfd1ff4067aa3c262bf",
+           intel: "4a2f2e4235c7c0764626ddd6b52990ab043ab143916ec488b8b2a03c0755bd70"
+  end
+
+  on_linux do
+    sha256 :no_check
+  end
 
   url "https://packages.broadcom.com/artifactory/saltproject-generic/macos/#{version}/salt-#{version}-py3-#{arch}.pkg",
       verified: "packages.broadcom.com/artifactory/saltproject-generic/"
