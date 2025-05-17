@@ -1,0 +1,7 @@
+PreCommit:
+  BrewStyle:
+    enabled: True
+    include:
+      - "Formula/**/*.rb"
+      - "Casks/**/*.rb"
+    command: ["brew", "style", "--fix"]
