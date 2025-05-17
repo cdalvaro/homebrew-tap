@@ -5,24 +5,25 @@ class CatboostCli < Formula
     tag:      "v1.2.8",
     revision: "0bcf252505e3d1cf01acd925dcd7026799512fb9"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/catboost/catboost.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/cdalvaro/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed725b9eff484f6440251c550e29f24fa2739fca64ab915ddd4c90a002aeeee6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9a62cea92e932740e58df2308f54b2b3094ce2d3839a66f73bc6502bbe9e669"
-    sha256 cellar: :any_skip_relocation, ventura:       "e1a304a069e6735cd22212f69e8fb7d1fb3bf9be4f48ea7713288a598302805a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f8439846aed68d1489b71f90bfaf955ca1fa6e02dce2196cb57975982381b61"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91dff5635c84f5333ca2c82cbc915566a92d9a1c9238f83302a89d5a0172f001"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07067818bf6c96e1c6a01b27ea6eed1bdf9fbaace72cb3a197c88eef54a9e1e9"
+    sha256 cellar: :any_skip_relocation, ventura:       "ef1f114f46a16627443f4c8603d335397367ae8375f3de3066a090ac5f60fb65"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fe9030792a541c843a56ddbd9d68d53ec8f298d1820c9aa1806cad9d3754a22"
   end
 
   depends_on "cmake" => :build
   depends_on "conan" => :build
   depends_on "ninja" => :build
-  depends_on "openssl@3.0"
 
   uses_from_macos "llvm" => :build
 
   on_linux do
+    depends_on "openssl@3.0" => :build
     depends_on "lld"
 
     patch :DATA
@@ -35,7 +36,8 @@ class CatboostCli < Formula
   end
 
   def install
-    # Fix find_package openssl::openssl is OpenSSL::SSL
+    # Replace openssl::openssl by OpenSSL::SSL
+    # Otherwise target_link_libraries fails
     Dir.glob("**/CMakeLists.*.txt") do |file|
       content = File.read(file)
       if content.include?("openssl::openssl")
@@ -44,12 +46,21 @@ class CatboostCli < Formula
       end
     end
 
+    cmake_project_top_level_includes = ["#{buildpath}/cmake/conan_provider.cmake"]
+
+    # Check if CMAKE_PROJECT_TOP_LEVEL_INCLUDES is already specified in std_cmake_args
+    cmake_top_level_includes = std_cmake_args.find { |arg| arg.start_with?("-DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=") }
+    if cmake_top_level_includes
+      cmake_project_top_level_includes.unshift(cmake_top_level_includes.split("=")[1])
+      std_cmake_args.delete(cmake_top_level_includes)
+    end
+
     args = [
       "-DCATBOOST_COMPONENTS=app",
       "-DCMAKE_POSITION_INDEPENDENT_CODE=On",
       "-DHAVE_CUDA=no",
       "-DCMAKE_TOOLCHAIN_FILE=#{buildpath}/build/toolchains/clang.toolchain",
-      "-DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=#{buildpath}/cmake/conan_provider.cmake",
+      "-DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=#{cmake_project_top_level_includes.join(";")}",
     ]
 
     cmakepath = buildpath/"cmake-build"
