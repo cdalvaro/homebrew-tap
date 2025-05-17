@@ -1,3 +1,6 @@
+CommitMsg:
+  CapitalizedSubject:
+    enabled: False
 PreCommit:
   BrewStyle:
     enabled: True
