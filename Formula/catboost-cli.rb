@@ -5,6 +5,7 @@ class CatboostCli < Formula
     tag:      "v1.2.8",
     revision: "0bcf252505e3d1cf01acd925dcd7026799512fb9"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/catboost/catboost.git", branch: "master"
 
   bottle do
@@ -18,11 +19,11 @@ class CatboostCli < Formula
   depends_on "cmake" => :build
   depends_on "conan" => :build
   depends_on "ninja" => :build
-  depends_on "openssl@3.0"
 
   uses_from_macos "llvm" => :build
 
   on_linux do
+    depends_on "openssl@3.0" => :build
     depends_on "lld"
 
     patch :DATA
@@ -35,7 +36,8 @@ class CatboostCli < Formula
   end
 
   def install
-    # Fix find_package openssl::openssl is OpenSSL::SSL
+    # Replace openssl::openssl by OpenSSL::SSL
+    # Otherwise target_link_libraries fails
     Dir.glob("**/CMakeLists.*.txt") do |file|
       content = File.read(file)
       if content.include?("openssl::openssl")
@@ -44,12 +46,21 @@ class CatboostCli < Formula
       end
     end
 
+    cmake_project_top_level_includes = ["#{buildpath}/cmake/conan_provider.cmake"]
+
+    # Check if CMAKE_PROJECT_TOP_LEVEL_INCLUDES is already specified in std_cmake_args
+    cmake_top_level_includes = std_cmake_args.find { |arg| arg.start_with?("-DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=") }
+    if cmake_top_level_includes
+      cmake_project_top_level_includes.unshift(cmake_top_level_includes.split("=")[1])
+      std_cmake_args.delete(cmake_top_level_includes)
+    end
+
     args = [
       "-DCATBOOST_COMPONENTS=app",
       "-DCMAKE_POSITION_INDEPENDENT_CODE=On",
       "-DHAVE_CUDA=no",
       "-DCMAKE_TOOLCHAIN_FILE=#{buildpath}/build/toolchains/clang.toolchain",
-      "-DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=#{buildpath}/cmake/conan_provider.cmake",
+      "-DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=#{cmake_project_top_level_includes.join(";")}",
     ]
 
     cmakepath = buildpath/"cmake-build"
