@@ -3,6 +3,9 @@
 module Overcommit
   module Hook
     module PreCommit
+      # Runs `brew style` against any modified Brew files.
+      #
+      # @see https://docs.brew.sh/Adding-Software-to-Homebrew
       class BrewStyle < Base
         FORMAT_AUDIT_CATEGORIZER = lambda do |type|
           type.match?(/\[correct(?:able|ed)\]/i) ? :warning : :error
