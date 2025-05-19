@@ -3,7 +3,7 @@ class CppPlotly < Formula
   homepage "https://github.com/pablrod/cppplotly"
   url      "https://github.com/pablrod/cppplotly/archive/refs/tags/v0.4.0.tar.gz"
   sha256   "378a978d5e6d06685e83593bbd5c4652685c2340240312ce57913befcca9f7c3"
-  revision 1
+  revision 2
   head     "https://github.com/pablrod/cppplotly.git"
 
   livecheck do
