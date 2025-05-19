@@ -13,11 +13,11 @@ class ClangFormatAT14 < Formula
   end
 
   bottle do
-    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/clang-format@14-14.0.6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "c42b9a057f2dd44e0236ef3038895785d1103fbfbd92d47441df369e1efaff1a"
-    sha256 cellar: :any_skip_relocation, ventura:      "a6edc464bca70ccdffc602d427a1a2cd92abb5cce6b968aa4c098f40f1f1cd81"
-    sha256 cellar: :any_skip_relocation, monterey:     "e1d9b7db2bc019ea004e51508a8913d5b4a5c71a30c6ead8e74bff00258bfeeb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "aa609dcd859a9dc046a2c48858fde5ab8cf792632781c509fef0f79639637457"
+    root_url "https://ghcr.io/v2/cdalvaro/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3689dc1728478966f5bf62dc49d8053112fcdba191c26c3e1f38ce736457da72"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b583c1294ebd5229b0680a8a84889b8cd079285f495bc78ae2dd5893b5b3521f"
+    sha256 cellar: :any_skip_relocation, ventura:       "048de52d859b6a7b2db79c2f785422e3b6f481f5da21262084e59c4ce9a2508e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f65cfc80a6cb4ff79368fbfb18c400ebb316414544380c16dc66f39e737dedb5"
   end
 
   depends_on "cmake" => :build
