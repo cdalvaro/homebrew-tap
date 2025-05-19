@@ -4,6 +4,7 @@ class CppZmq < Formula
   url      "https://github.com/zeromq/cppzmq/archive/refs/tags/v4.10.0.tar.gz"
   sha256   "c81c81bba8a7644c84932225f018b5088743a22999c6d82a2b5f5cd1e6942b74"
   license  "MIT"
+  revision 1
   head     "https://github.com/zeromq/cppzmq.git"
 
   livecheck do
