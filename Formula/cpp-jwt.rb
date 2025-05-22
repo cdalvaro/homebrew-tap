@@ -1,10 +1,9 @@
 class CppJwt < Formula
   desc     "JSON Web Token library for C++"
   homepage "https://github.com/arun11299/cpp-jwt"
-  url      "https://github.com/arun11299/cpp-jwt/archive/refs/tags/v1.4.tar.gz"
-  sha256   "1cb8039ee15bf9bf735c26082d7ff50c23d2886d65015dd6b0668c65e17dd20f"
+  url      "https://github.com/arun11299/cpp-jwt/archive/refs/tags/v1.5.tar.gz"
+  sha256   "44a59d619b0a82cae6334bb7d430d27b7fc7595e872c9f20d46aa96d2301edb2"
   license  "MIT"
-  revision 2
   head     "https://github.com/arun11299/cpp-jwt.git"
 
   livecheck do
@@ -65,10 +64,13 @@ class CppJwt < Formula
     custom_args = []
     custom_args << "-DCPP_JWT_USE_VENDORED_NLOHMANN_JSON" if build.without? "nlohmann-json"
 
-    system ENV.cxx, "-I#{include}", "-std=c++14",
+    system ENV.cxx, "test.cpp",
+           "-I#{include}", "-std=c++14",
            "-I#{Formula["openssl"].include}",
+           "-L#{Formula["openssl"].lib}",
+           "-lssl", "-lcrypto",
            *custom_args,
-           "test.cpp", "-o", "test"
+           "-o", "test"
     system "./test"
   end
 end
