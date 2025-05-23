@@ -13,10 +13,10 @@ class CppJwt < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/cdalvaro/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "199ba0297d4a3397b049a6a6ab664af375c7b7f27e90a31d8df70cc9e055ddff"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e0383f4f7704545f2bb6e3b28b9177f24f51a996264dd05443427d2015247ca"
-    sha256 cellar: :any_skip_relocation, ventura:       "ccb56ccf2a9714cfbb69aadd7ccd8e8613d5134a3d64cd001c6e75190312e7bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0852bf697c30132204f56abcb15320acef08d96fd0c59e145b977f4a85b96012"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9fdb39989f20a441b3f2e6574088cf3cbb251801354f75d05031a677451efad6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a5d2fdae42b5bc9f3c4207d1616b8b20ecfe0c17d61fe257d6f4f80ce2b010f"
+    sha256 cellar: :any_skip_relocation, ventura:       "b2c9c27d46f38254293a0d24133a8517ca37a2ae5b5bbb054c67f1cfd2ecc05f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cf2408cf608a21a0e7ad9d5405a14390081166da5e06d326dd1142a7f9378bf"
   end
 
   option "with-nlohmann-json", "Use nlohmann-json library instead of the vendored one"
