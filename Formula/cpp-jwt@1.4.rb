@@ -11,6 +11,14 @@ class CppJwtAT14 < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/cdalvaro/tap"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "356f162e9997e113f9ccad89c2961ddba4fab3d47df00a1a4e563ea2f3914457"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a0ae2f43f0d4dfcda438409b7cf10c1837da66576fbde7c4ae23300cbac8aa7"
+    sha256 cellar: :any_skip_relocation, ventura:       "8b61a4104a27468653cd993ea2abb593035526b4486253832f0a46fe1ce0222e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1a6d123f12e274a83fbf464c1cd0d78f5989b4d00fddd74b776b5a638507781"
+  end
+
   option "with-nlohmann-json", "Use nlohmann-json library instead of the vendored one"
 
   depends_on "cmake" => :build
