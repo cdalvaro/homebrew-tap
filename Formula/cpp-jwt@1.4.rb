@@ -19,6 +19,8 @@ class CppJwtAT14 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1a6d123f12e274a83fbf464c1cd0d78f5989b4d00fddd74b776b5a638507781"
   end
 
+  keg_only :versioned_formula
+
   option "with-nlohmann-json", "Use nlohmann-json library instead of the vendored one"
 
   depends_on "cmake" => :build
