@@ -13,10 +13,10 @@ class HowardHinnantDate < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/cdalvaro/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "db7a350903e04979bc5e16cfc286049f8478662c67064eb19238a8f849f89f83"
-    sha256 cellar: :any,                 arm64_sonoma:  "c2a4d2c38934798d125f0a2fcf47df74be1c8dd8037612487bf930b9e431b0aa"
-    sha256 cellar: :any,                 ventura:       "fc62956f862c168e715c5670bdb9f3324e04b93d5dd863f172ce35c586654cba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ed0bbeec12474d44f1db45502d677908ebe6f3d97ac98a5b3df185da73fdd02"
+    sha256 cellar: :any,                 arm64_sequoia: "e1a1d22fe74b8b7897bff65da454f1031c5bdabd30de9058d750b26f0e8de829"
+    sha256 cellar: :any,                 arm64_sonoma:  "98d8bc88897bd7e62f6eb426306de1373b001a28b16a899e2b7bac334fa32179"
+    sha256 cellar: :any,                 ventura:       "fec6c509c1b6e79cecf1a50b196fdd687d0ae67f4de7e906d4e53bd0caa916ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "023db19522fd883a442ab3cc4b33a12bbb4b968fc5692cab5f4991a08f972256"
   end
 
   option "without-string-view", "Disable C++ string view"
