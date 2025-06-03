@@ -1,4 +1,4 @@
-cask "salt@3006" do
+cask "salt@lts" do
   arch arm: "arm64", intel: "x86_64"
 
   version "3006.10"
