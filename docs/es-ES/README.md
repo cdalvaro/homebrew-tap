@@ -189,7 +189,7 @@ Esta fórmula [está disponible](https://github.com/Homebrew/homebrew-core/blob/
   <ul>
     <li><a href="#autofirma">autofirma</a></li>
     <li><a href="#salt-1">salt</a></li>
-    <li><a href="#salt3006">salt@3006</a></li>
+    <li><a href="#saltlts">salt@lts</a></li>
   </ul>
 </details>
 
@@ -233,17 +233,17 @@ El parche añade:
 
 Más documentación está disponible en: [Homebrew - Taps](https://docs.brew.sh/Taps)
 
-### `salt@3006`
+### `salt@lts`
 
 [![Badge](https://img.shields.io/badge/saltstack-salt%20LTS-grey?logo=saltproject&color=57BCAD)](https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/macos.html#lts-downloads)
-[![Badge](https://img.shields.io/badge/Cask-salt@3006-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Casks/salt@3006.rb)
+[![Badge](https://img.shields.io/badge/Cask-salt@lts-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Casks/salt@lts.rb)
 
 Software para automatizar la gestión y configuración de cualquier infraestructura o aplicación a escala.
 
 Este cask instala salt LTS usando el paquete de instalación oficial en lugar de construir el paquete completo desde el código fuente como hace la fórmula.
 
 ```sh
-brew install --cask cdalvaro/tap/salt@3006
+brew install --cask cdalvaro/tap/salt@lts
 ```
 
 Este cask incluye todos los parches indicados en [`salt`](#salt-1).
