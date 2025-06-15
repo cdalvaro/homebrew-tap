@@ -10,10 +10,10 @@ class Salt < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/cdalvaro/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "2bd7b2a3f64b120f2e6b166b26de4701d727051322b5f0a2c279c3e1ad08f6c1"
-    sha256 cellar: :any,                 arm64_sonoma:  "7abdd9feadc69ceeea0bd9a95414fca750bd30a0da3f7b68e2c28a6b7f6ee065"
-    sha256 cellar: :any,                 ventura:       "9992bb1af814c1fceaba5a4522c503dcbb6c937b5dcfe8b147fb395d2e4b1269"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a0acb248d54015bd1841408c03afa3b52243e7c71a6ec7aa29a1b1ad5d5a7de"
+    sha256 cellar: :any,                 arm64_sequoia: "de7014d3219c7de051c620568d91ce1b50717550a225896c6d701e6e66f215a6"
+    sha256 cellar: :any,                 arm64_sonoma:  "097b29357821b87d2b6f9f25a0fe1700537ee5950d9d30a0f4b45ae3c623572f"
+    sha256 cellar: :any,                 ventura:       "8ef0833bfaf4d9b5acc2190e7e1cbe7cbd3e9bafd5aa5a63854281cb9359756d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9abadc48f8cd3a4a1bc715cb574e312ec2f7a9427eba3057aafbf54a8195c2a"
   end
 
   depends_on "rust" => :build
