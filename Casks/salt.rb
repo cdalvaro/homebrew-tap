@@ -1,11 +1,11 @@
 cask "salt" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "3007.3"
+  version "3007.4"
 
   on_macos do
-    sha256 arm:   "5d65cd82c8b717c4b1f4523a7ad7c0bfe22bd995cb04d438c70082c3025d29fa",
-           intel: "39ef12e1f20255f2f585b4a3c12c398865a7237eb460c52be92c9f76e9e71f31"
+    sha256 arm:   "88e8d237e84dee0e05418e1f01e4125b44c408fd9ac49e90ff8d6928c3c53183",
+           intel: "7f625c72c994e576a4624616f98bb5e33b99b305de9ecadf29c6866a8627ce4a"
   end
 
   on_linux do
