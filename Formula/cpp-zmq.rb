@@ -1,10 +1,9 @@
 class CppZmq < Formula
   desc     "Header-only C++ binding for libzmq"
   homepage "https://github.com/zeromq/cppzmq"
-  url      "https://github.com/zeromq/cppzmq/archive/refs/tags/v4.10.0.tar.gz"
-  sha256   "c81c81bba8a7644c84932225f018b5088743a22999c6d82a2b5f5cd1e6942b74"
+  url      "https://github.com/zeromq/cppzmq/archive/refs/tags/v4.11.0.tar.gz"
+  sha256   "0fff4ff311a7c88fdb76fceefba0e180232d56984f577db371d505e4d4c91afd"
   license  "MIT"
-  revision 1
   head     "https://github.com/zeromq/cppzmq.git"
 
   livecheck do
@@ -42,7 +41,7 @@ class CppZmq < Formula
         zmq::socket_t socket(context, ZMQ_ROUTER);
       }
     EOS
-    system ENV.cxx, "test.cpp", "-std=c++11",
+    system ENV.cxx, "-std=c++11", "test.cpp",
                     "-I#{include}", "-L#{HOMEBREW_PREFIX}/lib",
                     "-lzmq", "-o", "test"
     system "./test"
