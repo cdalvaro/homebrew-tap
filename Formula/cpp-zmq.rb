@@ -13,10 +13,10 @@ class CppZmq < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/cdalvaro/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3f177a06b2d9f1541a424d9482418491649cdc7922a3c5b3c3d275f37236f834"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a1a7f74fc1708266db690c49eda545dbccba4ef534e3ba53a8f7dc22c85449c4"
-    sha256 cellar: :any_skip_relocation, ventura:       "6b220545eadfdb0273be30b0f9f6f189565513f588288f0d2730a6aa70fa8423"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b62aa613b53b1212b7c2dc8d7114e42cc9391ffba30090787a6d8beb19d1147"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de00d05a7ca1fc6c3aacd2a9f7694b601e85d6ecaf895bdcd43cef98604eed5e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b0325d177384623d493fdd84753cc8035bf7eeec736c6416700139e3935c60b"
+    sha256 cellar: :any_skip_relocation, ventura:       "e720cbba10f7793abd1a4b9f5cac81e2d71c8a67c7f049fcad0fec0530f545cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9f4d8b2ecfb56727d7ac0253cfb5ba4d4438fa64c479643945ef53610c6bfcb"
   end
 
   depends_on "cmake" => :build
