@@ -42,7 +42,7 @@ cask "salt" do
 
   zap trash: "/etc/salt"
 
-  define_method(:caveats) do
+  caveats do
     <<~CAVEATS
       Included services:
 
