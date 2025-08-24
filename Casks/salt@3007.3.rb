@@ -23,7 +23,6 @@ cask "salt@3007.3" do
     regex(%r{href="\d+\.\d+/">(\d+\.\d+)}i)
   end
 
-  conflicts_with formula: "salt"
   depends_on macos: ">= :big_sur"
 
   pkg "salt-#{version}-py3-#{arch}.pkg"
