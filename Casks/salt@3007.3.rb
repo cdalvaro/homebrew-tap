@@ -42,7 +42,7 @@ cask "salt@3007.3" do
 
   zap trash: "/etc/salt"
 
-  def caveats
+  define_method(:caveats) do
     <<~CAVEATS
       Included services:
 
