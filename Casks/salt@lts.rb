@@ -1,11 +1,11 @@
 cask "salt@lts" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "3006.13"
+  version "3006.14"
 
   on_macos do
-    sha256 arm:   "90ceed45f910a3934bf23a6535bba9ebb3861d08a5b30db665a8636d2061fef3",
-           intel: "1a22aac6854421f6039f07443420a12f3209f5a38af13adc04629702e8764e58"
+    sha256 arm:   "1733fbdd7bf9eb0510ec06782f671e08b0ce35cdc4138fae8f31ade393a70369",
+           intel: "535ab622dd5365324eb38c801bd66c2e2412a0381bd46671cabeaa7cc14bee0f"
   end
 
   on_linux do
@@ -42,7 +42,7 @@ cask "salt@lts" do
 
   zap trash: "/etc/salt"
 
-  define_method(:caveats) do
+  caveats do
     <<~CAVEATS
       Included services:
 
