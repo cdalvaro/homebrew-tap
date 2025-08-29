@@ -33,7 +33,6 @@ Puedes introducir directamente `brew install cdalvaro/tap/<formula>` para instal
     <li><a href="#cpp-zmq">cpp-zmq</a></li>
     <li><a href="#howard-hinnant-date">howard-hinnant-date</a></li>
     <li><a href="#json11">json11</a></li>
-    <li><a href="#salt">salt</a></li>
     <li><a href="#simple-web-server">simple-web-server</a></li>
     <li><a href="#wxwidgets">wxwidgets</a></li>
   </ul>
@@ -145,19 +144,6 @@ brew install cdalvaro/tap/json11
 
 Se trata de una librería compuesta únicamente por archivos de cabecera y además el proyecto fue archivado en marzo de 2020, por lo que no está disponible en homebrew-core.
 
-### `salt`
-
-[![Badge](https://img.shields.io/badge/saltstack-salt-grey?logo=github&color=181717)](https://github.com/saltstack/salt)
-[![Badge](https://img.shields.io/badge/Formula-salt-grey?logo=ruby&color=FBB040&logoColor=CC342D)](/Formula/salt.rb)
-
-Software para automatizar la gestión y configuración de cualquier infraestructura o aplicación a escala.
-
-```sh
-brew install cdalvaro/tap/salt
-```
-
-Salt usa su propia versión de python, por lo que [fue eliminado](https://github.com/Homebrew/homebrew-core/pull/157157) del repository homebrew-core. Pero lo mantengo actualizado por comodidad para instalarlo en mi NAS de Synology.
-
 ### `simple-web-server`
 
 [![Badge](https://img.shields.io/badge/eidheim-Simple--Web--Server-grey?logo=gitlab&color=FC6D26)](https://gitlab.com/eidheim/Simple-Web-Server)
@@ -188,7 +174,7 @@ Esta fórmula [está disponible](https://github.com/Homebrew/homebrew-core/blob/
   <summary>Lista de casks</summary>
   <ul>
     <li><a href="#autofirma">autofirma</a></li>
-    <li><a href="#salt-1">salt</a></li>
+    <li><a href="#salt">salt</a></li>
     <li><a href="#saltlts">salt@lts</a></li>
   </ul>
 </details>
