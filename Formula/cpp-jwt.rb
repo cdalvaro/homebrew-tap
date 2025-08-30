@@ -1,10 +1,10 @@
 class CppJwt < Formula
   desc     "JSON Web Token library for C++"
   homepage "https://github.com/arun11299/cpp-jwt"
-  url      "https://github.com/arun11299/cpp-jwt/archive/refs/tags/v1.5.tar.gz"
-  sha256   "44a59d619b0a82cae6334bb7d430d27b7fc7595e872c9f20d46aa96d2301edb2"
+  url      "https://github.com/arun11299/cpp-jwt/archive/refs/tags/v1.5.1.tar.gz"
+  sha256   "7e5ec6891254c8f00128952ed6b9a73d827539136c3b804563521a0042abe72c"
   license  "MIT"
-  head     "https://github.com/arun11299/cpp-jwt.git"
+  head     "https://github.com/arun11299/cpp-jwt.git", branch: "master"
 
   livecheck do
     url :stable
