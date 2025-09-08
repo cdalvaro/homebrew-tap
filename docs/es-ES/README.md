@@ -173,26 +173,10 @@ Esta fórmula [está disponible](https://github.com/Homebrew/homebrew-core/blob/
 <details>
   <summary>Lista de casks</summary>
   <ul>
-    <li><a href="#autofirma">autofirma</a></li>
     <li><a href="#salt">salt</a></li>
     <li><a href="#saltlts">salt@lts</a></li>
   </ul>
 </details>
-
-### `autofirma`
-
-[![Badge](https://img.shields.io/badge/Government%20of%20Spain-autofirma-grey?color=70130B)](https://firmaelectronica.gob.es/Home/Descargas.html)
-[![Badge](https://img.shields.io/badge/Cask-autofirma-grey?logo=ruby&color=FBB040&logoColor=CC342D)](/Casks/autofirma.rb)
-
-Aplicación de firma electrónica desarrollada por el Ministerio de Asuntos Económicos y Transformación Digital.
-
-Al poder ser ejecutada desde el navegador, permite la firma en páginas de Administración Electrónica cuando se requiere la firma en un procedimiento administrativo.
-
-```sh
-brew install --cask cdalvaro/tap/autofirma
-```
-
-Este cask [está disponible](https://github.com/Homebrew/homebrew-cask/blob/master/Casks/a/autofirma.rb) en el repositorio homebrew-cask. Sin embargo, el script postflight de desinstalación no funciona correctamente, por lo que lo he corregido en este tap. Intenté corregirlo en el repositorio principal, pero [no fue aceptado](https://github.com/Homebrew/homebrew-cask/pull/151676#issuecomment-1687230223).
 
 ### `salt`
 
