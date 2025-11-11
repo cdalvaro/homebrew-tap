@@ -4,6 +4,7 @@ class Wxwidgets < Formula
   url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.8.1/wxWidgets-3.2.8.1.tar.bz2"
   sha256 "ad0cf6c18815dcf1a6a89ad3c3d21a306cd7b5d99a602f77372ef1d92cb7d756"
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
+  revision 1
   head "https://github.com/wxWidgets/wxWidgets.git", branch: "master"
 
   livecheck do
@@ -40,6 +41,10 @@ class Wxwidgets < Formula
     url "https://raw.githubusercontent.com/cdalvaro/homebrew-tap/55724bef53cb80b9d6019f50cc915101c460bc48/patches/wxwidgets/enable_abort.diff"
     sha256 "2c14fb49da7ab4144fba1793fde80eedcb6201d7bf765d9c1c17b1f0b90851c8"
   end
+
+  # Fix an unnecessary link against Framework AGL, which has been removed in macOS 26
+  # https://github.com/wxWidgets/wxWidgets/pull/25799
+  patch :DATA
 
   def install
     if build.with? "enable-abort"
@@ -106,3 +111,31 @@ class Wxwidgets < Formula
     system bin/"wx-config", "--libs"
   end
 end
+
+__END__
+diff --git i/configure w/configure
+index 41c9466d48..dca0812c20 100755
+--- i/configure
++++ w/configure
+@@ -32397,7 +32397,7 @@ if test "$wxUSE_OPENGL" = "yes" -o "$wxUSE_OPENGL" = "auto"; then
+
+
+     if test "$wxUSE_OSX_COCOA" = 1; then
+-        OPENGL_LIBS="-framework OpenGL -framework AGL"
++        OPENGL_LIBS="-framework OpenGL"
+     elif test "$wxUSE_MSW" = 1; then
+         OPENGL_LIBS="-lopengl32 -lglu32"
+     elif test "$wxUSE_MOTIF" = 1 -o "$wxUSE_X11" = 1 -o "$wxUSE_GTK" = 1 -o "$wxUSE_QT" = 1; then
+diff --git i/configure.in w/configure.in
+index d2775343b5..69e7f7d584 100644
+--- i/configure.in
++++ w/configure.in
+@@ -3871,7 +3871,7 @@ if test "$wxUSE_OPENGL" = "yes" -o "$wxUSE_OPENGL" = "auto"; then
+     dnl look in glcanvas.h for the list of platforms supported by wxGlCanvas:
+
+     if test "$wxUSE_OSX_COCOA" = 1; then
+-        OPENGL_LIBS="-framework OpenGL -framework AGL"
++        OPENGL_LIBS="-framework OpenGL"
+     elif test "$wxUSE_MSW" = 1; then
+         OPENGL_LIBS="-lopengl32 -lglu32"
+     elif test "$wxUSE_MOTIF" = 1 -o "$wxUSE_X11" = 1 -o "$wxUSE_GTK" = 1 -o "$wxUSE_QT" = 1; then
