@@ -27,6 +27,12 @@ jobs:
           key: ${{ matrix.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
           restore-keys: ${{ matrix.os }}-rubygems-
 
+      # https://github.com/orgs/Homebrew/discussions/6517
+      - name: sanitize homebrew-core tap
+        run: |
+          brew update-reset "$(brew --repository homebrew/core)" || true
+          git -C "$(brew --repository homebrew/core)" clean -fd || true
+
       - run: brew test-bot --only-cleanup-before
 
       - run: brew test-bot --only-setup
