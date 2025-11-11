@@ -14,10 +14,10 @@ class Wxwidgets < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/cdalvaro/tap"
-    sha256 cellar: :any,                 arm64_sequoia: "c11a2efda00c13c9cf8c1dfe1dfedb7e3b701a273a404989b72c4d2fb6545b25"
-    sha256 cellar: :any,                 arm64_sonoma:  "2145bacd7a22a067406ff2a23f70d36831f38d4ca83a08c222e2322205f15a72"
-    sha256 cellar: :any,                 ventura:       "c2859af7745981423e349ac9e922f01cfb73f88de0208a7d2cd32a2e05cd3c84"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b366fa7ed962f8331f4d08e8d0c0c86b6ba7c4ccec16e30c639f142bfe035e58"
+    sha256 cellar: :any,                 arm64_tahoe:   "625fa883e50fceb4faec8bba3d1da62a6a87cdcd028e7e30660857ea292a6afc"
+    sha256 cellar: :any,                 arm64_sequoia: "db6d4f3a88051b33410b5aa4bacaafc67a6aee5a630edf0a0a596bdaaf9bbbef"
+    sha256 cellar: :any,                 arm64_sonoma:  "6c373a3a54dcd6a20a370b6c20cca4cf0f2afcb7c1383a9cb15bd3c1f6abdb70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d94ab22e86ffbec8ce8cae2cfcdf0b623a220a95cf180b122a61bb642de001f"
   end
 
   option "with-enable-abort", "Allows to abort a wxProgressDialog"
