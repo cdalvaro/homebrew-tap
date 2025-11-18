@@ -2,6 +2,5 @@
   "cppzmq": "cpp-zmq",
   "catboost": "catboost-cli",
   "catboost-model-cpp": "catboostmodel-cpp",
-  "wxmac": "wxwidgets",
-  "salt@3006": "salt@lts"
+  "wxmac": "wxwidgets"
 }
