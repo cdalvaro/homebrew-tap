@@ -23,6 +23,8 @@ class BoostAT189 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f31369fd087e3ed668cac023fc084f956f139a6b4caf90764066d846e00a4283"
   end
 
+  keg_only :versioned_formula
+
   depends_on "icu4c@78"
   depends_on "xz"
   depends_on "zstd"
@@ -136,7 +138,7 @@ class BoostAT189 < Formula
         return 0;
       }
     CPP
-    system ENV.cxx, "test.cpp", "-std=c++14", "-o", "test", "-L#{lib}", "-lboost_iostreams",
+    system ENV.cxx, "test.cpp", "-std=c++14", "-o", "test", "-I#{include}", "-L#{lib}", "-lboost_iostreams",
                     "-L#{Formula["zstd"].opt_lib}", "-lzstd"
     system "./test"
   end
