@@ -15,6 +15,14 @@ class BoostAT189 < Formula
     end
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/cdalvaro/tap"
+    sha256                               arm64_tahoe:   "504b7d68fd423e279da6c7d4819a2471e6c6b23e7991eca17c227215d9388f44"
+    sha256                               arm64_sequoia: "16f5e075c3f05462b6778ddcb4fc82b4146332a88e4ff380934e8479ac459235"
+    sha256                               arm64_sonoma:  "452b3af1ca39fbd15be757375fe985f48ee0a65bc0ea7103e57e5e2050f31888"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f31369fd087e3ed668cac023fc084f956f139a6b4caf90764066d846e00a4283"
+  end
+
   depends_on "icu4c@78"
   depends_on "xz"
   depends_on "zstd"
