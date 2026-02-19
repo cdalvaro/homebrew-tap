@@ -9,10 +9,10 @@ class CatboostCli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/cdalvaro/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91dff5635c84f5333ca2c82cbc915566a92d9a1c9238f83302a89d5a0172f001"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07067818bf6c96e1c6a01b27ea6eed1bdf9fbaace72cb3a197c88eef54a9e1e9"
-    sha256 cellar: :any_skip_relocation, ventura:       "ef1f114f46a16627443f4c8603d335397367ae8375f3de3066a090ac5f60fb65"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fe9030792a541c843a56ddbd9d68d53ec8f298d1820c9aa1806cad9d3754a22"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1445117551eff2481b148c092e93120beadf3d21cad5b4c7431eb48bef2c740e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a5b52d38fbbbe8e9725ea57667f8716d12e09dce4740523d7d942780daa0c6b8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f33a17515f87dae86e5a603cdc408b06aab68496e84426dfb22d8828ba65f580"
+    sha256                               x86_64_linux:  "8cd1e3489669e2b292f9937a73846ee463c762d2db6c003f5864d110562b3dc2"
   end
 
   depends_on "cmake" => :build
