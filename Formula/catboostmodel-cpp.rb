@@ -2,8 +2,8 @@ class CatboostmodelCpp < Formula
   desc "Gradient Boosting on Decision Trees C++ Model Library"
   homepage "https://catboost.ai"
   url "https://github.com/catboost/catboost.git",
-    tag:      "v1.2.9",
-    revision: "e7d262e7b58fc3217dd8ccbf7c246189873814e6"
+    tag:      "v1.2.10",
+    revision: "b1bd2a6d77219e82a1acfcedfccb8e6f6c1ee084"
   license "Apache-2.0"
   head "https://github.com/catboost/catboost.git", branch: "master"
 
