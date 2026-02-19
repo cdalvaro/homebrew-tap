@@ -9,10 +9,10 @@ class CatboostmodelCpp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/cdalvaro/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "a6f08484dd82fa25289261da134ebdc38419f19df05ae7b5ef03324678f62cd5"
-    sha256 cellar: :any,                 arm64_sequoia: "44afa178bf1b34e3ca47f48b7bf4980c2e7583774bb306dcecd0e4cc79d44817"
-    sha256 cellar: :any,                 arm64_sonoma:  "2c809722b68b84a5f254c863f722e8a5ea8acadfe044177222e66835b251562a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51e97152b86f76aede21379739015be0467074bc3bd1077f70b473705fd0b869"
+    sha256 cellar: :any,                 arm64_tahoe:   "b7cb08facd1933e94ca72845f8a9a144af06d15ed6f4a9f9428c6cc90d41431d"
+    sha256 cellar: :any,                 arm64_sequoia: "5f95f3dc7d646c70b4b89745ca3de0c3eb4c73fa97b7915e9bc7e688556fca4f"
+    sha256 cellar: :any,                 arm64_sonoma:  "b39d4f96e0c6af00df8c9e1542550e7ad5208ef0f2272c7246484e38a31dd48e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76c683444d712cc5c83c0f32a5d20a2d32cccb0205068a1b69711730bd920420"
   end
 
   option "with-static", "Also install the static library"
