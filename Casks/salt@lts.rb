@@ -1,11 +1,11 @@
 cask "salt@lts" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "3006.24"
+  version "3006.25"
 
   on_macos do
-    sha256 arm:   "05c07bd4f62f81bdf75876f976f29378da3ae605024657659b74a2f5abfde7a6",
-           intel: "afc48028cd00bb124c63bcabe53ba14638de3a0b31e8b5edbda335043dbb98c5"
+    sha256 arm:   "c209a148b4250bbd56fc6044b4d588c0cd5ae19426bac4a0283da9145a8d9db1",
+           intel: "e216aeb6a02b4e70cd5c3a7a7a552c2c7a1dfcc1956c0cfacc15133851ba11d2"
   end
 
   on_linux do
@@ -23,7 +23,7 @@ cask "salt@lts" do
     regex(%r{href="3006\.\d+/">(3006\.\d+)}i)
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on :macos
 
   pkg "salt-#{version}-py3-#{arch}.pkg"
 
