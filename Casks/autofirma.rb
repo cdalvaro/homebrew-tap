@@ -25,6 +25,8 @@ cask "autofirma" do
     end
   end
 
+  depends_on :macos
+
   # See https://github.com/Homebrew/homebrew-cask/pull/116137#issuecomment-998220031
   installer manual: "AutoFirma_#{version.dots_to_underscores}_#{pkg_arch}.pkg"
 
