@@ -23,7 +23,7 @@ cask "salt" do
     regex(%r{href="\d+\.\d+/">(\d+\.\d+)}i)
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on :macos
 
   pkg "salt-#{version}-py3-#{arch}.pkg"
 
