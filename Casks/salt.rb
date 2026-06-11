@@ -1,11 +1,11 @@
 cask "salt" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "3008.0"
+  version "3008.1"
 
   on_macos do
-    sha256 arm:   "ad24ea169e5a553298cb44112174c26906dd9912fc2b3706c553a2595fc5245a",
-           intel: "346f165a210827a1eaf20470bee26be1b1ec59994bfea8bb0c31fe06cf75969e"
+    sha256 arm:   "6358d1e76253b2894282992b1202a2b1f437a70a280c419ffde2707408fbce71",
+           intel: "78a467dee76eff9a5b58c63f588e69b703588a220aff269ed1b74b81d2818c35"
   end
 
   on_linux do
@@ -14,7 +14,7 @@ cask "salt" do
 
   url "https://packages.broadcom.com/artifactory/saltproject-generic/macos/#{version}/salt-#{version}-py3-#{arch}.pkg",
       verified: "packages.broadcom.com/artifactory/saltproject-generic/"
-  name "Salt #{version} STS"
+  name "Salt #{version} LTS"
   desc "Automation and infrastructure management engine"
   homepage "https://saltproject.io/"
 
