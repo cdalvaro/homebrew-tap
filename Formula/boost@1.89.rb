@@ -17,11 +17,11 @@ class BoostAT189 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/cdalvaro/tap"
-    rebuild 1
-    sha256                               arm64_tahoe:   "e9b9eafdcaa1e255f55a604a2c7acaeac318b15b7cdb5221ad9bee42d9bf529c"
-    sha256                               arm64_sequoia: "c271c4d71c5788b3202094eeff762067bd835cf3a6ad35f2990aedaa52e4f1ed"
-    sha256                               arm64_sonoma:  "8d737db1af2ecb191e331ee3f796e781c9f21d60ca9202d39445b4f243be41f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c71a4ddb59ce4a333022bdcd415914d88c0aaead0c35bc8bb449770f7104dc11"
+    rebuild 2
+    sha256               arm64_tahoe:   "423812f0494cbae32c0f2df8096fd2f39276e13bb644295100b3493dc3a4e51b"
+    sha256               arm64_sequoia: "af57652f88e54d04e330d60aff2c0badce6094a15e80b8b24dd14f7c9f2a9265"
+    sha256               arm64_sonoma:  "148f0ab59aae20b57ec7c3ee365c95dfea132a81ad7321c8c89cf2d14577394e"
+    sha256 cellar: :any, x86_64_linux:  "1dde9bd1764f4abe7640bf532f3c06ddc25c74a61e6877a753d86a7794837212"
   end
 
   keg_only :versioned_formula
