@@ -33,6 +33,10 @@ class BoostAT189 < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
+
   # Fix for `ncmpcpp`, pr ref: https://github.com/boostorg/range/pull/157
   patch :p3 do
     url "https://github.com/boostorg/range/commit/9ac89e9936b826c13e90611cb9a81a7aa0508d20.patch?full_index=1"
