@@ -12,9 +12,9 @@ class CppPlotly < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/cdalvaro/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75434f6b07fbf7e97ce88fc11f82f1926301fea47d51dc9d44daa73a59e6404a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89104499fac3ffb9234aab9818e582917b458d4775732815c54b89c549c1cb3e"
-    sha256 cellar: :any_skip_relocation, ventura:       "7166bf71dd0597915bc92014b2d880a86da6200b5e52f7e7f41c9e8f04c26aed"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a5de841571184d38211847841dc89f3f72cd9355dd905092c9dfd847af08ab5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f5da5a7537019e62a0ab05294785b6413b7a1cca62ad2adcf8d440ab77c184d9"
   end
 
   depends_on "cdalvaro/tap/json11"
