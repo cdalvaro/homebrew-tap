@@ -44,7 +44,7 @@ class CppPlotly < Formula
       }
     EOS
     system ENV.cxx, "-I#{include}", "-std=c++14",
-           "-L#{Formula["json11"].opt_lib}", "-ljson11",
+           "-L#{formula_opt_lib("json11")}", "-ljson11",
            "test.cpp", "-o", "test"
     system "./test"
   end
