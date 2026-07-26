@@ -1,14 +1,15 @@
 class Wxwidgets < Formula
   desc "Cross-platform C++ GUI toolkit"
   homepage "https://www.wxwidgets.org"
-  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.9/wxWidgets-3.2.9.tar.bz2"
-  sha256 "fb90f9538bffd6a02edbf80037a0c14c2baf9f509feac8f76ab2a5e4321f112b"
+  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.11/wxWidgets-3.2.11.tar.bz2"
+  sha256 "6a129015bce2e914e4bf61ec4411854ad962801d47e92f2eb8340adb6a90af08"
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
   head "https://github.com/wxWidgets/wxWidgets.git", branch: "master"
 
   livecheck do
     url :stable
-    strategy :github_latest
+    regex(/^v?(3\.2(?:\.\d+)+)$/i)
+    strategy :github_releases
   end
 
   bottle do
@@ -21,19 +22,30 @@ class Wxwidgets < Formula
 
   option "with-enable-abort", "Allows to abort a wxProgressDialog"
 
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "pcre2"
 
   uses_from_macos "expat"
-  uses_from_macos "zlib"
 
   on_linux do
+    depends_on "cairo"
+    depends_on "fontconfig"
+    depends_on "gdk-pixbuf"
+    depends_on "glib"
     depends_on "gtk+3"
     depends_on "libsm"
+    depends_on "libx11"
+    depends_on "libxkbcommon"
+    depends_on "libxtst"
+    depends_on "libxxf86vm"
+    depends_on "mesa"
     depends_on "mesa-glu"
+    depends_on "pango"
+    depends_on "wayland"
+    depends_on "zlib-ng-compat"
   end
 
   resource "enable_abort" do
@@ -53,7 +65,6 @@ class Wxwidgets < Formula
     %w[expat jpeg png tiff zlib].each { |l| rm_r(buildpath/"src"/l) }
 
     args = [
-      "--prefix=#{prefix}",
       "--enable-clipboard",
       "--enable-controls",
       "--enable-dataviewctrl",
@@ -70,7 +81,6 @@ class Wxwidgets < Formula
       "--with-libtiff",
       "--with-opengl",
       "--with-zlib",
-      "--disable-dependency-tracking",
       "--disable-tests",
       "--disable-precomp-headers",
       # This is the default option, but be explicit
@@ -82,13 +92,9 @@ class Wxwidgets < Formula
       args << "--with-macosx-version-min=#{MacOS.version}"
       args << "--with-osx_cocoa"
       args << "--with-libiconv"
-
-      # Work around deprecated Carbon API, see
-      # https://github.com/wxWidgets/wxWidgets/issues/24724
-      inreplace "src/osx/carbon/dcscreen.cpp", "#if !wxOSX_USE_IPHONE", "#if 0" if MacOS.version >= :sequoia
     end
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
 
     # wx-config should reference the public prefix, not wxwidgets's keg
@@ -97,12 +103,20 @@ class Wxwidgets < Formula
     # which are linked to the same place
     inreplace bin/"wx-config", prefix, HOMEBREW_PREFIX
 
-    # For consistency with the versioned wxwidgets formulae
-    bin.install_symlink bin/"wx-config" => "wx-config-#{version.major_minor}"
+    # Move some files out of the way to prevent conflict with `wxwidgets`
+    (bin/"wxrc").unlink
+    bin.install bin/"wx-config" => "wx-config-#{version.major_minor}"
     (share/"wx"/version.major_minor).install share/"aclocal", share/"bakefile"
   end
 
+  def caveats
+    <<~EOS
+      To avoid conflicts with the wxwidgets formula, `wx-config` and `wxrc`
+      have been installed as `wx-config-#{version.major_minor}` and `wxrc-#{version.major_minor}`.
+    EOS
+  end
+
   test do
-    system bin/"wx-config", "--libs"
+    system bin/"wx-config-#{version.major_minor}", "--libs"
   end
 end
