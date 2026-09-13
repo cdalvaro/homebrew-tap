@@ -4,7 +4,7 @@ class Json11 < Formula
   url      "https://github.com/dropbox/json11/archive/refs/tags/v1.0.0.tar.gz"
   sha256   "bab960eebc084d26aaf117b8b8809aecec1e86e371a173655b7dffb49383b0bf"
   license  "MIT"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/cdalvaro/tap"
@@ -16,10 +16,11 @@ class Json11 < Formula
   depends_on "cmake" => :build
 
   def install
-    custom_cmake_args = %w[
-      -DCMAKE_POLICY_VERSION_MINIMUM=3.5
-    ]
-    system "cmake", "-S", ".", "-B", ".", *std_cmake_args, *custom_cmake_args
+    # Upstream installs headers/libs under an arch-specific subdirectory
+    # (e.g. `include/x86_64-linux-gnu`) on multiarch Linux, breaking `-I#{include}`.
+    inreplace "CMakeLists.txt", "/${CMAKE_LIBRARY_ARCHITECTURE}", ""
+
+    system "cmake", "-S", ".", "-B", ".", *std_cmake_args, "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
     system "make", "install"
   end
 

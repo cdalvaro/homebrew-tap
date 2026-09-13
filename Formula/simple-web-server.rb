@@ -4,7 +4,7 @@ class SimpleWebServer < Formula
   url      "https://gitlab.com/eidheim/Simple-Web-Server/-/archive/v3.1.1/Simple-Web-Server-v3.1.1.tar.gz"
   sha256   "f8f656d941647199e0a2db3cb07788b0e8c30d0f019d28e6ee9281bc48db132d"
   license  "MIT"
-  revision 1
+  revision 2
   head     "https://gitlab.com/eidheim/Simple-Web-Server.git"
 
   bottle do
@@ -20,7 +20,7 @@ class SimpleWebServer < Formula
   depends_on "openssl"
 
   def install
-    system "cmake", "-S", ".", "-B", ".", *std_cmake_args
+    system "cmake", "-S", ".", "-B", ".", *std_cmake_args, "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
     system "make", "install"
   end
 end
