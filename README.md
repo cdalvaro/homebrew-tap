@@ -168,54 +168,6 @@ brew install cdalvaro/tap/wxwidgets
 
 This formula [is available](https://github.com/Homebrew/homebrew-core/blob/master/Formula/w/wxwidgets.rb) at homebrew-core repository. But I have added the option `--with-enable-abort` to allow aborting a running task using a `wxGenericProgressDialog`.
 
-## Available casks
-
-<details>
-  <summary>Casks list</summary>
-  <ul>
-    <li><a href="#salt">salt</a></li>
-    <li><a href="#saltlts">salt@lts</a></li>
-  </ul>
-</details>
-
-### `salt`
-
-[![Badge](https://img.shields.io/badge/saltstack-salt%20STS-grey?logo=saltproject&color=57BCAD)](https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/macos.html#sts-downloads)
-[![Badge](https://img.shields.io/badge/Cask-salt-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Casks/salt.rb)
-
-Software to automate the management and configuration of any infrastructure or application at scale.
-
-This cask installs salt STS using the official installation package instead
-of building the whole package from source as the formula does.
-
-```sh
-brew install --cask cdalvaro/tap/salt
-```
-
-This cask [is available](https://github.com/Homebrew/homebrew-cask/blob/master/Casks/s/salt.rb) at homebrew-cask repository. However I have added [a patch](https://github.com/cdalvaro/homebrew-tap/blob/main/Casks/salt.rb#L1-L32) to the `.plist` files to make `salt` to work properly with Homebrew out of the box.
-
-The patch adds:
-
-- `HOMEBREW_PREFIX` to the environment.
-- `PATH` env variable containing the `HOMEBREW_PREFIX` bin directory.
-- `HOME` env variable containing the `root` home directory, to avoid an issue with `brew` command.
-
-### `salt@lts`
-
-[![Badge](https://img.shields.io/badge/saltstack-salt%20LTS-grey?logo=saltproject&color=57BCAD)](https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/macos.html#lts-downloads)
-[![Badge](https://img.shields.io/badge/Cask-salt@lts-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Casks/salt@lts.rb)
-
-Software to automate the management and configuration of any infrastructure or application at scale.
-
-This cask installs salt LTS using the official installation package instead
-of building the whole package from source as the formula does.
-
-```sh
-brew install --cask cdalvaro/tap/salt@lts
-```
-
-This cask includes all patches from the [`salt`](#salt-1) cask.
-
 ## More documentation
 
 More documentation is available at: [Homebrew - Taps](https://docs.brew.sh/Taps)
