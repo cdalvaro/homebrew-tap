@@ -36,7 +36,7 @@ class CppJwtAT14 < Formula
     use_vendored_nlohmann = build.with?("nlohmann-json") ? "OFF" : "ON"
     custom_args << "-DCPP_JWT_USE_VENDORED_NLOHMANN_JSON=#{use_vendored_nlohmann}"
 
-    system "cmake", ".", *std_cmake_args, *custom_args
+    system "cmake", "-S", ".", "-B", ".", *std_cmake_args, *custom_args
     system "make", "install"
   end
 

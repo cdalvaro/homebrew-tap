@@ -28,7 +28,7 @@ class CppZmq < Formula
       "-DCPPZMQ_BUILD_TESTS=OFF",
     ]
 
-    system "cmake", ".", *std_cmake_args, *custom_args
+    system "cmake", "-S", ".", "-B", ".", *std_cmake_args, *custom_args
     system "make", "install"
   end
 

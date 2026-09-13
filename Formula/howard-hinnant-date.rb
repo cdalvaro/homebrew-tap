@@ -34,7 +34,7 @@ class HowardHinnantDate < Formula
     disable_string_view = build.with?("string-view") ? "OFF" : "ON"
     custom_args << "-DDISABLE_STRING_VIEW=#{disable_string_view}"
 
-    system "cmake", ".", *std_cmake_args, *custom_args
+    system "cmake", "-S", ".", "-B", ".", *std_cmake_args, *custom_args
     system "make", "install"
   end
 

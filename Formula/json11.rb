@@ -19,7 +19,7 @@ class Json11 < Formula
     custom_cmake_args = %w[
       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     ]
-    system "cmake", ".", *std_cmake_args, *custom_cmake_args
+    system "cmake", "-S", ".", "-B", ".", *std_cmake_args, *custom_cmake_args
     system "make", "install"
   end
 
