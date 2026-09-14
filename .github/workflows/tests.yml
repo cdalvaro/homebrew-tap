@@ -1,3 +1,4 @@
+# brew tap-new uses this file to generate a PR test workflow for the new tap
 name: brew test-bot
 
 on:
@@ -6,45 +7,54 @@ on:
       - main
   pull_request:
 
-env:
-  HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+permissions: {}
+
+defaults:
+  run:
+    shell: bash -xeuo pipefail {0}
 
 jobs:
   test-bot:
     strategy:
       matrix:
         os: [macOS-15, macOS-26, xcode-27, ubuntu-26.04]
+        include:
+          - os: ubuntu-latest
+            container:
+              image: ghcr.io/homebrew/brew:main
+              options: --privileged
     runs-on: ${{ matrix.os }}
+    container: ${{ fromJSON(toJSON(matrix.container)) }} # zizmor: ignore[unpinned-images]
+    permissions:
+      actions: read
+      checks: read
+      contents: read
+      pull-requests: read
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@main
+        uses: Homebrew/actions/setup-homebrew@f8d4222eb633e65c2a0157383cf80861fc7fae7f # 2026.09.07.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Cache Homebrew Bundler RubyGems
-        uses: actions/cache@v4
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: ${{ steps.set-up-homebrew.outputs.gems-path }}
           key: ${{ matrix.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
           restore-keys: ${{ matrix.os }}-rubygems-
-
-      # https://github.com/orgs/Homebrew/discussions/6517
-      - name: sanitize homebrew-core tap
-        run: |
-          brew update-reset "$(brew --repository homebrew/core)" || true
-          git -C "$(brew --repository homebrew/core)" clean -fd || true
 
       - run: brew test-bot --only-cleanup-before
 
       - run: brew test-bot --only-setup
 
       - run: brew test-bot --only-tap-syntax
-
-      - run: brew test-bot --only-formulae --root-url='https://ghcr.io/v2/cdalvaro/tap'
+      - run: brew test-bot --only-formulae
         if: github.event_name == 'pull_request'
 
       - name: Upload bottles as artifact
         if: always() && github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: bottles_${{ matrix.os }}
           path: "*.bottle.*"
