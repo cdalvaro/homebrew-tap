@@ -4,8 +4,8 @@ class SimpleWebServer < Formula
   url      "https://gitlab.com/eidheim/Simple-Web-Server/-/archive/v3.1.1/Simple-Web-Server-v3.1.1.tar.gz"
   sha256   "f8f656d941647199e0a2db3cb07788b0e8c30d0f019d28e6ee9281bc48db132d"
   license  "MIT"
-  revision 2
-  head     "https://gitlab.com/eidheim/Simple-Web-Server.git"
+  revision 3
+  head     "https://gitlab.com/eidheim/Simple-Web-Server.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/cdalvaro/tap"
