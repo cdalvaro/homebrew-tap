@@ -7,10 +7,11 @@ class Json11 < Formula
   revision 3
 
   bottle do
-    root_url "https://ghcr.io/v2/cdalvaro/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5fc26511768d3dfe2f04da9703a667aafa463b62feb29d71e4a9da001f93b828"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59c87a35e433d49de42b0448f8e8a2749e120cbe7999279d8e7e4b49325c09cc"
-    sha256 cellar: :any_skip_relocation, ventura:       "468d1fb72c0c17f2fdef8d177eeabb1a853eef6754f1d5b9a8c68a4a04b97a4b"
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/json11-1.0.0_3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "63e4809f77d1bc0058f8325f2c2850d905616a5436ee08ae294664b302bebe7a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "db5d60289cde2c6645a247a557ddb4cbc338998513b6baac63c8e8eaac6269ca"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "95c14534cdfb25fe354d13ea508951d8ed6dfe83077f2e30f8057cba2e13bdff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6bb9d63b21d1aaaa7251642f6c4f3f761243af0e42ecea0150a5c38a72e9ba72"
   end
 
   depends_on "cmake" => :build
