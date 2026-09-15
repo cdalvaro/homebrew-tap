@@ -4,7 +4,7 @@ class Json11 < Formula
   url      "https://github.com/dropbox/json11/archive/refs/tags/v1.0.0.tar.gz"
   sha256   "bab960eebc084d26aaf117b8b8809aecec1e86e371a173655b7dffb49383b0bf"
   license  "MIT"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://ghcr.io/v2/cdalvaro/tap"
