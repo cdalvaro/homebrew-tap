@@ -5,7 +5,14 @@ class CatboostCli < Formula
     tag:      "v1.2.10",
     revision: "b1bd2a6d77219e82a1acfcedfccb8e6f6c1ee084"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/catboost/catboost.git", branch: "master"
+
+  livecheck do
+    url :stable
+    regex(/^v(\d+(?:\.\d+)+)/i)
+    strategy :github_latest
+  end
 
   bottle do
     root_url "https://ghcr.io/v2/cdalvaro/tap"
