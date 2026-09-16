@@ -44,11 +44,11 @@ class CatboostmodelCpp < Formula
   end
 
   bottle do
-    root_url "https://ghcr.io/v2/cdalvaro/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "b7cb08facd1933e94ca72845f8a9a144af06d15ed6f4a9f9428c6cc90d41431d"
-    sha256 cellar: :any,                 arm64_sequoia: "5f95f3dc7d646c70b4b89745ca3de0c3eb4c73fa97b7915e9bc7e688556fca4f"
-    sha256 cellar: :any,                 arm64_sonoma:  "b39d4f96e0c6af00df8c9e1542550e7ad5208ef0f2272c7246484e38a31dd48e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76c683444d712cc5c83c0f32a5d20a2d32cccb0205068a1b69711730bd920420"
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/catboostmodel-cpp-1.2.10_1"
+    sha256 cellar: :any, arm64_golden_gate: "d76772aef86a504ec73cc7faf2ea9ba2daf4912dce110b8883a34fa7e0c6e656"
+    sha256 cellar: :any, arm64_tahoe:       "1ae951d327cd2a23c31cfad72ffa1791f14694274ffee1adad584395ffe4745d"
+    sha256 cellar: :any, arm64_sequoia:     "9b4db871295fb9d07ead6313306c91c026b5de7dafc4acd0949335769e47f40b"
+    sha256 cellar: :any, x86_64_linux:      "1d1151a74c8681b42ddaa33d7c1b6d2c034cc5123dcfbf06856cb199228d3f93"
   end
 
   option "with-static", "Also install the static library"
