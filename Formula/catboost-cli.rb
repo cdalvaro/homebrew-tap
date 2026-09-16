@@ -29,6 +29,7 @@ class CatboostCli < Formula
   uses_from_macos "llvm" => :build
 
   on_linux do
+    depends_on "llvm" => :build
     depends_on "lld"
     depends_on "openssl@3.0"
 
@@ -42,6 +43,10 @@ class CatboostCli < Formula
   end
 
   def install
+    # The build forces clang.toolchain, but Linux defaults to GCC, so
+    # switch to the real LLVM clang to avoid passing clang-only flags to GCC.
+    ENV.llvm_clang if OS.linux?
+
     # Replace openssl::openssl by OpenSSL::SSL
     # Otherwise target_link_libraries fails
     Dir.glob("**/CMakeLists.*.txt") do |file|
