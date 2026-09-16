@@ -1,3 +1,32 @@
+# Shared by the catboost-derived formulae (catboost-cli, catboostmodel-cpp).
+# Kept inline (not required from a separate lib file) because Homebrew only
+# snapshots this single formula file into the keg's `.brew/<name>.rb`, used as
+# a fallback loader once the tap is no longer resolvable (e.g. after
+# `brew untap`); a `require_relative` to an external file breaks that load.
+module CatboostConanToolchain
+  module_function
+
+  # Their CMake build forces `build/toolchains/clang.toolchain`, but Homebrew
+  # defaults to GCC on Linux, so the shim silently swaps in `g++` whenever the
+  # toolchain invokes `clang++`, which then chokes on Clang-only flags. Once we
+  # switch to the real LLVM clang, Conan's bundled `settings.yml` may still not
+  # recognize that LLVM release, so we register it via `settings_user.yml`,
+  # Conan's supported mechanism for extending settings without patching the
+  # bundled file.
+  def fix_linux_clang!
+    return unless OS.linux?
+
+    ENV.llvm_clang
+
+    conan_home = Pathname.new(Utils.safe_popen_read("conan", "config", "home").strip)
+    (conan_home/"settings_user.yml").write <<~YAML
+      compiler:
+        clang:
+          version: ["#{Formula["llvm"].version.major}"]
+    YAML
+  end
+end
+
 class CatboostmodelCpp < Formula
   desc "Gradient Boosting on Decision Trees C++ Model Library"
   homepage "https://catboost.ai"
@@ -5,7 +34,14 @@ class CatboostmodelCpp < Formula
     tag:      "v1.2.10",
     revision: "b1bd2a6d77219e82a1acfcedfccb8e6f6c1ee084"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/catboost/catboost.git", branch: "master"
+
+  livecheck do
+    url :stable
+    regex(/^v(\d+(?:\.\d+)+)/i)
+    strategy :github_latest
+  end
 
   bottle do
     root_url "https://ghcr.io/v2/cdalvaro/tap"
@@ -36,6 +72,8 @@ class CatboostmodelCpp < Formula
   end
 
   def install
+    CatboostConanToolchain.fix_linux_clang!
+
     # Replace openssl::openssl by OpenSSL::SSL
     # Otherwise target_link_libraries fails
     Dir.glob("**/CMakeLists.*.txt") do |file|
