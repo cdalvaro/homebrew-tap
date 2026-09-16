@@ -1,3 +1,32 @@
+# Shared by the catboost-derived formulae (catboost-cli, catboostmodel-cpp).
+# Kept inline (not required from a separate lib file) because Homebrew only
+# snapshots this single formula file into the keg's `.brew/<name>.rb`, used as
+# a fallback loader once the tap is no longer resolvable (e.g. after
+# `brew untap`); a `require_relative` to an external file breaks that load.
+module CatboostConanToolchain
+  module_function
+
+  # Their CMake build forces `build/toolchains/clang.toolchain`, but Homebrew
+  # defaults to GCC on Linux, so the shim silently swaps in `g++` whenever the
+  # toolchain invokes `clang++`, which then chokes on Clang-only flags. Once we
+  # switch to the real LLVM clang, Conan's bundled `settings.yml` may still not
+  # recognize that LLVM release, so we register it via `settings_user.yml`,
+  # Conan's supported mechanism for extending settings without patching the
+  # bundled file.
+  def fix_linux_clang!
+    return unless OS.linux?
+
+    ENV.llvm_clang
+
+    conan_home = Pathname.new(Utils.safe_popen_read("conan", "config", "home").strip)
+    (conan_home/"settings_user.yml").write <<~YAML
+      compiler:
+        clang:
+          version: ["#{Formula["llvm"].version.major}"]
+    YAML
+  end
+end
+
 class CatboostCli < Formula
   desc "Fast, scalable, high performance Gradient Boosting on Decision Trees cli tool"
   homepage "https://catboost.ai"
@@ -43,9 +72,7 @@ class CatboostCli < Formula
   end
 
   def install
-    # The build forces clang.toolchain, but Linux defaults to GCC, so
-    # switch to the real LLVM clang to avoid passing clang-only flags to GCC.
-    ENV.llvm_clang if OS.linux?
+    CatboostConanToolchain.fix_linux_clang!
 
     # Replace openssl::openssl by OpenSSL::SSL
     # Otherwise target_link_libraries fails
