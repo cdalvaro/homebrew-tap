@@ -13,11 +13,11 @@ class CppJwt < Formula
   end
 
   bottle do
-    root_url "https://ghcr.io/v2/cdalvaro/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5238979c89adfd4ea83f0980e408bf1cd33c54da14cc0f59369ab47ec13cc4f4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "943ae6aceb3ce5a05cf45fb33cc67efad7e462258896d67d1b2ebcdf5ae56527"
-    sha256 cellar: :any_skip_relocation, ventura:       "e8ae3075b7f92610bf550d3083dc24d19bfc732bfa2eac3b0eae5848b0481555"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3b1d504f8b619c9af4df73ee607dd6c596834cf9c3d59668684b4b2495c1e8a"
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/cpp-jwt-1.5.1_1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3fb3c624fa7b80bddcef3aaae0f8b8204ceed43a2dfee903c0c1cdee48119e1e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2e4db7c3f5e63c9f7346a19789604bf4f7bb493656f333ef9fd558d6e857c56f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9992b2bbced146281cef6d01e3f40e3b27d5271d72a840d3570c4291e7f9668f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "dacb4229df73c3c7b07689c80d153b39d0e1d89c04264165c697771f6fed75a0"
   end
 
   option "with-nlohmann-json", "Use nlohmann-json library instead of the vendored one"
