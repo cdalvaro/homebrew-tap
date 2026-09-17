@@ -11,11 +11,11 @@ class ClangFormatAT14 < Formula
   end
 
   bottle do
-    root_url "https://ghcr.io/v2/cdalvaro/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3689dc1728478966f5bf62dc49d8053112fcdba191c26c3e1f38ce736457da72"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b583c1294ebd5229b0680a8a84889b8cd079285f495bc78ae2dd5893b5b3521f"
-    sha256 cellar: :any_skip_relocation, ventura:       "048de52d859b6a7b2db79c2f785422e3b6f481f5da21262084e59c4ce9a2508e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f65cfc80a6cb4ff79368fbfb18c400ebb316414544380c16dc66f39e737dedb5"
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/clang-format@14-14.0.6_2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e8593bae16376c346e245992bf15039b6d9516502fea75e1248283c1c7079faf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "181369fc484736721920328904a48ee2066792a2afeb100c6d17d25b53f34a4f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d617a7cacafdeef17af2728c8bf46ee9d1939adcb2b65f08945dda3353bdb207"
+    sha256 cellar: :any,                 x86_64_linux:      "c2eaa5bfa30b99dbd02b50373ff3af6b7933d1dafe37fca8fd3c7a9effdb2ccb"
   end
 
   depends_on "cmake" => :build
