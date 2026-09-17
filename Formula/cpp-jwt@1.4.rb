@@ -14,11 +14,11 @@ class CppJwtAT14 < Formula
   end
 
   bottle do
-    root_url "https://ghcr.io/v2/cdalvaro/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "356f162e9997e113f9ccad89c2961ddba4fab3d47df00a1a4e563ea2f3914457"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a0ae2f43f0d4dfcda438409b7cf10c1837da66576fbde7c4ae23300cbac8aa7"
-    sha256 cellar: :any_skip_relocation, ventura:       "8b61a4104a27468653cd993ea2abb593035526b4486253832f0a46fe1ce0222e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1a6d123f12e274a83fbf464c1cd0d78f5989b4d00fddd74b776b5a638507781"
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/cpp-jwt@1.4-1.4_1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "153798ba07b35e847ae99324159acdd2bc28edb677671b53b6bff2040b0286e3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e3529dca9b925b738110af61a091c02b8ed92031aea33db8783fed48ed910dcf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a9a8a10615c9bcefad6af7abd1047f0da0518eb33c901e32dec09002c2c6effa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "91fb8d8a03c0684c5e91fdfb7bd910ff494884c6595fb79591de3a940881b9e4"
   end
 
   keg_only :versioned_formula
