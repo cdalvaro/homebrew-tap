@@ -4,6 +4,7 @@ class CppJwt < Formula
   url      "https://github.com/arun11299/cpp-jwt/archive/refs/tags/v1.5.1.tar.gz"
   sha256   "7e5ec6891254c8f00128952ed6b9a73d827539136c3b804563521a0042abe72c"
   license  "MIT"
+  revision 1
   head     "https://github.com/arun11299/cpp-jwt.git", branch: "master"
 
   livecheck do
