@@ -5,7 +5,7 @@ class CppZmq < Formula
   sha256   "0fff4ff311a7c88fdb76fceefba0e180232d56984f577db371d505e4d4c91afd"
   license  "MIT"
   revision 1
-  head     "https://github.com/zeromq/cppzmq.git"
+  head     "https://github.com/zeromq/cppzmq.git", branch: "master"
 
   livecheck do
     url :stable
