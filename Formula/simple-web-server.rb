@@ -8,10 +8,10 @@ class SimpleWebServer < Formula
   head     "https://gitlab.com/eidheim/Simple-Web-Server.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/simple-web-server-3.1.1_3"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2e0d25af5eab1f346f8271842b67d8d7ed636471327920601aa4bcc0a308096f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ccd0ef021fff224704b3c85f5dc75a985fbae257fb3afaba8300bfb04dda909"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01d53a4dd8c8968c7abb1e63f2c3db7100aeac3c7f6225497a19ecec4b1e5203"
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/simple-web-server-3.1.1_4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "ea8b607e1c7118cf371f82acc457eb67d3592593eb9014971139de4bdf3d9d9c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93aedd63abcc2990f13b1b22e5f83573380246c8939fac8ed1dfc0c16934dc3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca283ee5b9c9a1e4ea2e5c19a8afeb683eb1d370eaf9797aed7a2e75cc0993a9"
   end
 
   depends_on "cmake" => :build
