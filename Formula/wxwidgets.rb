@@ -4,6 +4,7 @@ class Wxwidgets < Formula
   url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.11/wxWidgets-3.2.11.tar.bz2"
   sha256 "6a129015bce2e914e4bf61ec4411854ad962801d47e92f2eb8340adb6a90af08"
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
+  revision 1
   head "https://github.com/wxWidgets/wxWidgets.git", branch: "master"
 
   livecheck do
