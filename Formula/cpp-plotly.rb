@@ -3,7 +3,7 @@ class CppPlotly < Formula
   homepage "https://github.com/pablrod/cppplotly"
   url      "https://github.com/pablrod/cppplotly/archive/refs/tags/v0.4.0.tar.gz"
   sha256   "378a978d5e6d06685e83593bbd5c4652685c2340240312ce57913befcca9f7c3"
-  revision 2
+  revision 3
   head     "https://github.com/pablrod/cppplotly.git", branch: "master"
 
   livecheck do
@@ -44,8 +44,9 @@ class CppPlotly < Formula
       }
     EOS
     system ENV.cxx, "-I#{include}", "-std=c++14",
-           "-L#{formula_opt_lib("json11")}", "-ljson11",
-           "test.cpp", "-o", "test"
+          "test.cpp",
+          "-L#{formula_opt_lib("json11")}", "-ljson11",
+          "-o", "test"
     system "./test"
   end
 end
