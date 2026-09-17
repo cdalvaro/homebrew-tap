@@ -14,11 +14,11 @@ class Wxwidgets < Formula
   end
 
   bottle do
-    root_url "https://ghcr.io/v2/cdalvaro/tap"
-    sha256 cellar: :any, arm64_tahoe:   "f6aaa39b0279f6c4678a66dff01cddad9f940a4d9213fbc115526a4070b902e6"
-    sha256 cellar: :any, arm64_sequoia: "7c8102d7963021e6d1f264353df9ca7d4e990eea4ea3e8d824c6857cd273a979"
-    sha256 cellar: :any, arm64_sonoma:  "fa6c52fd2e7964d3746167e16edea5db02d5d1231810a5104aea14a87a45d4d8"
-    sha256 cellar: :any, x86_64_linux:  "4ee0b5115516f6b9eeec453bb487a69b3f8bd6c7a4e0012366b54aa2d8619b22"
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/wxwidgets-3.2.11_1"
+    sha256 cellar: :any, arm64_golden_gate: "3265f1c53fbdd033be4f88ebc7eb7c8a2865e3dec8c08dd31395d9e3132805a1"
+    sha256 cellar: :any, arm64_tahoe:       "f4b6aa256cfad5a7972fdda9163457be98ef0cd4c36a18fd2482434414d22478"
+    sha256 cellar: :any, arm64_sequoia:     "956eb5a38d62f67a5f5ddeb64ff1aba62dc43c6f3170a975ef9b76f6ebf41a7c"
+    sha256 cellar: :any, x86_64_linux:      "82ebdfbc41e79255e6f178702b11aca7e300641aa71ae1fdcedb8cb444105360"
   end
 
   option "with-enable-abort", "Allows to abort a wxProgressDialog"
