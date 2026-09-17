@@ -4,12 +4,10 @@ class ClangFormatAT14 < Formula
   url "https://github.com/llvm/llvm-project/releases/download/llvmorg-14.0.6/llvm-14.0.6.src.tar.xz"
   sha256 "050922ecaaca5781fdf6631ea92bc715183f202f9d2f15147226f023414f619a"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   livecheck do
-    url :stable
-    regex(/llvmorg[._-]v?(\d+(?:\.\d+)+)/i)
-    strategy :github_latest
+    skip "Pinned to a specific, unmaintained series"
   end
 
   bottle do
