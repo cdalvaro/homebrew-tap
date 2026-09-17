@@ -12,11 +12,11 @@ class CppJwtAT14 < Formula
   end
 
   bottle do
-    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/cpp-jwt@1.4-1.4_1"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "153798ba07b35e847ae99324159acdd2bc28edb677671b53b6bff2040b0286e3"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e3529dca9b925b738110af61a091c02b8ed92031aea33db8783fed48ed910dcf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a9a8a10615c9bcefad6af7abd1047f0da0518eb33c901e32dec09002c2c6effa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "91fb8d8a03c0684c5e91fdfb7bd910ff494884c6595fb79591de3a940881b9e4"
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/cpp-jwt@1.4-1.4_2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e1b9f31744659aa4b48d748e53411776ff6202755dbe66da8d8b62ff39a66527"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "345b119d097ece3b73bd0f58d64cc6957a73ee047083971c2ee1acecee1de6e9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6b24f6540a4979ecb946680b2680e1bfe6e242e704263c4940be92c55957fbd3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ed872cdf26163cb1a5facaf66c5e8711ecb5e27284b371e2cc333618013d5e22"
   end
 
   keg_only :versioned_formula
