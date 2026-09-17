@@ -4,10 +4,12 @@ class CppJwtAT14 < Formula
   url      "https://github.com/arun11299/cpp-jwt/archive/refs/tags/v1.4.tar.gz"
   sha256   "1cb8039ee15bf9bf735c26082d7ff50c23d2886d65015dd6b0668c65e17dd20f"
   license  "MIT"
+  revision 1
   head "https://github.com/arun11299/cpp-jwt.git", branch: "master"
 
   livecheck do
     url :stable
+    regex(/^v(1\.4(?:\.\d+))/i)
     strategy :github_latest
   end
 
