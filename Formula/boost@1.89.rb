@@ -4,15 +4,11 @@ class BoostAT189 < Formula
   url "https://github.com/boostorg/boost/releases/download/boost-1.89.0/boost-1.89.0-b2-nodocs.tar.xz"
   sha256 "875cc413afa6b86922b6df3b2ad23dec4511c8a741753e57c1129e7fa753d700"
   license "BSL-1.0"
-  revision 1
+  revision 2
   head "https://github.com/boostorg/boost.git", branch: "master"
 
   livecheck do
-    url "https://www.boost.org/users/download/"
-    regex(/href=.*?boost[._-]v?(\d+(?:[._]\d+)+)\.t/i)
-    strategy :page_match do |page, regex|
-      page.scan(regex).map { |match| match.first.tr("_", ".") }
-    end
+    skip "Pinned to a specific, unmaintained series"
   end
 
   bottle do
