@@ -13,11 +13,11 @@ class CppZmq < Formula
   end
 
   bottle do
-    root_url "https://ghcr.io/v2/cdalvaro/tap"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de00d05a7ca1fc6c3aacd2a9f7694b601e85d6ecaf895bdcd43cef98604eed5e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b0325d177384623d493fdd84753cc8035bf7eeec736c6416700139e3935c60b"
-    sha256 cellar: :any_skip_relocation, ventura:       "e720cbba10f7793abd1a4b9f5cac81e2d71c8a67c7f049fcad0fec0530f545cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9f4d8b2ecfb56727d7ac0253cfb5ba4d4438fa64c479643945ef53610c6bfcb"
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/cpp-zmq-4.11.0_1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "74c775db5a8a7f409bc7c55883b47d783bbe11b02dc076cc2ab26d8a5d6fe700"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1e09d582c353cdc6c22aa2d26eb9a65c1d2497a5b6dae2bf89bb88597c45baa4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6427ea64016210f149ceef7d09535bf6ed93198228a15ecb5e8b022c9cef3958"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "70c5733896b4d5d570e6a6228906594b282d25b5f88d5d796d2b14a90145cabe"
   end
 
   depends_on "cmake" => :build
