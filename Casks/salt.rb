@@ -2,18 +2,10 @@ cask "salt" do
   arch arm: "arm64", intel: "x86_64"
 
   version "3008.2"
+  sha256 arm:   "9a227cd679b5ec276957e558bb0f87a014ee2b84bc72c70810494a7b8b73defa",
+         intel: "50affec75bc4036cc5d5424e49fee2d11b7daa4778afdabc58cd2b9cc3421b40"
 
-  on_macos do
-    sha256 arm:   "9a227cd679b5ec276957e558bb0f87a014ee2b84bc72c70810494a7b8b73defa",
-           intel: "50affec75bc4036cc5d5424e49fee2d11b7daa4778afdabc58cd2b9cc3421b40"
-  end
-
-  on_linux do
-    sha256 :no_check
-  end
-
-  url "https://packages.broadcom.com/artifactory/saltproject-generic/macos/#{version}/salt-#{version}-py3-#{arch}.pkg",
-      verified: "packages.broadcom.com/artifactory/saltproject-generic/"
+  url "https://packages.broadcom.com/artifactory/saltproject-generic/macos/#{version}/salt-#{version}-py3-#{arch}.pkg"
   name "Salt #{version} LTS"
   desc "Automation and infrastructure management engine"
   homepage "https://saltproject.io/"
@@ -27,9 +19,22 @@ cask "salt" do
 
   pkg "salt-#{version}-py3-#{arch}.pkg"
 
-  postflight do
-    require_relative "../lib/patches/salt"
-    %w[api master minion syndic].each { |daemon| Patches::Salt.patch_plist(daemon) }
+  postflight_steps do
+    run "/bin/sh",
+        args:         [
+          "-c",
+          <<~SH,
+            for daemon in api master minion syndic; do
+              plist="/Library/LaunchDaemons/com.saltstack.salt.${daemon}.plist"
+              plutil -insert EnvironmentVariables -dictionary "$plist" 2>/dev/null
+              plutil -replace EnvironmentVariables.HOMEBREW_PREFIX -string "{{HOMEBREW_PREFIX}}" "$plist"
+              plutil -replace EnvironmentVariables.PATH \\
+                -string "{{HOMEBREW_PREFIX}}/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" "$plist"
+            done
+          SH
+        ],
+        sudo:         true,
+        must_succeed: false
   end
 
   uninstall launchctl: [

@@ -191,13 +191,12 @@ Este cask instala salt STS usando el paquete de instalación oficial en lugar de
 brew install --cask cdalvaro/tap/salt
 ```
 
-Este cask [está disponible](https://github.com/Homebrew/homebrew-cask/blob/master/Casks/s/salt.rb) en el repositorio homebrew-cask. Sin embargo, he añadido [un parche](https://github.com/cdalvaro/homebrew-tap/blob/main/Casks/salt.rb#L1-L32) a los archivos `.plist` para que `salt` funcione correctamente con Homebrew sin necesidad de realizar ajustes adicionales.
+Este cask [está disponible](https://github.com/Homebrew/homebrew-cask/blob/master/Casks/s/salt.rb) en el repositorio homebrew-cask. Sin embargo, he añadido un bloque [`postflight_steps`](https://github.com/cdalvaro/homebrew-tap/blob/main/Casks/salt.rb) que parchea los archivos `.plist` para que `salt` funcione correctamente con Homebrew sin necesidad de realizar ajustes adicionales. Este bloque ejecuta `plutil`, a través del DSL declarativo de pasos de instalación de Homebrew, sobre el plist de cada demonio.
 
 El parche añade:
 
 - La variable de entorno `HOMEBREW_PREFIX`.
 - La variable de entorno `PATH` en el directorio de binarios asociado a `HOMEBREW_PREFIX`.
-- La variable de entorno `HOME` con el directorio _home_ de `root`, para evitar un problema con el comando `brew`.
 
 ## Más documentación
 
