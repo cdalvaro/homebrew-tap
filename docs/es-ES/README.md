@@ -168,6 +168,56 @@ brew install cdalvaro/tap/wxwidgets
 
 Esta fórmula [está disponible](https://github.com/Homebrew/homebrew-core/blob/master/Formula/w/wxwidgets.rb) en el repositorio homebrew-core. Pero he añadido la opción `--with-enable-abort` para permitir la cancelación de una tarea en ejecución utilizando un `wxGenericProgressDialog`.
 
+## Casks disponibles
+
+<details>
+  <summary>Lista de casks</summary>
+  <ul>
+    <li><a href="#salt">salt</a></li>
+    <li><a href="#saltlts">salt@lts</a></li>
+  </ul>
+</details>
+
+### `salt`
+
+[![Badge](https://img.shields.io/badge/saltstack-salt-grey?logo=saltproject&color=57BCAD)](https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/macos.html)
+[![Badge](https://img.shields.io/badge/Cask-salt-grey?logo=ruby&color=FBB040&logoColor=CC342D)](/Casks/salt.rb)
+
+Software para automatizar la gestión y configuración de cualquier infraestructura o aplicación a escala.
+
+Este cask instala salt STS usando el paquete de instalación oficial en lugar de construir el paquete completo desde el código fuente como hace la fórmula.
+
+```sh
+brew install --cask cdalvaro/tap/salt
+```
+
+Este cask [está disponible](https://github.com/Homebrew/homebrew-cask/blob/master/Casks/s/salt.rb) en el repositorio homebrew-cask. Sin embargo, he añadido [un parche](https://github.com/cdalvaro/homebrew-tap/blob/main/Casks/salt.rb#L1-L32) a los archivos `.plist` para que `salt` funcione correctamente con Homebrew sin necesidad de realizar ajustes adicionales.
+
+El parche añade:
+
+- La variable de entorno `HOMEBREW_PREFIX`.
+- La variable de entorno `PATH` en el directorio de binarios asociado a `HOMEBREW_PREFIX`.
+- La variable de entorno `HOME` con el directorio _home_ de `root`, para evitar un problema con el comando `brew`.
+
+## Más documentación
+
+Más documentación está disponible en: [Homebrew - Taps](https://docs.brew.sh/Taps)
+
+### `salt@lts`
+
+[![Badge](https://img.shields.io/badge/saltstack-salt%20LTS-grey?logo=saltproject&color=57BCAD)](https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/macos.html#lts-downloads)
+[![Badge](https://img.shields.io/badge/Cask-salt@lts-grey?logo=ruby&color=FBB040&logoColor=CC342D)](Casks/salt@lts.rb)
+
+Software para automatizar la gestión y configuración de cualquier infraestructura o aplicación a escala.
+
+Este cask instala salt LTS usando el paquete de instalación oficial en lugar de construir el paquete completo desde el código fuente como hace la fórmula.
+
+```sh
+brew install --cask cdalvaro/tap/salt@lts
+```
+
+Este cask incluye todos los parches indicados en [`salt`](#salt-1).
+
 ## Más documentación
 
 Más documentación está disponible en: [Homebrew - Taps](https://docs.brew.sh/Taps)

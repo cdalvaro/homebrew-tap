@@ -1,4 +1,0 @@
-{
-  "salt": "homebrew/cask",
-  "salt@lts": "homebrew/cask/salt"
-}
