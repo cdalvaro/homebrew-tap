@@ -192,13 +192,12 @@ of building the whole package from source as the formula does.
 brew install --cask cdalvaro/tap/salt
 ```
 
-This cask [is available](https://github.com/Homebrew/homebrew-cask/blob/master/Casks/s/salt.rb) at homebrew-cask repository. However I have added [a patch](https://github.com/cdalvaro/homebrew-tap/blob/main/Casks/salt.rb#L1-L32) to the `.plist` files to make `salt` to work properly with Homebrew out of the box.
+This cask [is available](https://github.com/Homebrew/homebrew-cask/blob/master/Casks/s/salt.rb) at homebrew-cask repository. However I have added a [`postflight_steps`](https://github.com/cdalvaro/homebrew-tap/blob/main/Casks/salt.rb) block that patches the `.plist` files to make `salt` work properly with Homebrew out of the box. It runs `plutil`, via Homebrew's declarative install steps DSL, against each daemon's plist.
 
 The patch adds:
 
 - `HOMEBREW_PREFIX` to the environment.
 - `PATH` env variable containing the `HOMEBREW_PREFIX` bin directory.
-- `HOME` env variable containing the `root` home directory, to avoid an issue with `brew` command.
 
 ### `salt@lts`
 
