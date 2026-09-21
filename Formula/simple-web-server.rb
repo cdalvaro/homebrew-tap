@@ -1,11 +1,10 @@
 class SimpleWebServer < Formula
   desc     "HTTP and HTTPS server and client library implemented using C++11 and Boost.Asio"
-  homepage "https://gitlab.com/eidheim/Simple-Web-Server"
-  url      "https://gitlab.com/eidheim/Simple-Web-Server/-/archive/v3.1.1/Simple-Web-Server-v3.1.1.tar.gz"
-  sha256   "f8f656d941647199e0a2db3cb07788b0e8c30d0f019d28e6ee9281bc48db132d"
+  homepage "https://github.com/cdalvaro/Simple-Web-Server"
+  url      "https://github.com/cdalvaro/Simple-Web-Server/archive/refs/tags/v3.2.0.tar.gz"
+  sha256   "30717b71c7c10ce894cfe47e1490eaf14652d750d381fdc7ebba53682af03335"
   license  "MIT"
-  revision 4
-  head     "https://gitlab.com/eidheim/Simple-Web-Server.git", branch: "master"
+  head     "https://github.com/cdalvaro/Simple-Web-Server.git", branch: "master"
 
   bottle do
     root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/simple-web-server-3.1.1_4"
@@ -15,11 +14,11 @@ class SimpleWebServer < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "boost@1.85"
+  depends_on "boost"
   depends_on "openssl"
 
   def install
-    system "cmake", "-S", ".", "-B", ".", *std_cmake_args, "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    system "cmake", "-S", ".", "-B", ".", *std_cmake_args
     system "make", "install"
   end
 end
