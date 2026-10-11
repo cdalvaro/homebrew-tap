@@ -22,4 +22,35 @@ class SimpleWebServer < Formula
     system "cmake", "-S", ".", "-B", ".", *std_cmake_args
     system "make", "install"
   end
+
+  test do
+    port = free_port
+    (testpath/"test.cpp").write <<~CPP
+      #include <simple-web-server/server_http.hpp>
+
+      int main() {
+        using HttpServer = SimpleWeb::Server<SimpleWeb::HTTP>;
+        HttpServer server;
+        server.config.address = "127.0.0.1";
+        server.config.port = #{port};
+        server.resource["^/$"]["GET"] = [](std::shared_ptr<HttpServer::Response> response,
+                                          std::shared_ptr<HttpServer::Request>) {
+          response->write("Hello, Homebrew!");
+        };
+        server.start();
+      }
+    CPP
+    system ENV.cxx, "test.cpp", "-std=c++11", "-pthread", "-I#{include}",
+                    "-I#{Formula["boost"].opt_include}", "-o", "test"
+
+    pid = fork { exec "#{testpath}/test" }
+    begin
+      assert_equal "Hello, Homebrew!\n200",
+                   shell_output("curl --silent --show-error --fail --retry 5 --retry-connrefused " \
+                                "--retry-delay 1 --max-time 5 --write-out '\\n%{http_code}' http://127.0.0.1:#{port}/")
+    ensure
+      Process.kill("TERM", pid)
+      Process.wait(pid)
+    end
+  end
 end
