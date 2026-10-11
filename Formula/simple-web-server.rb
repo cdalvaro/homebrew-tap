@@ -8,11 +8,11 @@ class SimpleWebServer < Formula
   head     "https://github.com/cdalvaro/Simple-Web-Server.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/simple-web-server-3.2.0"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9169a1f295640d0685373d66f95f730806787fccdb4bcd024358a01fea2ebae0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "68ee4dccfb19219ad482355246b155a7f9a1504c8cb982ddfc55fde20cf787b9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bcc3e57f7555a51ad3091f1f163105361de2166ca58f16bd238a793a79847854"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f86ab0b61c92d36deba6a27555cf64b790936da218504a3dc9b0525dbdc6073a"
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/simple-web-server-3.2.0_1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cf1017fab31d4e5e592b029c64ce4fbc2313eec3d8151a4037990bf996948bb1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "156387fc77d469219f6ed44ee57ed5b6b6492e4196c2faf34460eb04ee2ae4f5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "76a3360f9339abedafd655cf1933624980e18a8be270e69483735434e4d3ac34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9a323c39ee501d66c3cddf7cd02b02f6d9f366dc1f6f06fd6a599dfe2a9cbd77"
   end
 
   depends_on "cmake" => :build
