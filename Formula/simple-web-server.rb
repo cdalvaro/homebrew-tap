@@ -41,13 +41,14 @@ class SimpleWebServer < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-std=c++11", "-pthread", "-I#{include}",
-                    "-I#{Formula["boost"].opt_include}", "-o", "test"
+                    "-I#{formula_opt_include("boost")}", "-o", "test"
 
     pid = fork { exec "#{testpath}/test" }
     begin
-      assert_equal "Hello, Homebrew!\n200",
-                   shell_output("curl --silent --show-error --fail --retry 5 --retry-connrefused " \
-                                "--retry-delay 1 --max-time 5 --write-out '\\n%{http_code}' http://127.0.0.1:#{port}/")
+      output = shell_output("curl --silent --show-error --fail --include --retry 5 --retry-connrefused " \
+                            "--retry-delay 1 --max-time 5 http://127.0.0.1:#{port}/")
+      assert_match "HTTP/1.1 200 OK\r\n", output
+      assert_equal "Hello, Homebrew!", output.split("\r\n\r\n", 2).last
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)
