@@ -4,6 +4,7 @@ class SimpleWebServer < Formula
   url      "https://github.com/cdalvaro/Simple-Web-Server/archive/refs/tags/v3.2.0.tar.gz"
   sha256   "30717b71c7c10ce894cfe47e1490eaf14652d750d381fdc7ebba53682af03335"
   license  "MIT"
+  revision 1
   head     "https://github.com/cdalvaro/Simple-Web-Server.git", branch: "master"
 
   bottle do
