@@ -1,18 +1,18 @@
 cask "salt" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "3008.3"
-  sha256 arm:   "906c3faebfcbf47a71db9b4472b956b858d96276e2b01e2cab763a5caa68b695",
-         intel: "61c1a0af8ae7391d7c3be7f0dc158ffef75cd54be1bf9394ec567ec57ffe03d0"
+  version "3008.3-1"
+  sha256 arm:   "31737001c0eb4a29655e3a8973cd1b15b347b5d9b62865d1ed10d434a6cdc544",
+         intel: "930d92116d973d7b3b0a7715ad35cb0551d395eb3472332643428f907d63e15f"
 
-  url "https://packages.broadcom.com/artifactory/saltproject-generic/macos/#{version}/salt-#{version}-py3-#{arch}.pkg"
+  url "https://github.com/saltstack/salt/releases/download/v#{version}/salt-#{version}-py3-#{arch}.pkg"
   name "Salt #{version} LTS"
   desc "Automation and infrastructure management engine"
   homepage "https://saltproject.io/"
 
   livecheck do
-    url "https://packages.broadcom.com/artifactory/saltproject-generic/macos"
-    regex(%r{href="\d+\.\d+/">(\d+\.\d+)}i)
+    url :url
+    regex(/^v?(\d+\.\d+(?:-\d+)?)$/i)
   end
 
   depends_on :macos
