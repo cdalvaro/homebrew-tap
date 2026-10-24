@@ -1,9 +1,9 @@
 cask "salt" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "3008.3-1"
-  sha256 arm:   "31737001c0eb4a29655e3a8973cd1b15b347b5d9b62865d1ed10d434a6cdc544",
-         intel: "930d92116d973d7b3b0a7715ad35cb0551d395eb3472332643428f907d63e15f"
+  version "3008.4"
+  sha256 arm:   "bb2557a21b2b1dbfb17f2be6acc10e8b50d29b73b57a2906868f7768854c1085",
+         intel: "d2a3643c44d66dd2a0f50392cc0e071d40bf067d300121cabbb2f500ddb4afb1"
 
   url "https://github.com/saltstack/salt/releases/download/v#{version}/salt-#{version}-py3-#{arch}.pkg"
   name "Salt #{version} LTS"
