@@ -173,10 +173,21 @@ Esta fórmula [está disponible](https://github.com/Homebrew/homebrew-core/blob/
 <details>
   <summary>Lista de casks</summary>
   <ul>
+    <li><a href="#accents">accents</a></li>
     <li><a href="#salt">salt</a></li>
     <li><a href="#saltlts">salt@lts</a></li>
   </ul>
 </details>
+
+### `accents`
+
+[![Badge](https://img.shields.io/badge/Cask-accents-grey?logo=ruby&color=FBB040&logoColor=CC342D)](/Casks/accents.rb)
+
+Utiliza los colores de acento del iMac y del MacBook Neo en cualquier Mac con [Accents](https://mahdi.jp/apps/accents).
+
+```sh
+brew install --cask cdalvaro/tap/accents
+```
 
 ### `salt`
 
