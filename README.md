@@ -229,13 +229,18 @@ This cask includes all patches from the [`salt`](#salt-1) cask.
 
 ### `solidcraft`
 
-[![Badge](https://img.shields.io/badge/Cask-solidcraft-grey?logo=ruby&color=FBB040&logoColor=CC342D)](/Casks/solidcraft.rb)
+[![Badge](https://img.shields.io/badge/Cask-solidcraft-grey?logo=ruby&color=FBB040&logoColor=CC342D)](https://github.com/tangency-labs/homebrew-tap/blob/main/Casks/solidcraft.rb)
 
-Open-source parametric 3D CAD. Installs the universal Apple Silicon and Intel app and its bundled `solidcraft-cli` tool.
+Open-source parametric 3D CAD. Now maintained in the [official SolidCraft tap](https://github.com/tangency-labs/homebrew-tap), which installs the universal app and its bundled `solidcraft-cli` tool.
 
 ```sh
-brew install --cask cdalvaro/tap/solidcraft
+brew tap tangency-labs/tap
+brew install --cask tangency-labs/tap/solidcraft
 ```
+
+After adding the official tap and running `brew update`, the old `cdalvaro/tap/solidcraft` name redirects there through Homebrew's native tap migration.
+
+If Homebrew asks you to trust the cask, run `brew trust --cask tangency-labs/tap/solidcraft`.
 
 ## More documentation
 
