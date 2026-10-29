@@ -176,6 +176,7 @@ This formula [is available](https://github.com/Homebrew/homebrew-core/blob/maste
     <li><a href="#accents">accents</a></li>
     <li><a href="#salt">salt</a></li>
     <li><a href="#saltlts">salt@lts</a></li>
+    <li><a href="#solidcraft">solidcraft</a></li>
   </ul>
 </details>
 
@@ -225,6 +226,16 @@ brew install --cask cdalvaro/tap/salt@lts
 ```
 
 This cask includes all patches from the [`salt`](#salt-1) cask.
+
+### `solidcraft`
+
+[![Badge](https://img.shields.io/badge/Cask-solidcraft-grey?logo=ruby&color=FBB040&logoColor=CC342D)](/Casks/solidcraft.rb)
+
+Open-source parametric 3D CAD. Installs the universal Apple Silicon and Intel app and its bundled `solidcraft-cli` tool.
+
+```sh
+brew install --cask cdalvaro/tap/solidcraft
+```
 
 ## More documentation
 
