@@ -12,11 +12,11 @@ class BoostAT189 < Formula
   end
 
   bottle do
-    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/boost@1.89-1.89.0_2"
-    sha256               arm64_golden_gate: "adc515912a79255c4b4a526448b797d9c01da56826975499d483b6a2b2ec4004"
-    sha256               arm64_tahoe:       "1917b7eb239216fc7a26c62ed1787ba3a527e23d3cad6e17b7a0aaa4ef10df9d"
-    sha256               arm64_sequoia:     "579d06e593160e2588ff8b0a3ea2db4db2e61c32909fbf038566b2ccbd803336"
-    sha256 cellar: :any, x86_64_linux:      "a6359fe5d11827b9e5ec77642061cf57a80d84beecd68a5fb58194e0789ada7f"
+    root_url "https://github.com/cdalvaro/homebrew-tap/releases/download/boost@1.89-1.89.0_3"
+    sha256               arm64_golden_gate: "c397fa0209505334801d594f336383c03b0101bee290311a7bcaa1e924dfb7cd"
+    sha256               arm64_tahoe:       "8f6309d81b1a2d21580cbf788b990b438ab1c4a34643a40dc484419146c44b6e"
+    sha256               arm64_sequoia:     "3a0ea90e13ab8ddb02bcce59f92d4cc6b3ea573268eb5f10621c08d71a271050"
+    sha256 cellar: :any, x86_64_linux:      "aec83647aa79465435fc1e6613363a6c5f179cf0aa6c31e796952bbbb8bb1a70"
   end
 
   keg_only :versioned_formula
