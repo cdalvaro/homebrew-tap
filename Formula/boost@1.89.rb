@@ -4,7 +4,7 @@ class BoostAT189 < Formula
   url "https://github.com/boostorg/boost/releases/download/boost-1.89.0/boost-1.89.0-b2-nodocs.tar.xz"
   sha256 "875cc413afa6b86922b6df3b2ad23dec4511c8a741753e57c1129e7fa753d700"
   license "BSL-1.0"
-  revision 2
+  revision 3
   head "https://github.com/boostorg/boost.git", branch: "master"
 
   livecheck do
@@ -21,7 +21,7 @@ class BoostAT189 < Formula
 
   keg_only :versioned_formula
 
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "xz"
   depends_on "zstd"
 
